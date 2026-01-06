@@ -7,22 +7,12 @@ import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import SideBar from "@/components/SideBar";
 
 export default function Home() {
   return (
     <>
-      <Suspense>
-        <Header />
-      </Suspense>
-      <main>
-        <Hero />
-        <Problem />
-        <FeaturesAccordion />
-        <Pricing />
-        <FAQ />
-        <CTA />
-      </main>
-      <Footer />
+      <SideBar />
     </>
   );
 }

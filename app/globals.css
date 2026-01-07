@@ -54,6 +54,14 @@ body {
   list-style: none;
 }
 
+.scroll-list li {
+  width: 10vw;
+  border: 2px solid black;
+  padding: 8px 12px;
+  margin-bottom: 2px; 
+  background-color: #fff;
+}
+
 .newtag-div {
   width: 20vw;
   height: 4vh;
@@ -81,3 +89,26 @@ body {
   margin-bottom : 7px;
   text-align: center;
 }
+
+.tag-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 2px solid black;
+  padding: 60px 10px;
+  margin-bottom: 6px;
+}
+
+.delete-btn {
+  background: transparent;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+

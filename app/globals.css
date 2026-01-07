@@ -18,26 +18,66 @@ body {
   align-items: center;         
 }
 
-.btn-home{
+.home-dropdown {
   width: 20vw;
-  height: 7vh;
-  margin: 15px;
-  border: 2px;
-  border-radius: 10px;
+  height: 12vh;
+  background-color: #f6fdff;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start; 
+  align-items: center;    
+  overflow-y: auto;
 }
 
-.btn-newgrp{
+.sidebar-btn{
   width: 20vw;
   height: 7vh;
-  margin: 15px;
+  margin-top: 15px;
   border: 2px;
   border-radius: 10px;
+  background-color: #f6fdff;
 }
 
-.btn-grps{
+.sidebar-btn:focus{
   width: 20vw;
   height: 7vh;
-  margin: 15px;
+  margin-top: 15px;
   border: 2px;
   border-radius: 10px;
+  background-color: #93baeb;
+}
+
+.scroll-list {
+  margin: 0;
+  padding: 2px;
+  list-style: none;
+}
+
+.newtag-div {
+  width: 20vw;
+  height: 4vh;
+  background-color: #f6fdff;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center; 
+  align-items: center;    
+}
+
+.tagsp-div {
+  width: 20vw;
+  height: 4vh;
+  background-color: #f6fdff;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start; 
+  align-items: center;    
+}
+
+.tag-input {
+  margin-top : 7px;
+  margin-bottom : 7px;
+  text-align: center;
 }

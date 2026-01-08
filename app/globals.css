@@ -1,13 +1,51 @@
 html,
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 body {
   background-color: #aed0bd;
   min-height: 100%;
   margin: 0;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: flex-start; 
+  align-items: center;
 }
 
 .rechteck-sidebar {
   width: 25vw;
-  height: 100vh;
+  height: 95vh;
+  background-color: #95c6ac;
+  margin: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start; 
+  align-items: center;         
+}
+
+.rechteck-leftside {
+  width: 35vw;
+  height: 95vh;
+  background-color: #95c6ac;
+  margin: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start; 
+  align-items: center;         
+}
+
+.rechteck-rightside {
+  width: 35vw;
+  height: 95vh;
   background-color: #95c6ac;
   margin: 12px;
 
@@ -111,4 +149,63 @@ body {
 .delete-btn:hover {
   color: red;
 }
+
+.add-cfp {
+  width: 7vw;
+  height: 5vh;
+  background-color: #f6fdff;
+  display: flex;
+  flex-direction: row;
+  border: 2px;
+  border-radius: 10px;
+
+  justify-content: flex-start; 
+  align-items: center;    
+}
+
+.cfp-header {
+  width: 35vw;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;  
+}
+
+.addcfp-btn{
+  margin-left: auto;
+  margin-right: 5px;
+  font-size: 25px;
+}
+
+.cfp-title {
+  margin-left: 5px;
+  font-size: 25px;
+}
+
+.cfp-searchbar {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  border: 2px;
+  border-radius: 10px;
+}
+
+.search-wrapper {
+  margin-left: auto;
+  width: 25vw;
+  height: 5vh;
+  display:inline-block;
+  position:relative;
+}
+
+.search-wrapper button {
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 

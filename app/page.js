@@ -8,11 +8,15 @@ import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import SideBar from "@/components/SideBar";
+import LeftSideHome from "@/components/LeftSideHome";
+import RightSideHome from "@/components/RightSideHome";
 
 export default function Home() {
   return (
     <>
       <SideBar />
+      <LeftSideHome />
+      <RightSideHome />
     </>
   );
 }

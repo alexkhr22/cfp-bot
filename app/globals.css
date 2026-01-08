@@ -5,6 +5,10 @@ input[type="search"]::-webkit-search-cancel-button {
   appearance: none;
 }
 
+li {
+  list-style: none;
+}
+
 body {
   background-color: #aed0bd;
   min-height: 100%;
@@ -208,4 +212,34 @@ body {
   cursor: pointer;
 }
 
+.addcfp-div {
+  width: 40vw;
+  height: 40vh;
+  background-color: #f6fdff;
+  display: flex;
+  flex-direction: column;
 
+  justify-content: flex-start; 
+  align-items: center;  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+  border: 2px;
+  border-radius: 10px;
+}
+
+.addcfp-list {
+    width: 430px;
+    margin: 30px;
+    margin-right: 7vw;
+    float:left;
+}
+
+.addcfp-list label {
+    width: 210px;
+    padding-right: 10px;
+    text-align: right;
+    display:inline-block;
+    margin: 5px;
+}

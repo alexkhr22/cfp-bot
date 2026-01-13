@@ -243,3 +243,39 @@ body {
     display:inline-block;
     margin: 5px;
 }
+
+.confirm-btn {
+  margin: 20px;
+}
+
+.discard-btn{
+  margin: 20px;
+}
+
+.cfp-card {
+  width: 27vw;
+  height: 35vh;
+  background-color: #f6fdff;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  
+  border: 2px;
+  border-radius: 10px;
+}
+
+.cfps-list {
+  overflow-y: auto;
+}
+
+.cfp-card h3{
+  padding-left: 20px;
+}
+
+.cfp-details{
+  margin: 5px;
+}
+
+.cfp-details li{
+  margin: 10px;
+}

@@ -41,3 +41,4 @@ public/sitemap-0.xml
 
 # environment variables
 .env*
+/app/generated/prisma

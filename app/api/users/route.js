@@ -1,24 +1,46 @@
 import { prisma } from "@/libs/prisma";
 import { NextResponse } from "next/server";
 
-// GET all users
+/**
+ * Ruft alle Benutzer ab, sortiert nach Name.
+ * Inkludiert die Gruppenmitgliedschaften des Benutzers.
+ */
 export async function GET() {
-  const users = await prisma.user.findMany({
-    include: { groups: true },
-  });
-  return NextResponse.json(users);
+  try {
+    const users = await prisma.user.findMany({
+      include: { groups: true },
+      orderBy: { name: "asc" },
+    });
+    return NextResponse.json(users);
+  } catch (err) {
+    return NextResponse.json(
+      { error: err?.message ?? "Unbekannter Fehler" },
+      { status: 500 }
+    );
+  }
 }
 
-// POST create user
+/**
+ * Erstellt einen neuen Benutzer.
+ * Erwartet ein 'name' Feld im Body und initialisiert die Tags leer.
+ */
 export async function POST(req) {
-  const body = await req.json();
+  try {
+    const body = await req.json();
 
-  const user = await prisma.user.create({
-    data: {
-      name: body.name,
-      tags: [],
-    },
-  });
+    if (!body?.name) {
+      return NextResponse.json({ error: "name fehlt" }, { status: 400 });
+    }
 
-  return NextResponse.json(user);
+    const user = await prisma.user.create({
+      data: { name: body.name, tags: [] },
+    });
+
+    return NextResponse.json(user, { status: 201 });
+  } catch (err) {
+    return NextResponse.json(
+      { error: err?.message ?? "Unbekannter Fehler" },
+      { status: 500 }
+    );
+  }
 }

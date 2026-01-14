@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/libs/prisma";
 
 /**
- * Verknüpft einen Benutzer mit einer Keyword-Gruppe.
+ * Entfernt die Verknüpfung zwischen einem Benutzer und einer Gruppe.
  */
 export async function POST(req) {
   try {
@@ -18,22 +18,23 @@ export async function POST(req) {
       );
     }
 
-    // Eintrag in der Join-Tabelle (UserKeywordGroup) erstellen
-    await prisma.userKeywordGroup.create({
-      data: { 
-        userId: userId, 
-        groupId: groupId 
+    // Löschen über den zusammengesetzten Unique-Index (userId_groupId)
+    await prisma.userKeywordGroup.delete({
+      where: { 
+        userId_groupId: { 
+          userId: userId, 
+          groupId: groupId 
+        } 
       },
     });
 
-    return NextResponse.json({ ok: true }, { status: 201 });
+    return NextResponse.json({ ok: true });
   } catch (err) {
-    // Fehlerbehandlung: Prisma-Error P2002 (Unique Constraint) abfangen,
-    // falls die Verbindung zwischen User und Gruppe bereits existiert.
-    if (err.code === 'P2002') {
+    // Fehlerbehandlung: Check, falls die Beziehung gar nicht existierte
+    if (err.code === 'P2025') {
       return NextResponse.json(
-        { error: "User ist bereits Mitglied dieser Gruppe" },
-        { status: 409 }
+        { error: "Beziehung existiert nicht" },
+        { status: 404 }
       );
     }
 

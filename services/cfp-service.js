@@ -1,5 +1,5 @@
 /**
- * CFP Service (API-based)
+ * CFP Service
  *
  * Spricht ausschließlich über Next.js API Endpoints (fetch),
  * KEINE direkten Prisma-Queries mehr.

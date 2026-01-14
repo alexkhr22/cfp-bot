@@ -1,5 +1,5 @@
 /**
- * User Service (API-based)
+ * User Service
  *
  * Endpoints:
  * - GET    /api/users

@@ -1,5 +1,5 @@
 /**
- * Admin / DB Utility Service
+ * Admin Utility Service
  *
  * Enthält administrative Hilfsfunktionen für die Datenbank.
  * Aktuell: Reset/Leeren aller Tabellen für lokale Tests und Development.

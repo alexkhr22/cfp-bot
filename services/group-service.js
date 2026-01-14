@@ -1,5 +1,5 @@
 /**
- * Group Service (API-based)
+ * Group Service
  *
  * Endpoints:
  * - GET    /api/groups

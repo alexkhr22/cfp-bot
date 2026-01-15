@@ -17,7 +17,7 @@ body {
   display: flex;
   flex-direction: row;
 
-  justify-content: flex-start; 
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -30,8 +30,8 @@ body {
   display: flex;
   flex-direction: column;
 
-  justify-content: flex-start; 
-  align-items: center;         
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .rechteck-leftside {
@@ -43,8 +43,8 @@ body {
   display: flex;
   flex-direction: column;
 
-  justify-content: flex-start; 
-  align-items: center;         
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .rechteck-rightside {
@@ -56,8 +56,8 @@ body {
   display: flex;
   flex-direction: column;
 
-  justify-content: flex-start; 
-  align-items: center;         
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .home-dropdown {
@@ -67,12 +67,12 @@ body {
   display: flex;
   flex-direction: column;
 
-  justify-content: flex-start; 
-  align-items: center;    
+  justify-content: flex-start;
+  align-items: center;
   overflow-y: auto;
 }
 
-.sidebar-btn{
+.sidebar-btn {
   width: 20vw;
   height: 7vh;
   margin-top: 15px;
@@ -81,7 +81,7 @@ body {
   background-color: #f6fdff;
 }
 
-.sidebar-btn:focus{
+.sidebar-btn:focus {
   width: 20vw;
   height: 7vh;
   margin-top: 15px;
@@ -100,7 +100,7 @@ body {
   width: 10vw;
   border: 2px solid black;
   padding: 8px 12px;
-  margin-bottom: 2px; 
+  margin-bottom: 2px;
   background-color: #fff;
 }
 
@@ -111,8 +111,8 @@ body {
   display: flex;
   flex-direction: row;
 
-  justify-content: center; 
-  align-items: center;    
+  justify-content: center;
+  align-items: center;
 }
 
 .tagsp-div {
@@ -122,13 +122,13 @@ body {
   display: flex;
   flex-direction: column;
 
-  justify-content: flex-start; 
-  align-items: center;    
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .tag-input {
-  margin-top : 7px;
-  margin-bottom : 7px;
+  margin-top: 7px;
+  margin-bottom: 7px;
   text-align: center;
 }
 
@@ -163,19 +163,19 @@ body {
   border: 2px;
   border-radius: 10px;
 
-  justify-content: flex-start; 
-  align-items: center;    
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .cfp-header {
   width: 35vw;
   height: 5vh;
   display: flex;
-  justify-content: flex-start; 
-  align-items: center;  
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.addcfp-btn{
+.addcfp-btn {
   margin-left: auto;
   margin-right: 5px;
   font-size: 25px;
@@ -198,8 +198,8 @@ body {
   margin-left: auto;
   width: 25vw;
   height: 5vh;
-  display:inline-block;
-  position:relative;
+  display: inline-block;
+  position: relative;
 }
 
 .search-wrapper button {
@@ -219,36 +219,36 @@ body {
   display: flex;
   flex-direction: column;
 
-  justify-content: flex-start; 
-  align-items: center;  
+  justify-content: flex-start;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);  
+  transform: translate(-50%, -50%);
   border: 2px;
   border-radius: 10px;
 }
 
 .addcfp-list {
-    width: 430px;
-    margin: 30px;
-    margin-right: 7vw;
-    float:left;
+  width: 430px;
+  margin: 30px;
+  margin-right: 7vw;
+  float: left;
 }
 
 .addcfp-list label {
-    width: 210px;
-    padding-right: 10px;
-    text-align: right;
-    display:inline-block;
-    margin: 5px;
+  width: 210px;
+  padding-right: 10px;
+  text-align: right;
+  display: inline-block;
+  margin: 5px;
 }
 
 .confirm-btn {
   margin: 20px;
 }
 
-.discard-btn{
+.discard-btn {
   margin: 20px;
 }
 
@@ -259,7 +259,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 10px;
-  
+
   border: 2px;
   border-radius: 10px;
 }
@@ -268,14 +268,23 @@ body {
   overflow-y: auto;
 }
 
-.cfp-card h3{
+.cfp-card h3 {
   padding-left: 20px;
 }
 
-.cfp-details{
+.cfp-details {
   margin: 5px;
 }
 
-.cfp-details li{
+.cfp-details li {
   margin: 10px;
+}
+
+
+.rechteck-newgrp {
+  width: 75vw;
+  height: 95vh;
+  background-color: #95c6ac;
+  margin: 12px;
+
 }

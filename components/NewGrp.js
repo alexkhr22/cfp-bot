@@ -3,9 +3,19 @@
 import config from "@/config";
 import { useState } from "react";
 
-const NewGrp = () => {
-    const [keyword, setKeywords] = useState([]);
+const NewGrp = ({addGroup}) => {
+    const [keywords, setKeywords] = useState([]);
     const [input, setInput] = useState("");
+    const [groupName, setGroupName] = useState("");
+
+    const handleCreateGroup = () => {
+        if (!groupName.trim()) return;
+
+        addGroup(groupName, keywords);   
+        setKeywords([]);
+        setGroupName("");
+    };
+
 
 
     const handleAddKeyWord = () => {
@@ -23,8 +33,8 @@ const NewGrp = () => {
 
     return (
         <div className="rechteck-newgrp">
-            <input type="text" className="groupname" placeholder="Gruppenname"></input>
-            <div>
+            <input type="text" className="groupname" placeholder="Gruppenname" value={groupName} onChange={(e) => setGroupName(e.target.value)}></input>
+            <div> 
                 <input type="text" className="add-keyword" placeholder="Schlagwort hinzufügen" value={input} onChange={(e) => setInput(e.target.value)}></input>
                 <button className="addkeyword-btn" onClick={() => handleAddKeyWord()}>
                                         +
@@ -36,7 +46,7 @@ const NewGrp = () => {
             </div>
             <div className="keywords-div">
                 <ul className="scroll-list">
-                        {keyword.map((keyword, index) => (
+                        {keywords.map((keyword, index) => (
                             <li key={index} className="tag-item">
                                 <span>{keyword}</span>
                                 <button className="delete-btn" onClick={() => handleDeleteKeyword(index)}>
@@ -46,7 +56,7 @@ const NewGrp = () => {
                         ))}
                 </ul>
             </div>
-            <button className="creategrp-btn">Gruppe erstellen</button>
+            <button className="creategrp-btn" onClick={handleCreateGroup}>Gruppe erstellen</button>
         </div>
     );
 };

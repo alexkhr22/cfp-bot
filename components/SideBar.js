@@ -3,7 +3,7 @@
 import config from "@/config";
 import { useState } from "react";
 
-const SideBar = ({ screen, setScreen }) => {
+const SideBar = ({ screen, setScreen, groups }) => {
     const [input, setInput] = useState("");
     const [tags, setTags] = useState([]);
 
@@ -72,6 +72,23 @@ const SideBar = ({ screen, setScreen }) => {
             >
                 Gruppen
             </button>
+            <div className="groups-div">
+                <ul className="groups-list">
+                    {groups.map((group, i) => (
+                        <li key={i} className="group-item">
+                            <div className="group-item-div">
+                                <strong>{group.name}</strong>
+                            
+                                <ul>
+                                    {group.keywords.map((keyword, j) => (
+                                        <li key={j}>{keyword}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
 
     );

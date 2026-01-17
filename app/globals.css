@@ -371,11 +371,37 @@ body {
 
 .group-item-div {
   width: 100%;          
-  margin: 15px 0;
+  margin-bottom: 15px;
   background: lightgreen;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.group-item-title-div {
+  margin-top: 2vh;
+  width: 20vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #f6fdff;
+  height: 40px;       
+}     
+
+.join-group-btn,
+.leave-group-btn {
+  position: absolute;
+  left: 1vw;
+}
+
+.group-item-title {
+  margin: 0 auto;          
+}
+
+
+.group-item-dropdown-btn {
+  position: absolute;
+  right: 1vw;
 }
 

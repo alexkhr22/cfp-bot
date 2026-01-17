@@ -6,6 +6,8 @@ import { useState } from "react";
 const SideBar = ({ screen, setScreen, groups }) => {
     const [input, setInput] = useState("");
     const [tags, setTags] = useState([]);
+    const [joined, setJoined] = useState(false);
+    const [showDropdown, setShowDropdown] = useState(false);
 
     const showTags = screen === "home";
 
@@ -21,6 +23,19 @@ const SideBar = ({ screen, setScreen, groups }) => {
             prevTags.filter((_, index) => index !== deleteIndex)
         );
     }
+
+    const handleJoin = () => {
+        setJoined(true);
+    }
+
+    const handleLeave = () => {
+        setJoined(false);
+    }
+
+    const handleShowDropdown = () =>{
+        setShowDropdown(prev => !prev);
+    }
+
 
     return (
 
@@ -76,15 +91,25 @@ const SideBar = ({ screen, setScreen, groups }) => {
                 <ul className="groups-list">
                     {groups.map((group, i) => (
                         <li key={i} className="group-item">
-                            <div className="group-item-div">
-                                <strong>{group.name}</strong>
-                            
+                            <div className="group-item-title-div">
+                                {!joined?(
+                                    <button className="join-group-btn" onClick={handleJoin}>Join</button>
+                                ):(
+                                    <button className="leave-group-btn" onClick={handleLeave}>Leave</button>
+                                )}
+                                <p className="group-item-title"><strong>{group.name}</strong></p>
+                                <button className="group-item-dropdown-btn" onClick={handleShowDropdown}>drop</button>
+                            </div>
+                            {showDropdown &&(
+                                <div className="group-item-div">
                                 <ul>
                                     {group.keywords.map((keyword, j) => (
                                         <li key={j}>{keyword}</li>
                                     ))}
                                 </ul>
                             </div>
+                            )}
+                            
                         </li>
                     ))}
                 </ul>

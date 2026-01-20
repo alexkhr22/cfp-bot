@@ -405,3 +405,102 @@ body {
   right: 1vw;
 }
 
+
+.groups-screen-div {
+  width: 75vw;
+  height: 95vh;
+  background-color: #95c6ac;
+  margin: 12px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.user-screen-div{
+  width: 99vw;
+  height: 97vh;
+  background-color: #95c6ac;
+  margin: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.user-list-div{
+  width: 25vw;
+  height: 65vh;
+  background-color: #f6fdff;
+  border: 2px;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.user-para-text{
+   margin-top: 10vh;
+   font-size: 24;
+}
+
+.add-user {
+  height: 4vh;
+  width: 12vw;
+  bottom: 20px;
+  border: 1px solid black;
+
+}
+
+.new-user-div{
+  position: absolute;
+  height: 4vh;
+  bottom: 20px;
+  width: 80%;
+
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-user-btn{
+  height: 4vh;
+  width: 2vw;
+  border: 1px solid black;
+  font-size: 24px;
+}
+
+.scroll-list-users{
+  margin-top: 10px;
+  padding: 2px;
+  list-style: none;
+}
+
+.user-item{
+  width: 10vw;
+  border: 2px solid black;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  background-color: #fff;
+
+  display: flex;             
+  justify-content: space-between;  
+  align-items: center;
+}
+.delete-user-btn{
+  background: transparent;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}

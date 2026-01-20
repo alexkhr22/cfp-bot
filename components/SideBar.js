@@ -3,7 +3,7 @@
 import config from "@/config";
 import { useState } from "react";
 
-const SideBar = ({ screen, setScreen, groups }) => {
+const SideBar = ({ screen, setScreen, groups, goToUser }) => {
     const [input, setInput] = useState("");
     const [tags, setTags] = useState([]);
     const [joined, setJoined] = useState(false);
@@ -83,7 +83,7 @@ const SideBar = ({ screen, setScreen, groups }) => {
 
             <button
                 className={`sidebar-btn ${screen === "groups" ? "active" : ""}`}
-                onClick={() => setActive("groups")}
+                onClick={() => setScreen("groups")}
             >
                 Gruppen
             </button>
@@ -114,6 +114,7 @@ const SideBar = ({ screen, setScreen, groups }) => {
                     ))}
                 </ul>
             </div>
+            <button onClick={goToUser}>User</button>
         </div>
 
     );

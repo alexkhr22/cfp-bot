@@ -3,6 +3,8 @@
 import config from "@/config";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { createUser } from "@/services/user-service";
+
 
 
 const UserScreen = ({goBack}) =>{
@@ -15,12 +17,16 @@ const UserScreen = ({goBack}) =>{
         );
     }
 
-    const handleNewUser = () => {
+    const handleNewUser = async () => {
         if (input.trim() === "") return;
 
         setUsers((prevUser) => [...prevUser, input]);
         setInput("");
+        console.log(input + " AAAA ");
+        const user = await createUser(input);
+        console.log(user.id)
     };
+
 
    
 

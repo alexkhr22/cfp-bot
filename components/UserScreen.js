@@ -21,10 +21,11 @@ const UserScreen = ({goBack}) =>{
         if (input.trim() === "") return;
 
         setUsers((prevUser) => [...prevUser, input]);
-        setInput("");
         console.log(input + " AAAA ");
-        const user = await createUser(input);
+        const user = await createUser({name: input});
         console.log(user.id)
+        setInput("");
+        
     };
 
 

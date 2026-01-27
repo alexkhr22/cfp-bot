@@ -3,7 +3,7 @@
 import config from "@/config";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { createUser, getAllUsers } from "@/services/user-service";
+import { createUser, getAllUsers, deleteUser } from "@/services/user-service";
 
 
 
@@ -21,10 +21,9 @@ const UserScreen = ({goBack}) =>{
         loadUsers();
     }, []);
 
-    const handleDeleteUser = (deleteIndex) => {
-        setUsers((prevUser) =>
-            prevUser.filter((_, index) => index !== deleteIndex)
-        );
+    const handleDeleteUser = async (userId) => {
+        await deleteUser(userId);
+        setUsers(await getAllUsers());
     }
 
     const handleNewUser = async () => {
@@ -43,7 +42,7 @@ const UserScreen = ({goBack}) =>{
                         {users.map((user, index) => (
                             <li key={index} className="user-item" onDoubleClick={goBack}>
                                 <span>{user.name}</span>
-                                <button className="delete-user-btn" onClick={() => handleDeleteUser(index)}>
+                                <button className="delete-user-btn" onClick={() => handleDeleteUser(user.id)}>
                                     X
                                 </button>
                             </li>

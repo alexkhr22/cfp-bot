@@ -1,20 +1,35 @@
 "use client";
 
 import config from "@/config";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { addUserTag, getAllUsers } from "@/services/user-service";
 
-const SideBar = ({ screen, setScreen, groups, goToUser }) => {
+const SideBar = ({ screen, setScreen, groups, goToUser, selectedUser }) => {
     const [input, setInput] = useState("");
     const [tags, setTags] = useState([]);
     const [joined, setJoined] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
+    const [users, setUsers] = useState([]);
 
     const showTags = screen === "home";
 
-    const handleNewTag = () => {
-        if (input.trim() === "") return;
+    useEffect(() => {
+        const loadTags = async () => {
+            const data = await getAllUsers();
+            console.log("API tags:", data.tags);
+            setUsers(data);
+            setTags(data.tags);
+        };
 
-        setTags((prevTags) => [...prevTags, input]);
+        loadTags();
+    }, []);
+
+    const handleNewTag = async () => {
+        if (input.trim() === "") return;
+        
+        await addUserTag(selectedUser.id, input)
+        setTags(selectedUser.tags)
+        console.log("AAAAAAA " + tags)
         setInput("");
     }
 
@@ -40,6 +55,7 @@ const SideBar = ({ screen, setScreen, groups, goToUser }) => {
     return (
 
         <div className="rechteck-sidebar">
+            <p>Aktiver Nutzer: {selectedUser ? selectedUser.name : "—"}</p>
             <button
                 className={`sidebar-btn ${screen === "home" ? "active" : ""}`}
                 onClick={() => {
@@ -55,16 +71,21 @@ const SideBar = ({ screen, setScreen, groups, goToUser }) => {
             }
             {showTags &&
                 <div className="home-dropdown">
+                    
                     <ul className="scroll-list">
-                        {tags.map((tag, index) => (
+                        {(tags ?? []).map((tag, index) => (
                             <li key={index} className="tag-item">
-                                <span>{tag}</span>
-                                <button className="delete-btn" onClick={() => handleDeleteTag(index)}>
-                                    X
-                                </button>
+                            <span>{tag}</span>
+                            <button
+                                className="delete-btn"
+                                onClick={() => handleDeleteTag(index)}
+                            >
+                                X
+                            </button>
                             </li>
                         ))}
                     </ul>
+                    
                 </div>
             }
             {showTags &&

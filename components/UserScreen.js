@@ -7,7 +7,7 @@ import { createUser, getAllUsers, deleteUser } from "@/services/user-service";
 
 
 
-const UserScreen = ({goBack}) =>{
+const UserScreen = ({onSelectUser}) =>{
     const [users, setUsers] = useState([]);
     const [input, setInput] = useState("");
 
@@ -40,9 +40,12 @@ const UserScreen = ({goBack}) =>{
             <div className="user-list-div">
                 <ul className="scroll-list-users">
                         {users.map((user, index) => (
-                            <li key={index} className="user-item" onDoubleClick={goBack}>
+                            <li key={index} className="user-item" onDoubleClick={() => onSelectUser(user)}>
                                 <span>{user.name}</span>
-                                <button className="delete-user-btn" onClick={() => handleDeleteUser(user.id)}>
+                                <button className="delete-user-btn" onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleDeleteUser(user.id);
+                                }}>
                                     X
                                 </button>
                             </li>

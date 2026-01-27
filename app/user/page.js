@@ -6,7 +6,11 @@ import { useRouter } from "next/navigation";
 export default function UserPage() {
   const router = useRouter();
 
-  return (
-    <UserScreen goBack={() => router.push("/")} />
-  );
+  const handleSelectUser = (user) => {
+    localStorage.setItem("selectedUser", JSON.stringify(user));
+    router.push("/");
+  };
+
+  return <UserScreen onSelectUser={handleSelectUser} />;
 }
+

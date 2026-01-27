@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 import SideBar from "@/components/SideBar";
@@ -14,6 +14,13 @@ export default function Home() {
 
   const [screen, setScreen] = useState("home");
   const [groups, setGroups] = useState([]);
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  useEffect(() => {
+    const raw = localStorage.getItem("selectedUser");
+    if (raw) setSelectedUser(JSON.parse(raw));
+  }, []);
+
 
   const addGroup = (groupName, keywords) => {
     setGroups((prev) => [...prev, { name: groupName, keywords }]);
@@ -25,6 +32,7 @@ export default function Home() {
         screen={screen}
         setScreen={setScreen}
         groups={groups}
+        selectedUser={selectedUser}
         goToUser={() => router.push("/user")}  
       />
 

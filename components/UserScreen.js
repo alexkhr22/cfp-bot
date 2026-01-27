@@ -1,13 +1,25 @@
 "use client";
 
 import config from "@/config";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { createUser, getAllUsers } from "@/services/user-service";
+
 
 
 const UserScreen = ({goBack}) =>{
     const [users, setUsers] = useState([]);
     const [input, setInput] = useState("");
+
+    useEffect(() => {
+        const loadUsers = async () => {
+            const data = await getAllUsers();
+            console.log("API users:", data);
+            setUsers(data);
+        };
+
+        loadUsers();
+    }, []);
 
     const handleDeleteUser = (deleteIndex) => {
         setUsers((prevUser) =>
@@ -15,23 +27,22 @@ const UserScreen = ({goBack}) =>{
         );
     }
 
-    const handleNewUser = () => {
+    const handleNewUser = async () => {
         if (input.trim() === "") return;
 
-        setUsers((prevUser) => [...prevUser, input]);
+        await createUser({ name: input });
+        setUsers(await getAllUsers());
         setInput("");
     };
-
    
-
     return (
         <div className="user-screen-div">
             <p className="user-para-text">Nutzerauswahl</p>
             <div className="user-list-div">
                 <ul className="scroll-list-users">
-                        {users.map((users, index) => (
+                        {users.map((user, index) => (
                             <li key={index} className="user-item" onDoubleClick={goBack}>
-                                <span>{users}</span>
+                                <span>{user.name}</span>
                                 <button className="delete-user-btn" onClick={() => handleDeleteUser(index)}>
                                     X
                                 </button>

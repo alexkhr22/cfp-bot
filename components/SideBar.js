@@ -2,7 +2,7 @@
 
 import config from "@/config";
 import { useState, useEffect } from "react";
-import { addUserTag, getAllUsers } from "@/services/user-service";
+import { addUserTag, getAllUsers, removeUserTag } from "@/services/user-service";
 
 const SideBar = ({ screen, setScreen, groups, goToUser, selectedUser }) => {
     const [input, setInput] = useState("");
@@ -15,28 +15,39 @@ const SideBar = ({ screen, setScreen, groups, goToUser, selectedUser }) => {
 
     useEffect(() => {
         const loadTags = async () => {
-            const data = await getAllUsers();
-            console.log("API tags:", data.tags);
-            setUsers(data);
-            setTags(data.tags);
+            const all = await getAllUsers();
+            setUsers(all);
+
+            const user = all.find(u => String(u.id) === String(selectedUser?.id));
+            setTags(user?.tags ?? []);
         };
 
         loadTags();
-    }, []);
+    }, [selectedUser]);
+
+
 
     const handleNewTag = async () => {
         if (input.trim() === "") return;
         
         await addUserTag(selectedUser.id, input)
-        setTags(selectedUser.tags)
-        console.log("AAAAAAA " + tags)
+        renderTags();
         setInput("");
     }
 
-    const handleDeleteTag = (deleteIndex) => {
-        setTags((prevTags) =>
-            prevTags.filter((_, index) => index !== deleteIndex)
-        );
+    const handleDeleteTag = async (tag) => {
+        await removeUserTag(selectedUser.id, tag);
+        renderTags();
+    }
+
+    async function renderTags(){
+        const allUsers = await getAllUsers()
+        
+        allUsers.forEach(userFromAPI => {
+            if (userFromAPI.id === selectedUser.id){
+                setTags(userFromAPI.tags);
+            }
+        });
     }
 
     const handleJoin = () => {
@@ -51,6 +62,7 @@ const SideBar = ({ screen, setScreen, groups, goToUser, selectedUser }) => {
         setShowDropdown(prev => !prev);
     }
 
+    console.log("RENDER tags:", tags, "isArray:", Array.isArray(tags));
 
     return (
 
@@ -78,7 +90,7 @@ const SideBar = ({ screen, setScreen, groups, goToUser, selectedUser }) => {
                             <span>{tag}</span>
                             <button
                                 className="delete-btn"
-                                onClick={() => handleDeleteTag(index)}
+                                onClick={() => handleDeleteTag(tag)}
                             >
                                 X
                             </button>

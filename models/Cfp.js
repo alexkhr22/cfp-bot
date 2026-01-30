@@ -1,10 +1,13 @@
 export const createCfp = (data = {}) => ({
+  userId: data.userId,
   title: data.title || "",
-  submissionDeadline: data.submissionDeadline || "",
+  deadline: data.deadline ?? null,
+  conferenceDate: data.conferenceDate ?? null,
+  callback: data.callback ?? null,
   location: data.location || "",
-  dateOfConference: data.dateOfConference || "",
   url: data.url || "",
-  dateReturnMessage: data.dateReturnMessage || "",
   submissionForm: data.submissionForm || "",
-  wordLimit: data.wordLimit || ""
+  wordCharacterLimit: data.wordCharacterLimit ?? null,
+  tag: data.tag || "",
+  groupIds: data.groupIds || []
 });

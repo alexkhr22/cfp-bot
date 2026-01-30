@@ -41,6 +41,7 @@ export default function Home() {
           <LeftSideHome
             goToNewGrp={() => setScreen("newgrp")}
             goToGroups={() => setScreen("groups")}
+            selectedUser={selectedUser}
           />
           <RightSideHome
             goToNewGrp={() => setScreen("newgrp")}

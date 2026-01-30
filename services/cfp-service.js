@@ -12,7 +12,7 @@
 
 import { apiFetch } from "./_apiFetch.js";
 
-export async function createCFP(payload) {
+export async function addCFP(payload) {
   return apiFetch("/api/cfps", { method: "POST", body: payload });
 }
 

@@ -1,10 +1,11 @@
 "use client";
 
 import config from "@/config";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createCfp } from "@/models/Cfp";
+import { addCFP, getUserCfPs } from "@/services/cfp-service";
 
-const LeftSideHome = () =>{
+const LeftSideHome = ({selectedUser}) =>{
     const [showAddCfp, setShowAddCfp] = useState(false);
 
     const [form, setForm] = useState({
@@ -15,11 +16,24 @@ const LeftSideHome = () =>{
         url: "",
         dateReturnMessage: "",
         submissionForm: "",
-        wordLimit: ""
+        wordLimit: "",
+        tag: "",
+        groupIds: []
     });
 
     const [cfps, setCfps] = useState([]);
 
+
+    useEffect(() => {
+        if (!selectedUser?.id) return;   // ⬅️ DAS ist entscheidend
+
+        const loadCfps = async () => {
+            const all = await getUserCfPs(selectedUser.id);
+            setCfps(all);
+        };
+
+        loadCfps();
+    }, [selectedUser]);
 
     function handleCfpInputChange(e){
         setForm({
@@ -32,20 +46,29 @@ const LeftSideHome = () =>{
 
     }
 
-    function handleConfirm(){
+    async function handleConfirm(){
         const newCfp = createCfp({
+            userId: selectedUser.id,
             title: form.title,
-            submissionDeadline: form.submissionDeadline,
+            deadline: new Date(form.submissionDeadline),
+            conferenceDate: new Date(form.dateOfConference),
+            callback: new Date(form.dateReturnMessage),
             location: form.location,
-            dateOfConference: form.dateOfConference,
             url: form.url,
-            dateReturnMessage: form.dateReturnMessage,
             submissionForm: form.submissionForm,
-            wordLimit: form.wordLimit
+            wordCharacterLimit: Number(form.wordLimit),
+            tag: form.tag,
+            groupIds: form.groupIds
         });
         setShowAddCfp(false);
-
+        console.log("submissionDeadline:", form.submissionDeadline);
+        console.log("dateOfConference:", form.dateOfConference);
+        console.log("dateReturnMessage:", form.dateReturnMessage);
         setCfps(prev => [...prev, newCfp]);
+
+        console.log(newCfp)
+
+        await addCFP(newCfp)
         setForm("");
     }
 
@@ -68,11 +91,11 @@ const LeftSideHome = () =>{
                     <ul className="addcfp-list">
                         <li>
                             <label>Titel:</label>
-                            <input className="cfp-title-add" name="title" value={form.title} onChange={handleCfpInputChange}></input>
+                            <input className="cfp-title-add"  name="title" value={form.title} onChange={handleCfpInputChange}></input>
                         </li>
                         <li>
                             <label>Einreichungs Deadline:</label>
-                            <input className="cfp-submission-deadline" name="submissionDeadline" value={form.submissionDeadline} onChange={handleCfpInputChange}></input>
+                            <input className="cfp-submission-deadline" type="date" name="submissionDeadline" value={form.submissionDeadline} onChange={handleCfpInputChange}></input>
                         </li>
                         <li>
                             <label>Ort:</label>
@@ -80,7 +103,7 @@ const LeftSideHome = () =>{
                         </li>
                         <li>
                             <label>Datum der Konferenz:</label>
-                            <input className="cfp-conference-date" name="dateOfConference" value={form.dateOfConference} onChange={handleCfpInputChange}></input>
+                            <input className="cfp-conference-date" type="date" name="dateOfConference" value={form.dateOfConference} onChange={handleCfpInputChange}></input>
                         </li>
                         <li>
                             <label>URL:</label>
@@ -88,7 +111,7 @@ const LeftSideHome = () =>{
                         </li>
                         <li>
                             <label>Datum Rückmeldung:</label>
-                            <input className="cfp-return-message-date" name="dateReturnMessage" value={form.dateReturnMessage} onChange={handleCfpInputChange}></input>
+                            <input className="cfp-return-message-date" type="date" name="dateReturnMessage" value={form.dateReturnMessage} onChange={handleCfpInputChange}></input>
                         </li>
                         <li>
                             <label>Einreichungsform:</label>
@@ -97,6 +120,10 @@ const LeftSideHome = () =>{
                         <li>
                             <label>Wort-/Seitenbeschränkung:</label>
                             <input className="cfp-word-limit" name="wordLimit" value={form.wordLimit} onChange={handleCfpInputChange}></input>
+                        </li>
+                        <li>
+                            <label>Tag:</label>
+                            <input className="cfp-tag" name="tag" value={form.tag} onChange={handleCfpInputChange}></input>
                         </li>
                     </ul>
                     <div className="cfpaddbtn-box">

@@ -9,7 +9,7 @@
 import { prisma } from "../libs/prisma.js";
 import { createUser, addUserTag, getAllUsers, deleteUser, removeUserTag } from "../services/user-service.js";
 import { createGroup, userJoinGroup, getAllGroupConnectedCfP, getAllGroups, deleteGroup, userLeaveGroup } from "../services/group-service.js";
-import { createCFP, updateCfPTag, getUserCfPs } from "../services/cfp-service.js";
+import { addCFP, updateCfPTag, getUserCfPs } from "../services/cfp-service.js";
 import { clearAllTables } from "../services/admin-service.js";
 
 function assert(condition, message) {
@@ -75,7 +75,7 @@ async function main() {
   await userJoinGroup(user.id, group.id);
 
   // CreateCFP
-  const cfp = await createCFP({
+  const cfp = await addCFP({
     userId: user.id,
     title: "ICML 2026",
     deadline: "2026-01-10T00:00:00Z",

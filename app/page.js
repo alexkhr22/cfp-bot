@@ -8,6 +8,8 @@ import LeftSideHome from "@/components/LeftSideHome";
 import RightSideHome from "@/components/RightSideHome";
 import NewGrp from "@/components/NewGrp";
 import GroupsScreen from "@/components/GroupsScreen";
+import { getAllUsers } from "@/services/user-service";
+
 
 export default function Home() {
   const router = useRouter();
@@ -16,9 +18,24 @@ export default function Home() {
   const [groups, setGroups] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
 
+  const loadUser = async (id) => {
+    const allUsers = await getAllUsers();
+
+    const freshUser = allUsers.find(u => u.id === id); 
+
+    if (!freshUser) return;
+
+    setSelectedUser(freshUser);
+    localStorage.setItem("selectedUser", JSON.stringify(freshUser));
+  };
+
+
   useEffect(() => {
     const raw = localStorage.getItem("selectedUser");
-    if (raw) setSelectedUser(JSON.parse(raw));
+    if (!raw) return;
+
+    const parsed = JSON.parse(raw);
+    loadUser(parsed.id);   
   }, []);
 
 
@@ -42,6 +59,7 @@ export default function Home() {
             goToNewGrp={() => setScreen("newgrp")}
             goToGroups={() => setScreen("groups")}
             selectedUser={selectedUser}
+            reloadUser={() => loadUser(selectedUser.id)}
           />
           <RightSideHome
             goToNewGrp={() => setScreen("newgrp")}

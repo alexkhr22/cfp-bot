@@ -40,7 +40,7 @@ const UserScreen = ({onSelectUser}) =>{
             <div className="user-list-div">
                 <ul className="scroll-list-users">
                         {users.map((user, index) => (
-                            <li key={index} className="user-item" onDoubleClick={() => onSelectUser(user)}>
+                            <li key={index} className="user-item" onClick={() => onSelectUser(user)}>
                                 <span>{user.name}</span>
                                 <button className="delete-user-btn" onClick={(e) => {
                                     e.stopPropagation();

@@ -5,35 +5,43 @@ import { useState, useEffect } from "react";
 import { createCfp } from "@/models/Cfp";
 import { addCFP, getUserCfPs } from "@/services/cfp-service";
 
-const LeftSideHome = ({selectedUser}) =>{
+const LeftSideHome = ({selectedUser, reloadUser}) =>{
     const [showAddCfp, setShowAddCfp] = useState(false);
 
-    const [form, setForm] = useState({
+    const emptyForm = {
         title: "",
         submissionDeadline: "",
         location: "",
         dateOfConference: "",
         url: "",
         dateReturnMessage: "",
-        submissionForm: "",
+        submissionForm: "OPENREVIEW",
         wordLimit: "",
         tag: "",
         groupIds: []
-    });
+    };
+
+    const [form, setForm] = useState(emptyForm);
 
     const [cfps, setCfps] = useState([]);
 
 
     useEffect(() => {
-        if (!selectedUser?.id) return;   // ⬅️ DAS ist entscheidend
+        if (!selectedUser?.id) return;
 
         const loadCfps = async () => {
             const all = await getUserCfPs(selectedUser.id);
-            setCfps(all);
+
+            const filtered = all.filter(cfp =>
+            selectedUser.tags.includes(cfp.tag)
+            );
+
+            setCfps(filtered);
         };
 
         loadCfps();
     }, [selectedUser]);
+
 
     function handleCfpInputChange(e){
         setForm({
@@ -43,7 +51,8 @@ const LeftSideHome = ({selectedUser}) =>{
     }
 
     function handleDiscard(){
-
+        setShowAddCfp(false);
+        setForm(emptyForm);
     }
 
     async function handleConfirm(){
@@ -64,12 +73,18 @@ const LeftSideHome = ({selectedUser}) =>{
         console.log("submissionDeadline:", form.submissionDeadline);
         console.log("dateOfConference:", form.dateOfConference);
         console.log("dateReturnMessage:", form.dateReturnMessage);
+
+        reloadUser();
+
+
         setCfps(prev => [...prev, newCfp]);
+
+        
 
         console.log(newCfp)
 
         await addCFP(newCfp)
-        setForm("");
+        setForm(emptyForm);
     }
 
 
@@ -115,7 +130,12 @@ const LeftSideHome = ({selectedUser}) =>{
                         </li>
                         <li>
                             <label>Einreichungsform:</label>
-                            <input className="cfp-submission-form" name="submissionForm" value={form.submissionForm} onChange={handleCfpInputChange}></input>
+                            <select className="cfp-submission-form" name="submissionForm" value={form.submissionForm} onChange={handleCfpInputChange}>
+                                <option value="OPENREVIEW">OPENREVIEW</option>
+                                <option value="EASYCHAIR">EASYCHAIR</option>
+                                <option value="PDF">PDF</option>
+                                <option value="OTHER">OTHER</option>
+                            </select>
                         </li>
                         <li>
                             <label>Wort-/Seitenbeschränkung:</label>
@@ -137,7 +157,11 @@ const LeftSideHome = ({selectedUser}) =>{
                     <li key={index} className="cfp-item">
 
                         <div className="cfp-card">
-                            <h3>{cfp.title || "No Title"}</h3>
+                            <div>
+                                <h3>{cfp.title || "No Title"}</h3>
+                                <p className="cfp-card-tag-paragraph"><strong>Tag:</strong> {cfp.tag}</p>
+                            </div>
+                            
 
                             <ul className="cfp-details">
                                 <li><strong>Titel:</strong> {cfp.title}</li>

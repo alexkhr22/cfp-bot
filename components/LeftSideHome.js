@@ -3,7 +3,8 @@
 import config from "@/config";
 import { useState, useEffect } from "react";
 import { createCfp } from "@/models/Cfp";
-import { addCFP, getUserCfPs } from "@/services/cfp-service";
+import { addCFP, getUserCfPs, updateCfPTag } from "@/services/cfp-service";
+import { addUserTag } from "@/services/user-service";
 
 const LeftSideHome = ({selectedUser, reloadUser}) =>{
     const [showAddCfp, setShowAddCfp] = useState(false);
@@ -24,6 +25,13 @@ const LeftSideHome = ({selectedUser, reloadUser}) =>{
     const [form, setForm] = useState(emptyForm);
 
     const [cfps, setCfps] = useState([]);
+
+    const [editingId, setEditingId] = useState(null);
+    const [tagEdit, setTagEdit] = useState("");
+
+    const sortedCfps = [...cfps].sort((a, b) => {
+        return new Date(a.deadline) - new Date(b.deadline);
+    });
 
 
     useEffect(() => {
@@ -76,16 +84,52 @@ const LeftSideHome = ({selectedUser, reloadUser}) =>{
 
         reloadUser();
 
+        if(!selectedUser.tags.includes(form.tag)){
+            await addUserTag(selectedUser.id, form.tag)
+        }
 
-        setCfps(prev => [...prev, newCfp]);
-
-        
+        reloadUser();
 
         console.log(newCfp)
 
-        await addCFP(newCfp)
+        const savedCfp = await addCFP(newCfp)
+        setCfps(prev => [...prev, savedCfp]);
         setForm(emptyForm);
     }
+
+    const startEditTag = (cfp) => {
+        setEditingId(cfp.id);
+        setTagEdit(cfp.tag ?? "");
+    };
+
+    const cancelEditTag = () => {
+        setEditingId(null);
+        setTagEdit("");
+    };
+
+    const saveEditTag = async (cfp) => {
+        const newTag = tagEdit.trim();
+
+        if (newTag === cfp.tag) {
+            cancelEditTag();
+            return;
+        }
+
+        setCfps(prev =>
+            prev.map(cfpItem =>
+                cfpItem.id === cfp.id ? { ...cfpItem, tag: newTag } : cfpItem
+            )
+        );
+
+        if (!selectedUser.tags.includes(newTag)) {
+            await addUserTag(selectedUser.id, newTag);
+            reloadUser();
+        }
+
+        await updateCfPTag(cfp.id, newTag);
+
+        cancelEditTag();
+    };
 
 
     return (
@@ -153,25 +197,46 @@ const LeftSideHome = ({selectedUser, reloadUser}) =>{
                 </div>
             )}
             <ul className="cfps-list">
-                {cfps.map((cfp, index) => (
-                    <li key={index} className="cfp-item">
+                {sortedCfps.map((cfp) => (
+                    <li key={cfp.id} className="cfp-item">
 
                         <div className="cfp-card">
                             <div>
                                 <h3>{cfp.title || "No Title"}</h3>
-                                <p className="cfp-card-tag-paragraph"><strong>Tag:</strong> {cfp.tag}</p>
+                                <p className="cfp-card-tag-paragraph">
+                                    <strong>Tag:</strong>{" "}
+                                    {editingId !== cfp.id ? (
+                                        <>
+                                        {cfp.tag ?? "-"}
+                                        <button type="button" onClick={() => startEditTag(cfp)}>
+                                            Edit
+                                        </button>
+                                        </>
+                                    ) : (
+                                        <input
+                                        className="cfp-tag-edit"
+                                        value={tagEdit}
+                                        onChange={(e) => setTagEdit(e.target.value)}
+                                        onKeyDown={(e) => {
+                                            if (e.key === "Enter") saveEditTag(cfp);
+                                            if (e.key === "Escape") cancelEditTag();
+                                        }}
+                                        autoFocus
+                                        />
+                                    )}
+                                </p>
                             </div>
                             
 
                             <ul className="cfp-details">
                                 <li><strong>Titel:</strong> {cfp.title}</li>
-                                <li><strong>Deadline:</strong> {cfp.submissionDeadline}</li>
+                                <li><strong>Deadline:</strong> {String(cfp.deadline)}</li>
                                 <li><strong>Ort:</strong> {cfp.location}</li>
-                                <li><strong>Konferenzdatum:</strong> {cfp.dateOfConference}</li>
+                                <li><strong>Konferenzdatum:</strong> {String(cfp.conferenceDate)}</li>
                                 <li><strong>URL:</strong> {cfp.url}</li>
-                                <li><strong>Rückmeldung bis:</strong> {cfp.dateReturnMessage}</li>
+                                <li><strong>Rückmeldung bis:</strong> {String(cfp.callback)}</li>
                                 <li><strong>Einreichungsformular:</strong> {cfp.submissionForm}</li>
-                                <li><strong>Wortlimit:</strong> {cfp.wordLimit}</li>
+                                <li><strong>Wortlimit:</strong> {cfp.wordCharacterLimit}</li>
                             </ul>
                         </div>
 

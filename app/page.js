@@ -48,7 +48,6 @@ export default function Home() {
       <SideBar
         screen={screen}
         setScreen={setScreen}
-        groups={groups}
         selectedUser={selectedUser}
         goToUser={() => router.push("/user")}  
       />

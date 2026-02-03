@@ -3,29 +3,40 @@
 import config from "@/config";
 import { useState, useEffect } from "react";
 import { addUserTag, getAllUsers, removeUserTag } from "@/services/user-service";
+import { getAllGroups, userJoinGroup, userLeaveGroup } from "@/services/group-service";
 
-const SideBar = ({ screen, setScreen, groups, goToUser, selectedUser }) => {
+const SideBar = ({ screen, setScreen, goToUser, selectedUser }) => {
     const [input, setInput] = useState("");
     const [tags, setTags] = useState([]);
     const [joined, setJoined] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
     const [users, setUsers] = useState([]);
+    const [groups, setGroups] = useState([]);
 
     const showTags = screen === "home";
 
     useEffect(() => {
-        const loadTags = async () => {
-            const all = await getAllUsers();
-            setUsers(all);
+    const load = async () => {
+        const all = await getAllUsers();
+        setUsers(all);
 
-            const user = all.find(u => String(u.id) === String(selectedUser?.id));
-            setTags(user?.tags ?? []);
-        };
+        const user = all.find(u => String(u.id) === String(selectedUser?.id));
+        setTags(user?.tags ?? []);
 
-        loadTags();
-    }, [selectedUser]);
+        const links = user?.groups ?? [];
+        const allGroups = await getAllGroups(); 
 
+        const resolvedGroups = links
+        .map(l => allGroups.find(g => String(g.id) === String(l.groupId)))
+        .filter(Boolean);
 
+        setGroups(resolvedGroups);
+
+        console.log("First group name:", resolvedGroups[0]?.name);
+    };
+
+        if (selectedUser?.id) load();
+    }, [selectedUser?.id]);
 
     const handleNewTag = async () => {
         if (input.trim() === "") return;
@@ -50,16 +61,34 @@ const SideBar = ({ screen, setScreen, groups, goToUser, selectedUser }) => {
         });
     }
 
-    const handleJoin = () => {
+    const handleJoin = async (group) => {
+        if (!group || !selectedUser) return;
+
+        const currentGroup = await getClickedGroup(group);
+
+        await userJoinGroup(selectedUser.id, currentGroup.id)
         setJoined(true);
     }
 
-    const handleLeave = () => {
+    const handleLeave = async (group) => {
+        if (!group || !selectedUser) return;
+
+        const currentGroup = await getClickedGroup(group);
+
+        await userLeaveGroup(selectedUser.id, currentGroup.id)
         setJoined(false);
     }
 
     const handleShowDropdown = () =>{
         setShowDropdown(prev => !prev);
+    }
+
+    async function getClickedGroup(group){
+        const allGroups = await getAllGroups();
+
+        const currentGroup = allGroups.find(g => String(g.name) === String(group?.name));
+
+        return currentGroup;
     }
 
     console.log("RENDER tags:", tags, "isArray:", Array.isArray(tags));
@@ -125,11 +154,9 @@ const SideBar = ({ screen, setScreen, groups, goToUser, selectedUser }) => {
                     {groups.map((group, i) => (
                         <li key={i} className="group-item">
                             <div className="group-item-title-div">
-                                {!joined?(
-                                    <button className="join-group-btn" onClick={handleJoin}>Join</button>
-                                ):(
-                                    <button className="leave-group-btn" onClick={handleLeave}>Leave</button>
-                                )}
+                                {/* <button className="join-group-btn" onClick={() => handleJoin(group)}>Join</button> */}
+                                <button className="leave-group-btn" onClick={() => handleLeave(group)}>Leave</button>
+
                                 <p className="group-item-title"><strong>{group.name}</strong></p>
                                 <button className="group-item-dropdown-btn" onClick={handleShowDropdown}>drop</button>
                             </div>

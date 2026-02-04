@@ -444,9 +444,10 @@ body {
 
   display: flex;
   flex-direction: column;
+  padding: 12px;       
+  box-sizing: border-box;
+  gap: 12px;
 
-  justify-content: flex-start;
-  align-items: stretch;
 }
 
 .user-screen-div{
@@ -533,4 +534,115 @@ body {
   color: black;
   font-weight: bold;
   cursor: pointer;
+}
+
+.groups-screen-title-div {
+  width: 100%;
+  height: 7vh;
+  display: flex;             
+  align-items: center;
+  justify-content: center; 
+  background-color: #f6fdff;
+}
+
+.groups-content {
+  flex: 1;        
+  display: flex;
+  gap: 12px;      
+  overflow-y: auto; 
+  overflow-x: hidden;         
+}
+
+.groups-left-side,
+.groups-right-side {
+  display: flex;   
+  flex-direction: column;
+  flex: 1;       
+  justify-content: flex-start;
+  align-items: center;        
+  background-color: #ffffff; 
+  overflow-y: auto; 
+  overflow-x: hidden;
+}
+
+.groups-screen-group-item {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;             
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column;
+}
+
+.member-groups-list {
+  width: 80%;
+  height: 80%;
+  background-color: transparent;
+  
+  display: flex;
+  flex-direction: column;       
+}
+
+.groups-screen-group-item-content-div {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;        
+  justify-content: flex-start;
+
+  border: 2px solid black;
+  color: black;
+  background-color: #f6fdff;
+}
+
+.groups-screen-group-item-title-div{
+  width: 100%;
+  height: 5vh;
+  display: flex;             
+  align-items: center;
+  justify-content: center; 
+  border: 2px solid black;
+  color: black;
+  background-color: green;
+}
+
+.groups-keywords-scroll-list{
+  margin: 0;
+  padding: 2px;
+  list-style: none;
+
+}
+
+.groups-keywords-scroll-list li{
+  width: 10vw;
+  border: 2px solid black;
+  padding: 8px 12px;
+  margin-bottom: 2px;
+  background-color: #fff;
+}
+
+
+.groups-ulist-div{
+  width: 80%;
+  height: 60%;
+  border: 2px solid black;
+  color: black;
+  overflow-y: auto; 
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center; 
+}
+
+.delete-group-btn{
+  height: 3vh;
+  width: 8vw;
+  background: #f98383;
+  border: 2px;
+  border-radius: 10px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-size: 18px;
 }

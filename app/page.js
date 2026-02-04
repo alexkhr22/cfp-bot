@@ -17,6 +17,8 @@ export default function Home() {
   const [screen, setScreen] = useState("home");
   const [groups, setGroups] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
+  const [refreshKey, setRefreshKey] = useState(0);
+  const refresh = () => setRefreshKey(k => k + 1);
 
   const loadUser = async (id) => {
     const allUsers = await getAllUsers();
@@ -49,6 +51,8 @@ export default function Home() {
         screen={screen}
         setScreen={setScreen}
         selectedUser={selectedUser}
+        refreshKey = {refreshKey}
+        onGroupsChanged={refresh}
         goToUser={() => router.push("/user")}  
       />
 
@@ -72,6 +76,8 @@ export default function Home() {
           goToHome={() => setScreen("home")}
           goToGroups={() => setScreen("groups")}
           addGroup={addGroup}
+          onCreated = {refresh}
+          selectedUser={selectedUser}
         />
       )}
 
@@ -79,6 +85,8 @@ export default function Home() {
         <GroupsScreen
           goToHome={() => setScreen("home")}
           goToNewGrp={() => setScreen("newgrp")}
+          selectedUser={selectedUser}
+          refreshKey = {refreshKey}
         />
       )}
     </>

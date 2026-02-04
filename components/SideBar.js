@@ -5,38 +5,39 @@ import { useState, useEffect } from "react";
 import { addUserTag, getAllUsers, removeUserTag } from "@/services/user-service";
 import { getAllGroups, userJoinGroup, userLeaveGroup } from "@/services/group-service";
 
-const SideBar = ({ screen, setScreen, goToUser, selectedUser }) => {
+const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGroupsChanged }) => {
     const [input, setInput] = useState("");
     const [tags, setTags] = useState([]);
     const [joined, setJoined] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
     const [users, setUsers] = useState([]);
     const [groups, setGroups] = useState([]);
+    const [dropDownGroupId, setDropDownGroupId] = useState(null);
 
     const showTags = screen === "home";
 
     useEffect(() => {
     const load = async () => {
-        const all = await getAllUsers();
-        setUsers(all);
+        const allUsers = await getAllUsers();
+        setUsers(allUsers);
 
-        const user = all.find(u => String(u.id) === String(selectedUser?.id));
+        const user = allUsers.find(u => String(u.id) === String(selectedUser?.id));
         setTags(user?.tags ?? []);
 
         const links = user?.groups ?? [];
         const allGroups = await getAllGroups(); 
 
-        const resolvedGroups = links
+        const userJoinedGroups = links
         .map(l => allGroups.find(g => String(g.id) === String(l.groupId)))
         .filter(Boolean);
 
-        setGroups(resolvedGroups);
+        setGroups(userJoinedGroups);
 
-        console.log("First group name:", resolvedGroups[0]?.name);
+        console.log("First group name:", userJoinedGroups[0]?.name);
     };
 
         if (selectedUser?.id) load();
-    }, [selectedUser?.id]);
+    }, [selectedUser?.id, refreshKey]);
 
     const handleNewTag = async () => {
         if (input.trim() === "") return;
@@ -61,12 +62,15 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser }) => {
         });
     }
 
+
     const handleJoin = async (group) => {
         if (!group || !selectedUser) return;
 
         const currentGroup = await getClickedGroup(group);
 
         await userJoinGroup(selectedUser.id, currentGroup.id)
+        
+        onGroupsChanged?.();
         setJoined(true);
     }
 
@@ -76,11 +80,14 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser }) => {
         const currentGroup = await getClickedGroup(group);
 
         await userLeaveGroup(selectedUser.id, currentGroup.id)
+        
+        onGroupsChanged?.();
+
         setJoined(false);
     }
 
-    const handleShowDropdown = () =>{
-        setShowDropdown(prev => !prev);
+    const handleShowDropdown = (groupId) =>{
+        setDropDownGroupId(prev => (prev === groupId ? null : groupId));
     }
 
     async function getClickedGroup(group){
@@ -158,9 +165,9 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser }) => {
                                 <button className="leave-group-btn" onClick={() => handleLeave(group)}>Leave</button>
 
                                 <p className="group-item-title"><strong>{group.name}</strong></p>
-                                <button className="group-item-dropdown-btn" onClick={handleShowDropdown}>drop</button>
+                                <button className="group-item-dropdown-btn" onClick={() => handleShowDropdown(group.id)}>drop</button>
                             </div>
-                            {showDropdown &&(
+                            {dropDownGroupId === group.id &&(
                                 <div className="group-item-div">
                                 <ul>
                                     {group.keywords.map((keyword, j) => (

@@ -1,10 +1,11 @@
 "use client";
 
 import config from "@/config";
-import { createGroup, getAllGroups } from "@/services/group-service";
+import { createGroup, getAllGroups, userJoinGroup } from "@/services/group-service";
+import { getAllUsers } from "@/services/user-service";
 import { useState } from "react";
 
-const NewGrp = ({addGroup}) => {
+const NewGrp = ({addGroup, onCreated, selectedUser}) => {
     const [keywords, setKeywords] = useState([]);
     const [input, setInput] = useState("");
     const [groupName, setGroupName] = useState("");
@@ -17,11 +18,18 @@ const NewGrp = ({addGroup}) => {
 
         if (allGroups.find(g => String(g.name) === String(name))) return;
         
+        const allUsers = await getAllUsers();
+        
+        const user = allUsers.find(u => String(u.id) === String(selectedUser?.id));
 
 
+        
 
-        await createGroup({ name, keywords });
+        const createdGroup =await createGroup({ name, keywords });
 
+        await userJoinGroup(user.id, createdGroup.id);
+        onCreated?.();
+        
         addGroup(name, keywords);
         setKeywords([]);
         setGroupName("");

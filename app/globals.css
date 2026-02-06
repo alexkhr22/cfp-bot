@@ -560,7 +560,7 @@ body {
   flex: 1;       
   justify-content: flex-start;
   align-items: center;        
-  background-color: #ffffff; 
+  background-color: #95c6ac; 
   overflow-y: auto; 
   overflow-x: hidden;
 }
@@ -607,6 +607,7 @@ body {
   border: 2px solid black;
   color: black;
   background-color: green;
+  position: relative;
 }
 
 .groups-keywords-scroll-list{
@@ -645,4 +646,9 @@ body {
   margin-top: 1vh;
   margin-bottom: 1vh;
   font-size: 18px;
+}
+
+.groups-screen-leave-group-btn{
+  position: absolute;
+  left: 10px;
 }

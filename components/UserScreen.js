@@ -14,7 +14,6 @@ const UserScreen = ({onSelectUser}) =>{
     useEffect(() => {
         const loadUsers = async () => {
             const data = await getAllUsers();
-            console.log("API users:", data);
             setUsers(data);
         };
 

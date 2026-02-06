@@ -63,17 +63,6 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
     }
 
 
-    const handleJoin = async (group) => {
-        if (!group || !selectedUser) return;
-
-        const currentGroup = await getClickedGroup(group);
-
-        await userJoinGroup(selectedUser.id, currentGroup.id)
-        
-        onGroupsChanged?.();
-        setJoined(true);
-    }
-
     const handleLeave = async (group) => {
         if (!group || !selectedUser) return;
 

@@ -1,0 +1,236 @@
+[
+  {
+    "title": "NordiCHI 2026",
+    "conferenceSeries": "n/a",
+    "deadline": "2026-04-23",
+    "conferenceDate": "n/a",
+    "location": "n/a",
+    "submissionForm": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "conference"
+    ],
+    "reviewModel": "n/a",
+    "notes": "In-person conference. No hybrid or remote attendance.",
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit",
+    "id": "na_2026_chi2026submit",
+    "extractedAt": "2026-02-06T12:40:44.352414Z"
+  },
+  {
+    "title": "Research Papers",
+    "conferenceSeries": "NordiCHI 2026",
+    "deadline": "2026-04-23",
+    "conferenceDate": "n/a",
+    "location": "Vaasa, Finland",
+    "submissionForm": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/papers",
+    "wordCharacterLimit": "12000 words",
+    "tags": [
+      "hci",
+      "research",
+      "papers"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Submissions must not exceed 12,000 words (excluding references). Accepted papers will appear in the ACM Digital Library.",
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/papers",
+    "id": "nordichi2026_2026_6submitpapers",
+    "extractedAt": "2026-02-06T12:40:49.802508Z"
+  },
+  {
+    "title": "Critiques",
+    "conferenceSeries": "n/a",
+    "deadline": "2026-04-23",
+    "conferenceDate": "n/a",
+    "location": "n/a",
+    "submissionForm": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/critiques/",
+    "wordCharacterLimit": "5000 words for critical writings; 500 words for abstracts of critical visualizations",
+    "tags": [
+      "hci",
+      "critique",
+      "research"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Submissions should use the ACM master article template in single-column format. The critique track is open for two types of submissions: critical writings and critical visualizations.",
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/critiques",
+    "id": "na_2026_ubmitcritiques",
+    "extractedAt": "2026-02-06T12:40:57.836266Z"
+  },
+  {
+    "title": "Arts-Based Approaches in HCI",
+    "conferenceSeries": "NordiCHI 2026",
+    "deadline": "2026-04-23",
+    "conferenceDate": "2026-10-06",
+    "location": "Vaasa, Finland",
+    "submissionForm": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/submission-guidelines/",
+    "wordCharacterLimit": "1500-2000 words for extended abstract",
+    "tags": [
+      "hci",
+      "arts",
+      "design",
+      "interaction"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Submissions should not be anonymised. Content will be published under ACM Open Access.",
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/arts-based-approaches-in-hci",
+    "id": "nordichi2026_2026_proachesinhci",
+    "extractedAt": "2026-02-06T12:41:07.796325Z"
+  },
+  {
+    "title": "Industry Experiences",
+    "conferenceSeries": "NordiCHI 2026",
+    "deadline": "2026-04-23",
+    "conferenceDate": "2026-10-03",
+    "location": "Vaasa, Finland",
+    "submissionForm": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/industry-experiences/",
+    "wordCharacterLimit": "2�4 pages",
+    "tags": [
+      "hci",
+      "industry",
+      "user experience",
+      "design"
+    ],
+    "reviewModel": "Single-blind",
+    "notes": "Accepted submissions will be published in the ACM Digital Library Adjunct Proceedings and presented during the Industry Day on October 7th, 2026.",
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/industry-experiences",
+    "id": "nordichi2026_2026_tryexperiences",
+    "extractedAt": "2026-02-06T12:41:16.381092Z"
+  },
+  {
+    "title": "Late Breaking Work",
+    "conferenceSeries": "NordiCHI 2026",
+    "deadline": "2026-05-18",
+    "conferenceDate": "2026-10-05",
+    "location": "n/a",
+    "submissionForm": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/submission-guidelines/",
+    "wordCharacterLimit": "up to 5000 words",
+    "tags": [
+      "hci",
+      "research",
+      "late-breaking work"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Accepted submissions will be presented as posters during the conference and published in the ACM Digital Library.",
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/late-breaking-work",
+    "id": "nordichi2026_2026_ebreakingwork",
+    "extractedAt": "2026-02-06T12:41:24.798206Z"
+  },
+  {
+    "title": "Papers",
+    "conferenceSeries": "CHI 2026",
+    "deadline": "2025-09-11",
+    "conferenceDate": "2026-04-13",
+    "location": "Barcelona, Spain",
+    "submissionForm": "https://chi2026.acm.org/authors/papers/",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "papers"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Abstract/Metadata due on 2025-09-04; Reviews released on 2025-11-04; Resubmission due on 2025-12-04; Decisions notification on 2026-01-15.",
+    "url": "https://chi2026.acm.org/tag/papers",
+    "id": "chi2026_2025_orgtagpapers",
+    "extractedAt": "2026-02-06T12:46:48.880378Z"
+  },
+  {
+    "title": "2026 ACM Conference on Fairness, Accountability, and Transparency (FAccT)",
+    "conferenceSeries": "FAccT",
+    "deadline": "2026-01-13",
+    "conferenceDate": "2026-06-25",
+    "location": "Montr�al, Canada",
+    "submissionForm": "https://openreview.net/group?id=ACM.org/FAccT/2026/Conference",
+    "wordCharacterLimit": "14 pages (excluding references)",
+    "tags": [
+      "fairness",
+      "accountability",
+      "transparency",
+      "computing"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Papers must be anonymized and comply with the submission guidelines. New revision process introduced this year.",
+    "url": "https://facctconference.org/2026/cfp.html",
+    "id": "facct_2026_g2026cfphtml",
+    "extractedAt": "2026-02-06T12:47:00.953332Z"
+  },
+  {
+    "title": "ACM FAccT 2026 Call for CRAFT Proposals",
+    "conferenceSeries": "FAccT",
+    "deadline": "2026-03-25",
+    "conferenceDate": "2026-06-25",
+    "location": "Montr�al, Canada",
+    "submissionForm": "n/a",
+    "wordCharacterLimit": "4 pages",
+    "tags": [
+      "AI",
+      "accountability",
+      "fairness",
+      "transparency",
+      "community engagement"
+    ],
+    "reviewModel": "n/a",
+    "notes": "CRAFT sessions may be in-person, online-only, or hybrid. Proposals should be submitted via EasyChair.",
+    "url": "https://facctconference.org/2026/cfpcraft.html",
+    "id": "facct_2026_6cfpcrafthtml",
+    "extractedAt": "2026-02-06T12:47:09.240589Z"
+  },
+  {
+    "title": "Call for Papers",
+    "conferenceSeries": "TEI 2026",
+    "deadline": "2025-08-07",
+    "conferenceDate": "2026-03-08",
+    "location": "Chicago, United States",
+    "submissionForm": "https://new.precisionconference.com/",
+    "wordCharacterLimit": "7000-8000 words",
+    "tags": [
+      "tangible interaction",
+      "embodied interaction",
+      "embedded computing",
+      "digital fabrication",
+      "sustainability"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Submissions should explore interdisciplinary knowledge, bridging the physical and digital, technology and humanity, and more.",
+    "url": "https://tei.acm.org/2026/participate/papers",
+    "id": "tei2026_2025_ticipatepapers",
+    "extractedAt": "2026-02-06T12:47:13.359100Z"
+  },
+  {
+    "title": "Generative AI and Society: What is at stake?",
+    "conferenceSeries": "n/a",
+    "deadline": "2026-01-31",
+    "conferenceDate": "2026-06-10",
+    "location": "Berlin, Germany",
+    "submissionForm": "https://easychair.org/conferences/?conf=weizconf26",
+    "wordCharacterLimit": "500 words",
+    "tags": [
+      "generative AI",
+      "society",
+      "knowledge production",
+      "work"
+    ],
+    "reviewModel": "n/a",
+    "notes": "The conference will focus on the impact of Generative AI on society, knowledge work, and knowledge production.",
+    "url": "https://www.weizenbaum-conference.de/call-for-papers",
+    "id": "na_2026_callforpapers",
+    "extractedAt": "2026-02-06T12:47:17.700563Z"
+  },
+  {
+    "title": "ACM SIGCHI Conference on Designing Interactive Systems 2026",
+    "conferenceSeries": "DIS 2026",
+    "deadline": "2026-01-19",
+    "conferenceDate": "2026-06-13",
+    "location": "Singapore, n/a",
+    "submissionForm": "https://new.precisionconference.com/user/login",
+    "wordCharacterLimit": "7000-8000 words (typical submissions), 4000-12000 words (considered for desk rejection)",
+    "tags": [
+      "hci",
+      "interaction design",
+      "research"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Accepted papers will be included in the Proceedings of Designing Interactive Systems 2026 and will become available in ACM Digital Library. Authors must present their work in person.",
+    "url": "https://dis.acm.org/2026/papers",
+    "id": "dis2026_2026_org2026papers",
+    "extractedAt": "2026-02-06T12:47:22.278344Z"
+  }
+]

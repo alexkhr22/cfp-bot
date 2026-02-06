@@ -1,0 +1,110 @@
+[
+  {
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit",
+    "text": "submit",
+    "reason": "The URL leads to a submission page for the NordiCHI 2026 conference.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:30:32.812457Z",
+    "targetYear": 2026,
+    "confidence": 0.9
+  },
+  {
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/papers",
+    "text": "research papers",
+    "reason": "The URL leads to a specific submission page for research papers for NordiCHI 2026.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:30:32.812957Z",
+    "targetYear": 2026,
+    "confidence": 0.9
+  },
+  {
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/critiques",
+    "text": "critiques",
+    "reason": "The URL leads to a specific submission page for critiques for NordiCHI 2026.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:30:32.812957Z",
+    "targetYear": 2026,
+    "confidence": 0.9
+  },
+  {
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/arts-based-approaches-in-hci",
+    "text": "arts-based approaches",
+    "reason": "The URL leads to a specific submission page for arts-based approaches for NordiCHI 2026.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:30:32.812957Z",
+    "targetYear": 2026,
+    "confidence": 0.9
+  },
+  {
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/industry-experiences",
+    "text": "industry experiences",
+    "reason": "The URL leads to a specific submission page for industry experiences for NordiCHI 2026.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:30:32.812957Z",
+    "targetYear": 2026,
+    "confidence": 0.9
+  },
+  {
+    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/late-breaking-work",
+    "text": "late breaking work",
+    "reason": "The URL contains '2026' and relates to submission details for late breaking work.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:30:43.513257Z",
+    "targetYear": 2026,
+    "confidence": 0.9
+  },
+  {
+    "url": "https://chi2026.acm.org/tag/papers",
+    "text": "papers",
+    "reason": "The URL contains '2026' and 'papers', indicating a call for papers.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:30:55.991839Z",
+    "targetYear": 2026,
+    "confidence": 1.0
+  },
+  {
+    "url": "https://facctconference.org/2026/cfp.html",
+    "text": "call for papers",
+    "reason": "The URL contains '2026' and 'cfp', indicating a call for papers.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:30:55.991839Z",
+    "targetYear": 2026,
+    "confidence": 1.0
+  },
+  {
+    "url": "https://facctconference.org/2026/cfpcraft.html",
+    "text": "call for craft",
+    "reason": "The URL contains '2026' and 'cfp', indicating a call for papers.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:30:55.991839Z",
+    "targetYear": 2026,
+    "confidence": 1.0
+  },
+  {
+    "url": "https://tei.acm.org/2026/participate/papers",
+    "text": "papers",
+    "reason": "The URL contains '2026' and 'papers', indicating a direct Call for Papers.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:31:03.645993Z",
+    "targetYear": 2026,
+    "confidence": 1.0
+  },
+  {
+    "url": "https://www.weizenbaum-conference.de/call-for-papers",
+    "text": "cfp",
+    "reason": "The URL indicates a Call for Papers.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:31:03.646494Z",
+    "targetYear": 2026,
+    "confidence": 1.0
+  },
+  {
+    "url": "https://dis.acm.org/2026/papers",
+    "text": "papers",
+    "reason": "The URL contains '2026' and 'papers', indicating a direct Call for Papers.",
+    "classification": "cfp",
+    "discoveredAt": "2026-02-06T12:31:03.646494Z",
+    "targetYear": 2026,
+    "confidence": 1.0
+  }
+]

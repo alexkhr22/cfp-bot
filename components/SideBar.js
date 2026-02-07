@@ -4,6 +4,7 @@ import config from "@/config";
 import { useState, useEffect } from "react";
 import { addUserTag, getAllUsers, removeUserTag } from "@/services/user-service";
 import { getAllGroups, userJoinGroup, userLeaveGroup } from "@/services/group-service";
+import { useUserGroups } from "@/hooks/useUserGroups";
 
 const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGroupsChanged }) => {
     const [input, setInput] = useState("");
@@ -14,6 +15,8 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
     const [groups, setGroups] = useState([]);
     const [dropDownGroupId, setDropDownGroupId] = useState(null);
 
+    const {userGroups} = useUserGroups(selectedUser?.id, refreshKey);
+
     const showTags = screen === "home";
 
     useEffect(() => {
@@ -23,17 +26,6 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
 
         const user = allUsers.find(u => String(u.id) === String(selectedUser?.id));
         setTags(user?.tags ?? []);
-
-        const links = user?.groups ?? [];
-        const allGroups = await getAllGroups(); 
-
-        const userJoinedGroups = links
-        .map(l => allGroups.find(g => String(g.id) === String(l.groupId)))
-        .filter(Boolean);
-
-        setGroups(userJoinedGroups);
-
-        console.log("First group name:", userJoinedGroups[0]?.name);
     };
 
         if (selectedUser?.id) load();
@@ -71,7 +63,6 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
         await userLeaveGroup(selectedUser.id, currentGroup.id)
         
         onGroupsChanged?.();
-
         setJoined(false);
     }
 
@@ -147,7 +138,7 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
             </button>
             <div className="groups-div">
                 <ul className="groups-list">
-                    {groups.map((group, i) => (
+                    {userGroups.map((group, i) => (
                         <li key={i} className="group-item">
                             <div className="group-item-title-div">
                                 {/* <button className="join-group-btn" onClick={() => handleJoin(group)}>Join</button> */}

@@ -4,9 +4,10 @@ import config from "@/config";
 import { useState, useEffect } from "react";
 import { createCfp } from "@/models/Cfp";
 import { addCFP, getUserCfPs, updateCfPTag } from "@/services/cfp-service";
-import { addUserTag } from "@/services/user-service";
+import { addUserTag, getAllUsers } from "@/services/user-service";
+import { useUserGroups } from "@/hooks/useUserGroups";
 
-const LeftSideHome = ({selectedUser, reloadUser}) =>{
+const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
     const [showAddCfp, setShowAddCfp] = useState(false);
 
     const emptyForm = {
@@ -29,6 +30,8 @@ const LeftSideHome = ({selectedUser, reloadUser}) =>{
     const [editingId, setEditingId] = useState(null);
     const [tagEdit, setTagEdit] = useState("");
 
+    const {userGroups} = useUserGroups(selectedUser?.id, refreshKey);
+
     const sortedCfps = [...cfps].sort((a, b) => {
         return new Date(a.deadline) - new Date(b.deadline);
     });
@@ -37,27 +40,62 @@ const LeftSideHome = ({selectedUser, reloadUser}) =>{
     useEffect(() => {
         if (!selectedUser?.id) return;
 
-        const loadCfps = async () => {
-            const all = await getUserCfPs(selectedUser.id);
+        const loadAndMerge = async () => {
+            const allCfp = await getAllCfPFromUsers();
 
-            const filtered = all.filter(cfp =>
-            selectedUser.tags.includes(cfp.tag)
+            allCfp.forEach((cfp, index) => {
+                console.log("ALL CFP: " + cfp.title);
+            })
+
+            const tagMatches = allCfp.filter(cfp =>
+                (selectedUser.tags ?? []).includes(cfp.tag)
             );
 
-            setCfps(filtered);
+            const keywords = (userGroups?.flatMap(g => g.keywords) ?? [])
+            .map(k => k.toLowerCase());
+
+            console.log("Keywords: " + keywords)
+
+            const keywordMatches = allCfp.filter(cfp => {
+                const text = cfpToSearchText(cfp);
+                return keywords.some(kw => text.includes(kw));
+            });
+
+            console.log("Keyword Matches: " + keywordMatches)
+
+            const mergedById = new Map();
+            for (const cfp of [...tagMatches, ...keywordMatches]) {
+                mergedById.set(String(cfp.id), cfp);
+            }
+
+            setCfps(Array.from(mergedById.values()));
+            cfps.forEach((cfp, index) => {
+                console.log(cfp.title);
+            })
+            console.log("CFPS USER: " + cfps)
         };
 
-        loadCfps();
-    }, [selectedUser]);
+            loadAndMerge();
+        }, [selectedUser?.id, refreshKey, userGroups]);
 
 
-    function handleCfpInputChange(e){
+    
+    async function getAllCfPFromUsers() {
+        const users = await getAllUsers();
+
+        const allCfpArrays = await Promise.all(
+            users.map(u => getUserCfPs(u.id))
+        );
+
+        return allCfpArrays.flat();
+    }
+
+     function handleCfpInputChange(e){
         setForm({
             ...form,
             [e.target.name]: e.target.value
         });
     }
-
     function handleDiscard(){
         setShowAddCfp(false);
         setForm(emptyForm);
@@ -130,6 +168,25 @@ const LeftSideHome = ({selectedUser, reloadUser}) =>{
 
         cancelEditTag();
     };
+
+
+    function cfpToSearchText(cfp) {
+        return [
+            cfp.title,
+            cfp.location,
+            cfp.url,
+            cfp.submissionForm,
+            cfp.tag,
+            cfp.wordCharacterLimit,
+            cfp.deadline,
+            cfp.conferenceDate,
+            cfp.callback
+        ]
+            .filter(Boolean)        
+            .join(" ")
+            .toLowerCase();       
+    }      
+
 
 
     return (

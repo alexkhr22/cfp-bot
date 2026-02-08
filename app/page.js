@@ -20,6 +20,7 @@ export default function Home() {
   const [selectedUser, setSelectedUser] = useState(null);
   const [refreshKey, setRefreshKey] = useState(0);
   const refresh = () => setRefreshKey(k => k + 1);
+  const [cfps, setCfps] = useState([]);
 
   const loadUser = async (id) => {
     const allUsers = await getAllUsers();
@@ -55,6 +56,7 @@ export default function Home() {
         refreshKey = {refreshKey}
         onGroupsChanged={refresh}
         goToUser={() => router.push("/user")}  
+        reloadUser={() => loadUser(selectedUser.id)}
       />
 
       {screen === "home" && (
@@ -64,10 +66,15 @@ export default function Home() {
             goToGroups={() => setScreen("groups")}
             selectedUser={selectedUser}
             reloadUser={() => loadUser(selectedUser.id)}
+            cfps={cfps}
+            setCfps={setCfps}
+            onCfpChanged={refresh}
+            refreshKey={refreshKey}
           />
           <RightSideHome
             goToNewGrp={() => setScreen("newgrp")}
             goToGroups={() => setScreen("groups")}
+            cfps={cfps}
           />
         </>
       )}

@@ -6,8 +6,9 @@ import { createCfp } from "@/models/Cfp";
 import { addCFP, getUserCfPs, updateCfPTag } from "@/services/cfp-service";
 import { addUserTag, getAllUsers } from "@/services/user-service";
 import { useUserGroups } from "@/hooks/useUserGroups";
+import { all } from "axios";
 
-const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
+const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCfpChanged}) =>{
     const [showAddCfp, setShowAddCfp] = useState(false);
 
     const emptyForm = {
@@ -25,13 +26,15 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
 
     const [form, setForm] = useState(emptyForm);
 
-    const [cfps, setCfps] = useState([]);
-
     const [editingId, setEditingId] = useState(null);
     const [tagEdit, setTagEdit] = useState("");
 
     const {userGroups} = useUserGroups(selectedUser?.id, refreshKey);
 
+    const [showAllCfp, setShowAllCfp] = useState(false);
+
+    const [allCfpGlobal, setAllCfpGlobal] = useState([]);
+    const [userCfpGlobal, setUserCfpGlobal] = useState([]);
     const sortedCfps = [...cfps].sort((a, b) => {
         return new Date(a.deadline) - new Date(b.deadline);
     });
@@ -42,14 +45,17 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
 
         const loadAndMerge = async () => {
             const allCfp = await getAllCfPFromUsers();
+            setAllCfpGlobal(allCfp);
+
+            const allUsers = await getAllUsers();
+            const freshUser = allUsers.find(u => String(u.id) === String(selectedUser.id));
+            const freshTags = freshUser?.tags ?? [];
 
             allCfp.forEach((cfp, index) => {
                 console.log("ALL CFP: " + cfp.title);
             })
 
-            const tagMatches = allCfp.filter(cfp =>
-                (selectedUser.tags ?? []).includes(cfp.tag)
-            );
+            const tagMatches = allCfp.filter(cfp => freshTags.includes(cfp.tag));
 
             const keywords = (userGroups?.flatMap(g => g.keywords) ?? [])
             .map(k => k.toLowerCase());
@@ -69,10 +75,10 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
             }
 
             setCfps(Array.from(mergedById.values()));
+            setUserCfpGlobal(Array.from(mergedById.values()));
             cfps.forEach((cfp, index) => {
                 console.log(cfp.title);
             })
-            console.log("CFPS USER: " + cfps)
         };
 
             loadAndMerge();
@@ -90,7 +96,7 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
         return allCfpArrays.flat();
     }
 
-     function handleCfpInputChange(e){
+    function handleCfpInputChange(e){
         setForm({
             ...form,
             [e.target.name]: e.target.value
@@ -120,18 +126,19 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
         console.log("dateOfConference:", form.dateOfConference);
         console.log("dateReturnMessage:", form.dateReturnMessage);
 
-        reloadUser();
+        await reloadUser();
 
         if(!selectedUser.tags.includes(form.tag)){
             await addUserTag(selectedUser.id, form.tag)
         }
 
-        reloadUser();
+        await reloadUser();
 
         console.log(newCfp)
 
         const savedCfp = await addCFP(newCfp)
         setCfps(prev => [...prev, savedCfp]);
+        onCfpChanged?.();
         setForm(emptyForm);
     }
 
@@ -166,6 +173,8 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
 
         await updateCfPTag(cfp.id, newTag);
 
+        onCfpChanged?.();
+
         cancelEditTag();
     };
 
@@ -187,6 +196,15 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
             .toLowerCase();       
     }      
 
+    const showAllCfpClicked = () => {
+        setCfps(allCfpGlobal);
+        setShowAllCfp(true);
+    }
+
+    const showUserCfpClicked = () => {
+        setCfps(userCfpGlobal);
+        setShowAllCfp(false);
+    }
 
 
     return (
@@ -196,6 +214,12 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey}) =>{
                     <p className="cfp-title">CfP's</p>
                     <button className="addcfp-btn" onClick={() => setShowAddCfp(true)}>+</button>
                 </div>
+                {!showAllCfp ? (
+                    <button className="show-all-cfp-btn" onClick={() => showAllCfpClicked()}>Show All</button>
+                ) : (
+                    <button className="show-user-cfp-btn" onClick={() => showUserCfpClicked()}>Show User CfP</button>
+                )}
+                
                 <div className="search-wrapper">
                     <input type="search" className="cfp-searchbar" placeholder="Suchen …"></input>
                     <button type="submit">🔍</button>

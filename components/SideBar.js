@@ -6,7 +6,7 @@ import { addUserTag, getAllUsers, removeUserTag } from "@/services/user-service"
 import { getAllGroups, userJoinGroup, userLeaveGroup } from "@/services/group-service";
 import { useUserGroups } from "@/hooks/useUserGroups";
 
-const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGroupsChanged }) => {
+const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGroupsChanged, reloadUser }) => {
     const [input, setInput] = useState("");
     const [tags, setTags] = useState([]);
     const [joined, setJoined] = useState(false);
@@ -35,12 +35,16 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
         if (input.trim() === "") return;
         
         await addUserTag(selectedUser.id, input)
+        await reloadUser?.();
         renderTags();
+        onGroupsChanged?.();
         setInput("");
     }
 
     const handleDeleteTag = async (tag) => {
         await removeUserTag(selectedUser.id, tag);
+        await reloadUser?.();
+        onGroupsChanged?.();
         renderTags();
     }
 
@@ -78,7 +82,6 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
         return currentGroup;
     }
 
-    console.log("RENDER tags:", tags, "isArray:", Array.isArray(tags));
 
     return (
 

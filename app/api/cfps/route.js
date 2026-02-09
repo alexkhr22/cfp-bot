@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/libs/prisma";
 
+const SYSTEM_USER_ID = Number(process.env.SYSTEM_USER_ID);
+
 /**
  * Erstellt einen neuen CFP-Eintrag.
  * Verknüpft den CFP mit einem User und optionalen Keyword-Gruppen.
@@ -8,18 +10,42 @@ import { prisma } from "@/libs/prisma";
 export async function POST(req) {
   try {
     const body = await req.json();
-    if (!body?.userId) {
-      return NextResponse.json({ error: "userId fehlt" }, { status: 400 });
-    }
-    const userId = parseInt(body.userId, 10);
 
     if (!body?.title) {
       return NextResponse.json({ error: "title fehlt" }, { status: 400 });
     }
+    if (!body?.url || !body?.conferenceDate) {
+      return NextResponse.json(
+        { error: "url oder conferenceDate fehlt" },
+        { status: 400 }
+      );
+    }
 
-    // Erstellung des CFPs inklusive Datumskonvertierung und Relationen
-    const cfp = await prisma.cFP.create({
-      data: {
+    // 👉 WICHTIG: userId NICHT mehr aus dem Body erzwingen
+    // Scraper → SYSTEM
+    // UI → über Session (hier vereinfacht SYSTEM)
+    const userId = body.userId
+      ? parseInt(body.userId, 10)
+      : SYSTEM_USER_ID;
+
+    const cfp = await prisma.cFP.upsert({
+      where: {
+        url_title_conferenceDate: {
+          url: body.url,
+          title: body.title,
+          conferenceDate: new Date(body.conferenceDate),
+        },
+      },
+      update: {
+        deadline: new Date(body.deadline),
+        location: body.location ?? null,
+        callback: new Date(body.callback),
+        submissionForm: body.submissionForm,
+        wordCharacterLimit: body.wordCharacterLimit ?? null,
+        tag: body.tag ?? null,
+        note: body.note ?? null,
+      },
+      create: {
         title: body.title,
         deadline: new Date(body.deadline),
         location: body.location ?? null,
@@ -29,12 +55,12 @@ export async function POST(req) {
         submissionForm: body.submissionForm,
         wordCharacterLimit: body.wordCharacterLimit ?? null,
         tag: body.tag ?? null,
-        userId: userId, // Verknüpfung mit dem Ersteller
+        note: body.note ?? null,
+        userId: userId,
 
-        // Join-Tabelle: Erstellt Einträge für jede übergebene groupId (als Zahl)
         groups: {
-          create: (body.groupIds ?? []).map((groupId) => ({ 
-            groupId: parseInt(groupId, 10) 
+          create: (body.groupIds ?? []).map((groupId) => ({
+            groupId: parseInt(groupId, 10),
           })),
         },
       },
@@ -49,6 +75,7 @@ export async function POST(req) {
     );
   }
 }
+
 
 /**
  * Ruft alle CFPs ab, die einem bestimmten Benutzer gehören.

@@ -2,8 +2,6 @@
   "MAX_DEPTH": 5,
   "LINKS_PER_LEVEL": 50,
   "TIMEOUT_PER_PAGE": 30,
-  "TARGET_YEAR": 2026,
-  "YEAR_TOLERANCE": 1,
   "KEYWORDS": [
     "acceptance",
     "acm",

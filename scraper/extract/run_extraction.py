@@ -16,11 +16,12 @@ async def main():
     client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     BASE_DIR = Path(__file__).resolve().parents[1]
-    INPUT_PATH = BASE_DIR / "outputs" / "cfp_links_only.json"
-    OUTPUT_PATH = BASE_DIR / "outputs" / "final_cfps.json"
+    INPUT_PATH = BASE_DIR / "outputs" / "cfp_candidates.json"
+    OUTPUT_PATH = BASE_DIR / "outputs" / "all_cfps.json"
 
     links = load_json(INPUT_PATH)
     existing = load_json(OUTPUT_PATH)
+    
     existing_urls = {e["url"] for e in existing}
 
     run_config = CrawlerRunConfig(cache_mode=CacheMode.BYPASS)

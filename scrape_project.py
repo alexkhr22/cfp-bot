@@ -49,7 +49,7 @@ MAX_FILE_SIZE_KB = 512
 # Set   → nur diese Endungen (z. B. {".py", ".js"})
 # ALLOWED_EXTENSIONS = None
 # Beispiele:
-ALLOWED_EXTENSIONS = {".py", ".json"}
+ALLOWED_EXTENSIONS = {".js"}
 # ALLOWED_EXTENSIONS = {".json", ".yaml", ".yml", ".md"}
 
 # ============================

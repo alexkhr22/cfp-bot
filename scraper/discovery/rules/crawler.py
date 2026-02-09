@@ -2,7 +2,8 @@ from urllib.parse import urljoin, urlparse
 from crawl4ai import AsyncWebCrawler
 
 from .robots import is_allowed_by_robots
-from .scoring import cfp_score, is_relevant_year
+from .scoring import cfp_score
+from scraper.utils.years import is_relevant_year
 from .filters import is_calendar_link, NEGATIVE_HINTS
 
 
@@ -63,7 +64,7 @@ async def get_relevant_links(
         if any(bad in combined for bad in NEGATIVE_HINTS):
             continue
 
-        if not is_relevant_year(combined, config["TARGET_YEAR"]):
+        if not is_relevant_year(combined):
             continue
 
         score = cfp_score(combined, config["KEYWORDS"])

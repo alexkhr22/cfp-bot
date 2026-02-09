@@ -1,10 +1,10 @@
 import json
 from datetime import datetime
 from openai import AsyncOpenAI
-
+from scraper.prompts.extractor import build_cfp_extraction_prompt
 from .ids import generate_canonical_id
 
-MODEL = "gpt-4o-mini"
+MODEL = "gpt-4o"
 
 
 async def extract_cfp(
@@ -13,31 +13,7 @@ async def extract_cfp(
     url: str,
 ) -> dict | None:
 
-    prompt = f"""
-You are a senior research assistant. Extract Call for Papers (CFP) details.
-Today is {datetime.now().strftime('%Y-%m-%d')}.
-
-MANDATORY RULES:
-1. NEVER return null for the entire object.
-2. If a specific field is missing, use "n/a".
-3. Title: If no specific title is found, use the name of the website/event.
-4. Dates: Use ISO format (YYYY-MM-DD). If missing, use "n/a".
-5. Tracks: Many pages are sub-tracks (e.g., "Posters", "Critiques"). Extract them as individual CFPs.
-
-JSON STRUCTURE:
-{{
-  "title": "Full name of the track or conference (MANDATORY)",
-  "conferenceSeries": "Short acronym or n/a",
-  "deadline": "YYYY-MM-DD or n/a",
-  "conferenceDate": "YYYY-MM-DD or n/a",
-  "location": "City, Country or n/a",
-  "submissionForm": "URL or n/a",
-  "wordCharacterLimit": "string or n/a",
-  "tags": ["hci", "etc"],
-  "reviewModel": "Double-blind | Single-blind | n/a",
-  "notes": "Extra info or n/a"
-}}
-"""
+    prompt = build_cfp_extraction_prompt()
 
     try:
         response = await client.chat.completions.create(

@@ -11,14 +11,13 @@ from .classifier import classify_batch
 from .io import load_json, save_json
 
 
-def build_entry(link, result, target_year):
+def build_entry(link, result):
     return {
         "url": link["url"],
         "text": link.get("text", ""),
         "reason": result.get("reason", "AI classification"),
         "classification": "cfp",
         "confidence": result.get("confidence", 0.0),
-        "targetYear": target_year,
         "discoveredAt": datetime.utcnow().isoformat() + "Z",
     }
 
@@ -30,9 +29,8 @@ async def main():
 
     BASE_DIR = Path(__file__).resolve().parents[2]
     INPUT_PATH = BASE_DIR / "outputs" / "filtered_links.json"
-    OUTPUT_PATH = BASE_DIR / "outputs" / "cfp_links_only.json"
+    OUTPUT_PATH = BASE_DIR / "outputs" / "cfp_candidates.json"
 
-    TARGET_YEAR = 2026
     BATCH_SIZE = 12
 
     grouped = load_json(INPUT_PATH)
@@ -51,7 +49,7 @@ async def main():
     results_acc = []
 
     for batch in chunked(new_links, BATCH_SIZE):
-        ai_results = await classify_batch(client, batch, TARGET_YEAR)
+        ai_results = await classify_batch(client, batch)
 
         for res in ai_results:
             idx = res.get("index")
@@ -65,7 +63,7 @@ async def main():
                 classification = "cfp"
 
             if classification == "cfp" and not is_calendar_link(link["url"]):
-                results_acc.append(build_entry(link, res, TARGET_YEAR))
+                results_acc.append(build_entry(link, res))
 
         save_json(OUTPUT_PATH, existing + results_acc)
 

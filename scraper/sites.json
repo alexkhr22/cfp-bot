@@ -1,27 +1,20 @@
 {
   "urls": [
-    "https://dl.acm.org/conference/chi",
-    "https://dl.acm.org/conference/cscw",
-    "https://dl.acm.org/conference/facct",
-    "https://dl.acm.org/conference/tei",
-    "https://sites.uwasa.fi/nordichi2026/",
-    "https://dl.acm.org/conference/aies",
-    "https://dl.acm.org/conference/mundc",
+    "https://dl.acm.org/",
     "https://interact2025.org/",
     "https://www.pdc2026.polimi.it/",
-    "https://www.weizenbaum-institut.de/en/transfer/mediating-and-networking/weizenbaum-conference/",
-    "https://dl.acm.org/conference/dis",
-    "https://ecscw.eusset.eu/2025/",
+    "https://www.weizenbaum-institut.de/",
+    "https://dl.acm.org/",
+    "https://ecscw.eusset.eu/",
     "https://icis2025.aisconferences.org/",
-    "https://easst.net/conference/easst2026/easst2026-home/",
+    "https://easst.net/",
     "https://chi2026.acm.org/",
-    "https://cscw.acm.org/2025/",
+    "https://cscw.acm.org/",
     "https://facctconference.org/",
-    "https://tei.acm.org/2026/",
-    "https://muc2025.mensch-und-computer.de/de/",
-    "https://www.weizenbaum-conference.de/",
-    "https://dis.acm.org/2026/",
-    "https://dblp.org/db/conf/ecscw/index.html",
-    "https://aisel.aisnet.org/icis/"
+    "https://tei.acm.org/",
+    "https://muc2025.mensch-und-computer.de/",
+    "https://dis.acm.org/",
+    "https://dblp.org/",
+    "https://aisel.aisnet.org/"
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "MAX_DEPTH": 3,
+  "MAX_DEPTH": 5,
   "LINKS_PER_LEVEL": 50,
   "TIMEOUT_PER_PAGE": 30,
   "TARGET_YEAR": 2026,

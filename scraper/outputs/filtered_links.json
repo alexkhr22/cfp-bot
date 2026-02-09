@@ -1,102 +1,20 @@
 {
-  "https://dl.acm.org/conference/chi": [
-    {
-      "text": "code of ethics",
-      "url": "https://www.acm.org/code-of-ethics"
-    },
-    {
-      "text": "CFP Link",
-      "url": "https://www.google.com/calendar/event?action=TEMPLATE&dates=20260413%2F20260417&details=ACM+CHI+Conference+on+Human+Factors+in+Computing+Systems&location=Barcelona%2C+%2C+Spain&text=ACM+CHI+Conference+on+Human+Factors+in+Computing+Systems"
-    },
-    {
-      "text": "CFP Link",
-      "url": "https://www.google.com/calendar/event?action=TEMPLATE&dates=20261102%2F20261105&details=The+Annual+Symposium+on+Computer-Human+Interaction+in+Play&location=York%2C+%2C+United+Kingdom&text=The+Annual+Symposium+on+Computer-Human+Interaction+in+Play"
-    }
-  ],
-  "https://dl.acm.org/conference/cscw": [
-    {
-      "text": "code of ethics",
-      "url": "https://www.acm.org/code-of-ethics"
-    },
-    {
-      "text": "CFP Link",
-      "url": "https://www.google.com/calendar/event?action=TEMPLATE&dates=20261010%2F20261014&details=Computer-Supported+Cooperative+Work+and+Social+Computing&location=Salt+Lake+City%2C+UT%2C+USA&text=Computer-Supported+Cooperative+Work+and+Social+Computing"
-    }
-  ],
-  "https://dl.acm.org/conference/facct": [],
-  "https://dl.acm.org/conference/tei": [
-    {
-      "text": "code of ethics",
-      "url": "https://www.acm.org/code-of-ethics"
-    },
-    {
-      "text": "CFP Link",
-      "url": "https://www.google.com/calendar/event?action=TEMPLATE&dates=20260308%2F20260311&details=Twentieth+International+Conference+on+Tangible%2C+Embedded%2C+and+Embodied+Interaction&location=Chicago%2C+IL%2C+USA&text=Twentieth+International+Conference+on+Tangible%2C+Embedded%2C+and+Embodied+Interaction"
-    }
-  ],
-  "https://sites.uwasa.fi/nordichi2026/": [
-    {
-      "text": "submit",
-      "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit"
-    },
-    {
-      "text": "research papers",
-      "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/papers"
-    },
-    {
-      "text": "critiques",
-      "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/critiques"
-    },
-    {
-      "text": "arts-based approaches",
-      "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/arts-based-approaches-in-hci"
-    },
-    {
-      "text": "industry experiences",
-      "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/industry-experiences"
-    },
-    {
-      "text": "late breaking work",
-      "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/late-breaking-work"
-    },
-    {
-      "text": "acm single-column template",
-      "url": "https://www.acm.org/publications/taps/word-template-workflow"
-    }
-  ],
-  "https://dl.acm.org/conference/aies": [
+  "https://dl.acm.org/": [
     {
       "text": "code of ethics",
       "url": "https://www.acm.org/code-of-ethics"
     }
   ],
-  "https://dl.acm.org/conference/mundc": [],
   "https://interact2025.org/": [],
   "https://www.pdc2026.polimi.it/": [],
-  "https://www.weizenbaum-institut.de/en/transfer/mediating-and-networking/weizenbaum-conference/": [
-    {
-      "text": "policy papers",
-      "url": "https://www.weizenbaum-institut.de/en/transfer/explaining-and-advising/policy-papers"
-    },
-    {
-      "text": "discussion papers",
-      "url": "https://www.weizenbaum-institut.de/en/publications/discussion-papers"
-    },
-    {
-      "text": "policy papers",
-      "url": "https://www.weizenbaum-institut.de/en/publications/policy-papers"
-    },
-    {
-      "text": "de",
-      "url": "https://www.weizenbaum-institut.de/transfer/erklaeren-und-beraten/policy-papers"
-    },
-    {
-      "text": "CFP Link",
-      "url": "https://www.weizenbaum-institut.de/media/Publikationen/Weizenbaum_Policy_Paper/WPP5_Dateninstitut_after_final.pdf"
-    },
+  "https://www.weizenbaum-institut.de/": [
     {
       "text": "daten, algorithmische systeme und ethik",
       "url": "https://www.weizenbaum-institut.de/forschung/digitale-technologien-in-der-gesellschaft/daten-algorithmische-systeme-und-ethik"
+    },
+    {
+      "text": "policy papers",
+      "url": "https://www.weizenbaum-institut.de/transfer/erklaeren-und-beraten/policy-papers"
     },
     {
       "text": "discussion papers",
@@ -109,24 +27,107 @@
     {
       "text": "datenschutz",
       "url": "https://www.weizenbaum-institut.de/datenschutz"
-    }
-  ],
-  "https://dl.acm.org/conference/dis": [
+    },
     {
-      "text": "code of ethics",
-      "url": "https://www.acm.org/code-of-ethics"
+      "text": "en",
+      "url": "https://www.weizenbaum-institut.de/en/transfer/explaining-and-advising/policy-papers"
     },
     {
       "text": "CFP Link",
-      "url": "https://www.google.com/calendar/event?action=TEMPLATE&dates=20260613%2F20260617&details=Designing+Interactive+Systems+Conference&location=Singapore%2C+%2C+Singapore&text=Designing+Interactive+Systems+Conference"
+      "url": "https://www.weizenbaum-institut.de/media/Publikationen/Weizenbaum_Policy_Paper/WPP5_Dateninstitut_after_final.pdf"
+    },
+    {
+      "text": "discussion papers",
+      "url": "https://www.weizenbaum-institut.de/en/publications/discussion-papers"
+    },
+    {
+      "text": "policy papers",
+      "url": "https://www.weizenbaum-institut.de/en/publications/policy-papers"
     }
   ],
-  "https://ecscw.eusset.eu/2025/": [],
-  "https://icis2025.aisconferences.org/": [],
-  "https://easst.net/conference/easst2026/easst2026-home/": [
+  "https://ecscw.eusset.eu/": [
     {
-      "text": "add to calendar  \n                         \n                         add to calendar links",
-      "url": "https://nomadit.co.uk/conference/easst2026/show/html/page/popup/calendar-event.ics"
+      "text": "submissions",
+      "url": "https://ecscw.eusset.eu/2026/submissions"
+    },
+    {
+      "text": "(full) conference papers",
+      "url": "https://ecscw.eusset.eu/2026/submissions/conference-papers"
+    },
+    {
+      "text": "exploratory papers",
+      "url": "https://ecscw.eusset.eu/2026/submissions/exploratory-papers"
+    },
+    {
+      "text": "journal papers",
+      "url": "https://ecscw.eusset.eu/2026/submissions/journal-papers"
+    },
+    {
+      "text": "eusset conference template",
+      "url": "https://ecscw.eusset.eu/2026/submissions/template"
+    },
+    {
+      "text": "official call for papers for ecscw 2026",
+      "url": "https://ecscw.eusset.eu/2026/2025/09/29/ecscw-2026-call-for-papers"
+    },
+    {
+      "text": "easychair is open for submissions",
+      "url": "https://ecscw.eusset.eu/2026/2026/01/15/easychair-is-open-for-submissions"
+    },
+    {
+      "text": "snapp (springer nature)",
+      "url": "https://submission.nature.com/new-submission/10606/3"
+    },
+    {
+      "text": "eusset submission format instructions v0.1",
+      "url": "https://ecscw.eusset.eu/2026/wp-content/uploads/2025/09/EUSSET-Submission-Format-Instructions-v0.1.zip"
+    },
+    {
+      "text": "overleaf template",
+      "url": "https://www.overleaf.com/latex/templates/eusset-conference-submission/khppkvydkqvx"
+    }
+  ],
+  "https://icis2025.aisconferences.org/": [],
+  "https://easst.net/": [
+    {
+      "text": "06/02/2026 \n               cfp: p8. should we smash our keyboards? ethnographic interventions and/in the algorithmic age | interventions: swedish anthropological association conference 2026",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_f982"
+    },
+    {
+      "text": "06/02/2026 \n               call for papers: rgs-ibg 2026 critical remote sensing",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_e0c5"
+    },
+    {
+      "text": "06/02/2026 \n               vb: swedish sts conference, deadline abstract 27 feb",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_363e"
+    },
+    {
+      "text": "03/02/2026 \n               reminder: epistemic passages: knowledge in tr=?utf-8?q?anslation=2c 9=e2=80=9311 september 2026 in prague=2e deadline=3a?=  15 february 2026",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-03_9018"
+    },
+    {
+      "text": "03/02/2026 \n               gentle reminder - cfp: 30th euras annual standardisation conference (european academy for standardisation)",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-03_10e3"
+    },
+    {
+      "text": "02/02/2026 \n               ideas2026 conference - call for papers",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-02_cfca"
+    },
+    {
+      "text": "31/01/2026 \n               cfp technology and language – theatrum machinarium",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-31_772e"
+    },
+    {
+      "text": "29/01/2026 \n               deadline extended: call for abstracts - sts conference graz 2026",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_c449"
+    },
+    {
+      "text": "29/01/2026 \n               fw: cfp extended to february 8: social study of microbes conference 2026",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_bb23"
+    },
+    {
+      "text": "29/01/2026 \n               ideas2026 conference - call for papers",
+      "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_1826"
     }
   ],
   "https://chi2026.acm.org/": [
@@ -151,7 +152,32 @@
       "url": "https://chi2026.acm.org/tag/papers"
     }
   ],
-  "https://cscw.acm.org/2025/": [],
+  "https://cscw.acm.org/": [
+    {
+      "text": "submit",
+      "url": "https://cscw.acm.org/2026/papers.html"
+    },
+    {
+      "text": "rolling submissions",
+      "url": "https://cscw.acm.org/2026/rolling.html"
+    },
+    {
+      "text": "https://www.acm.org/publications/policies/simultaneous-submissions.",
+      "url": "https://www.acm.org/publications/policies/simultaneous-submissions"
+    },
+    {
+      "text": "https://dl.acm.org/journal/pacmhci/submission-templates",
+      "url": "https://dl.acm.org/journal/pacmhci/submission-templates"
+    },
+    {
+      "text": "papers2026@cscw.acm.org",
+      "url": "https://cscw.acm.org/2026/papers2026@cscw.acm.org"
+    },
+    {
+      "text": "papers2026@cscw.acm.org",
+      "url": "mailto:papers2026@cscw.acm.org"
+    }
+  ],
   "https://facctconference.org/": [
     {
       "text": "call for papers",
@@ -170,7 +196,7 @@
       "url": "https://www.acm.org/publications/taps/word-template-workflow"
     }
   ],
-  "https://tei.acm.org/2026/": [
+  "https://tei.acm.org/": [
     {
       "text": "papers",
       "url": "https://tei.acm.org/2026/participate/papers"
@@ -180,37 +206,23 @@
       "url": "https://www.acm.org/code-of-ethics"
     }
   ],
-  "https://muc2025.mensch-und-computer.de/de/": [
+  "https://muc2025.mensch-und-computer.de/": [
     {
       "text": "datenschutz",
       "url": "https://gi.de/datenschutz"
     }
   ],
-  "https://www.weizenbaum-conference.de/": [
-    {
-      "text": "cfp",
-      "url": "https://www.weizenbaum-conference.de/call-for-papers"
-    }
-  ],
-  "https://dis.acm.org/2026/": [
-    {
-      "text": "papers",
-      "url": "https://dis.acm.org/2026/papers"
-    },
-    {
-      "text": "microsoft word",
-      "url": "https://www.acm.org/binaries/content/assets/publications/taps/acm_submission_template.docx"
-    },
-    {
-      "text": "latex",
-      "url": "https://portalparts.acm.org/hippo/latex_templates/acmart-primary.zip"
-    }
-  ],
-  "https://dblp.org/db/conf/ecscw/index.html": [
+  "https://dis.acm.org/": [],
+  "https://dblp.org/": [
     {
       "text": "update feed",
       "url": "https://dblp.org/feed"
     }
   ],
-  "https://aisel.aisnet.org/icis/": []
+  "https://aisel.aisnet.org/": [
+    {
+      "text": "CFP Link",
+      "url": "https://aisel.aisnet.org/submit_research.html"
+    }
+  ]
 }

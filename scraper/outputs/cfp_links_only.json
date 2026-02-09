@@ -1,110 +1,173 @@
 [
   {
-    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit",
-    "text": "submit",
-    "reason": "The URL leads to a submission page for the NordiCHI 2026 conference.",
+    "url": "https://ecscw.eusset.eu/2026/submissions",
+    "text": "submissions",
+    "reason": "The URL contains '2026' and relevant keyword 'submissions'.",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:30:32.812457Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 0.9
+    "discoveredAt": "2026-02-09T10:54:30.251005Z"
   },
   {
-    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/papers",
-    "text": "research papers",
-    "reason": "The URL leads to a specific submission page for research papers for NordiCHI 2026.",
+    "url": "https://ecscw.eusset.eu/2026/submissions/conference-papers",
+    "text": "(full) conference papers",
+    "reason": "The URL contains '2026' and relevant keyword '(full) conference papers'.",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:30:32.812957Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 0.9
+    "discoveredAt": "2026-02-09T10:54:30.251005Z"
   },
   {
-    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/critiques",
-    "text": "critiques",
-    "reason": "The URL leads to a specific submission page for critiques for NordiCHI 2026.",
+    "url": "https://ecscw.eusset.eu/2026/submissions/exploratory-papers",
+    "text": "exploratory papers",
+    "reason": "URL contains '2026' and 'papers'",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:30:32.812957Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 0.9
+    "discoveredAt": "2026-02-09T10:54:35.659830Z"
   },
   {
-    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/arts-based-approaches-in-hci",
-    "text": "arts-based approaches",
-    "reason": "The URL leads to a specific submission page for arts-based approaches for NordiCHI 2026.",
+    "url": "https://ecscw.eusset.eu/2026/submissions/journal-papers",
+    "text": "journal papers",
+    "reason": "URL contains '2026' and 'papers'",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:30:32.812957Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 0.9
+    "discoveredAt": "2026-02-09T10:54:35.659830Z"
   },
   {
-    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/industry-experiences",
-    "text": "industry experiences",
-    "reason": "The URL leads to a specific submission page for industry experiences for NordiCHI 2026.",
+    "url": "https://ecscw.eusset.eu/2026/2025/09/29/ecscw-2026-call-for-papers",
+    "text": "official call for papers for ecscw 2026",
+    "reason": "URL contains '2026' and 'call for papers'",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:30:32.812957Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 0.9
+    "discoveredAt": "2026-02-09T10:54:35.659830Z"
   },
   {
-    "url": "https://sites.uwasa.fi/nordichi2026/nordichi-2026/submit/late-breaking-work",
-    "text": "late breaking work",
-    "reason": "The URL contains '2026' and relates to submission details for late breaking work.",
+    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_f982",
+    "text": "06/02/2026 \n               cfp: p8. should we smash our keyboards? ethnographic interventions and/in the algorithmic age | interventions: swedish anthropological association conference 2026",
+    "reason": "URL contains '2026' and 'cfp'",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:30:43.513257Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 0.9
+    "discoveredAt": "2026-02-09T10:54:35.659830Z"
+  },
+  {
+    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_e0c5",
+    "text": "06/02/2026 \n               call for papers: rgs-ibg 2026 critical remote sensing",
+    "reason": "URL contains '2026' and 'call for papers'",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "targetYear": 2026,
+    "discoveredAt": "2026-02-09T10:54:35.659830Z"
+  },
+  {
+    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-03_10e3",
+    "text": "03/02/2026 \n               gentle reminder - cfp: 30th euras annual standardisation conference (european academy for standardisation)",
+    "reason": "The URL contains '2026' and the text mentions 'cfp' for a conference.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "targetYear": 2026,
+    "discoveredAt": "2026-02-09T10:54:41.703142Z"
+  },
+  {
+    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-02_cfca",
+    "text": "02/02/2026 \n               ideas2026 conference - call for papers",
+    "reason": "The URL contains '2026' and the text mentions 'call for papers'.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "targetYear": 2026,
+    "discoveredAt": "2026-02-09T10:54:41.703142Z"
+  },
+  {
+    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-31_772e",
+    "text": "31/01/2026 \n               cfp technology and language – theatrum machinarium",
+    "reason": "The URL contains '2026' and the text mentions 'cfp'.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "targetYear": 2026,
+    "discoveredAt": "2026-02-09T10:54:41.703142Z"
+  },
+  {
+    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_c449",
+    "text": "29/01/2026 \n               deadline extended: call for abstracts - sts conference graz 2026",
+    "reason": "The URL contains '2026' and the text mentions 'call for abstracts'.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "targetYear": 2026,
+    "discoveredAt": "2026-02-09T10:54:41.703142Z"
+  },
+  {
+    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_bb23",
+    "text": "29/01/2026 \n               fw: cfp extended to february 8: social study of microbes conference 2026",
+    "reason": "The URL contains '2026' and the text mentions 'cfp'.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "targetYear": 2026,
+    "discoveredAt": "2026-02-09T10:54:41.703142Z"
+  },
+  {
+    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_1826",
+    "text": "29/01/2026 \n               ideas2026 conference - call for papers",
+    "reason": "The URL contains '2026' and the text mentions 'call for papers'.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "targetYear": 2026,
+    "discoveredAt": "2026-02-09T10:54:41.703142Z"
   },
   {
     "url": "https://chi2026.acm.org/tag/papers",
     "text": "papers",
-    "reason": "The URL contains '2026' and 'papers', indicating a call for papers.",
+    "reason": "The URL contains '2026' and is tagged with 'papers'.",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:30:55.991839Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 1.0
+    "discoveredAt": "2026-02-09T10:54:41.703639Z"
+  },
+  {
+    "url": "https://cscw.acm.org/2026/papers.html",
+    "text": "submit",
+    "reason": "The URL contains '2026' and mentions 'submit' related to papers.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "targetYear": 2026,
+    "discoveredAt": "2026-02-09T10:54:41.703639Z"
+  },
+  {
+    "url": "https://cscw.acm.org/2026/papers2026@cscw.acm.org",
+    "text": "papers2026@cscw.acm.org",
+    "reason": "The URL contains '2026' and the text suggests a submission email for papers.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "targetYear": 2026,
+    "discoveredAt": "2026-02-09T10:54:47.677401Z"
   },
   {
     "url": "https://facctconference.org/2026/cfp.html",
     "text": "call for papers",
-    "reason": "The URL contains '2026' and 'cfp', indicating a call for papers.",
+    "reason": "The URL contains '2026' and 'cfp' indicating a call for papers.",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:30:55.991839Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 1.0
+    "discoveredAt": "2026-02-09T10:54:47.677401Z"
   },
   {
     "url": "https://facctconference.org/2026/cfpcraft.html",
     "text": "call for craft",
-    "reason": "The URL contains '2026' and 'cfp', indicating a call for papers.",
+    "reason": "The URL contains '2026' and 'cfp' indicating a call for craft submissions.",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:30:55.991839Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 1.0
+    "discoveredAt": "2026-02-09T10:54:47.677401Z"
   },
   {
     "url": "https://tei.acm.org/2026/participate/papers",
     "text": "papers",
-    "reason": "The URL contains '2026' and 'papers', indicating a direct Call for Papers.",
+    "reason": "The URL contains '2026' and 'papers' indicating a submission page.",
     "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:31:03.645993Z",
+    "confidence": 1.0,
     "targetYear": 2026,
-    "confidence": 1.0
-  },
-  {
-    "url": "https://www.weizenbaum-conference.de/call-for-papers",
-    "text": "cfp",
-    "reason": "The URL indicates a Call for Papers.",
-    "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:31:03.646494Z",
-    "targetYear": 2026,
-    "confidence": 1.0
-  },
-  {
-    "url": "https://dis.acm.org/2026/papers",
-    "text": "papers",
-    "reason": "The URL contains '2026' and 'papers', indicating a direct Call for Papers.",
-    "classification": "cfp",
-    "discoveredAt": "2026-02-06T12:31:03.646494Z",
-    "targetYear": 2026,
-    "confidence": 1.0
+    "discoveredAt": "2026-02-09T10:54:47.677401Z"
   }
 ]

@@ -1,0 +1,168 @@
+[
+  {
+    "title": "ECSCW 2026 - Full Conference Papers",
+    "conferenceSeries": "ECSCW",
+    "deadline": "n/a",
+    "conferenceDate": "n/a",
+    "location": "Munich, Germany",
+    "submissionForm": "https://ecscw.eusset.eu/2026/submissions/conference-papers/",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "collaborative work"
+    ],
+    "reviewModel": "n/a",
+    "notes": "Deadline information not provided.",
+    "url": "https://ecscw.eusset.eu/2026/submissions",
+    "id": "ecscw_2026_026submissions",
+    "extractedAt": "2026-02-10T16:55:10.738995Z"
+  },
+  {
+    "title": "ECSCW 2026 Conference Papers",
+    "conferenceSeries": "ECSCW",
+    "deadline": "2026-03-06",
+    "conferenceDate": "2026-07-01",
+    "location": "Munich, Germany",
+    "submissionForm": "https://easychair.org/conferences/?conf=<PERSON>",
+    "wordCharacterLimit": "6000 words without references",
+    "tags": [
+      "CSCW",
+      "collaboration",
+      "technology",
+      "methodology",
+      "case study"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Submissions must be anonymized and follow the EUSSET conference template. Accepted papers will be published in the EUSSET Digital Library.",
+    "url": "https://ecscw.eusset.eu/2026/submissions/conference-papers",
+    "id": "ecscw_2026_nferencepapers",
+    "extractedAt": "2026-02-10T16:55:16.784498Z"
+  },
+  {
+    "title": "Exploratory Papers",
+    "conferenceSeries": "ECSCW",
+    "deadline": "2026-03-06",
+    "conferenceDate": "2026-07-01",
+    "location": "Munich, Germany",
+    "submissionForm": "https://easychair.org/conferences/?conf=<PERSON>",
+    "wordCharacterLimit": "5000 words (excluding references)",
+    "tags": [
+      "cscw",
+      "exploratory studies",
+      "design probes",
+      "innovation"
+    ],
+    "reviewModel": "Single-blind",
+    "notes": "Submissions should be in PDF format using the EUSSET conference template. Accepted papers will be published in the EUSSET digital library with various copyright options.",
+    "url": "https://ecscw.eusset.eu/2026/submissions/exploratory-papers",
+    "id": "ecscw_2026_loratorypapers",
+    "extractedAt": "2026-02-10T16:55:21.096499Z"
+  },
+  {
+    "title": "ECSCW 2026 Journal Papers",
+    "conferenceSeries": "ECSCW",
+    "deadline": "n/a",
+    "conferenceDate": "2026-07-01",
+    "location": "Munich, Germany",
+    "submissionForm": "https://submission.nature.com/new-submission/10606/3",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "cscw",
+      "collaborative systems",
+      "social technologies",
+      "ethnography",
+      "human-AI collaboration"
+    ],
+    "reviewModel": "Single-blind",
+    "notes": "Submissions are on a rolling basis. Papers must be accepted by April 1, 2026, for inclusion in ECSCW 2026.",
+    "url": "https://ecscw.eusset.eu/2026/submissions/journal-papers",
+    "id": "ecscw_2026_journalpapers",
+    "extractedAt": "2026-02-10T16:55:25.686995Z"
+  },
+  {
+    "title": "ECSCW 2026 - Full Conference Papers",
+    "conferenceSeries": "ECSCW",
+    "deadline": "n/a",
+    "conferenceDate": "2026-06-29",
+    "location": "Munich, Germany",
+    "submissionForm": "https://easychair.org/conferences/?conf=ecscw2026",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "collaboration",
+      "social technologies",
+      "system design"
+    ],
+    "reviewModel": "n/a",
+    "notes": "Single-track conference; part of the EUSSET Conference on Computer-Supported Cooperative Work series.",
+    "url": "https://ecscw.eusset.eu/2026/2025/09/29/ecscw-2026-call-for-papers",
+    "id": "ecscw_2026_callforpapers",
+    "extractedAt": "2026-02-10T16:55:30.713495Z"
+  },
+  {
+    "title": "ECSCW 2026 - Full Conference Papers",
+    "conferenceSeries": "ECSCW",
+    "deadline": "2026-03-06",
+    "conferenceDate": "n/a",
+    "location": "Munich, Germany",
+    "submissionForm": "https://easychair.org/conferences/?conf=<PERSON>",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "cscl",
+      "collaborative work"
+    ],
+    "reviewModel": "n/a",
+    "notes": "n/a",
+    "url": "https://ecscw.eusset.eu/2026/2026/01/15/easychair-is-open-for-submissions",
+    "id": "ecscw_2026_forsubmissions",
+    "extractedAt": "2026-02-10T16:55:34.270995Z"
+  },
+  {
+    "title": "New paths and future trajectories in digital (dis)connection studies",
+    "conferenceSeries": "n/a",
+    "deadline": "2026-04-01",
+    "conferenceDate": "2026-09-07",
+    "location": "Brno, Czech Republic",
+    "submissionForm": "https://easst.net/eurograd-message/?mailbox_message_uid=2026-02-10_3c54",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "digital studies",
+      "disconnection",
+      "future trajectories"
+    ],
+    "reviewModel": "n/a",
+    "notes": "n/a",
+    "url": "https://easst.net/eurograd-message",
+    "id": "na_2026_urogradmessage",
+    "extractedAt": "2026-02-10T16:55:40.555995Z"
+  },
+  {
+    "title": "ACM FAccT 2026 Call for CRAFT Proposals",
+    "conferenceSeries": "FAccT",
+    "deadline": "2026-03-25",
+    "conferenceDate": "2026-06-25",
+    "location": "Montréal, Canada",
+    "submissionForm": "n/a",
+    "wordCharacterLimit": "Proposals should be no more than 4 pages (excluding references) or an equivalent length",
+    "tags": [
+      "hci",
+      "ai",
+      "computing",
+      "accountability",
+      "fairness",
+      "transparency",
+      "community-driven",
+      "experimental",
+      "indigeneity",
+      "feminist politics",
+      "disability justice",
+      "environmental justice"
+    ],
+    "reviewModel": "n/a",
+    "notes": "CRAFT sessions may be in-person, online-only, or hybrid. Proposals should be submitted via EasyChair.",
+    "url": "https://facctconference.org/2026/cfpcraft.html",
+    "id": "facct_2026_6cfpcrafthtml",
+    "extractedAt": "2026-02-10T16:56:14.732995Z"
+  }
+]

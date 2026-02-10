@@ -1,0 +1,130 @@
+[
+  {
+    "url": "https://www.weizenbaum-institut.de/media/Publikationen/Weizenbaum_Policy_Paper/WPP5_Dateninstitut_after_final.pdf",
+    "text": "CFP Link",
+    "reason": "The URL suggests it is a CFP link, but the content is not directly accessible.",
+    "classification": "cfp",
+    "confidence": 0.8,
+    "discoveredAt": "2026-02-10T16:54:38.567995Z"
+  },
+  {
+    "url": "https://ecscw.eusset.eu/2026/submissions",
+    "text": "submissions",
+    "reason": "The page explicitly mentions submissions.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:38.567995Z"
+  },
+  {
+    "url": "https://ecscw.eusset.eu/2026/submissions/conference-papers",
+    "text": "(full) conference papers",
+    "reason": "The page is specifically about conference paper submissions.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:38.567995Z"
+  },
+  {
+    "url": "https://ecscw.eusset.eu/2026/submissions/exploratory-papers",
+    "text": "exploratory papers",
+    "reason": "The page is specifically about exploratory paper submissions.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:38.567995Z"
+  },
+  {
+    "url": "https://ecscw.eusset.eu/2026/submissions/journal-papers",
+    "text": "journal papers",
+    "reason": "The URL refers to journal papers submission details.",
+    "classification": "cfp",
+    "confidence": 0.9,
+    "discoveredAt": "2026-02-10T16:54:48.723995Z"
+  },
+  {
+    "url": "https://ecscw.eusset.eu/2026/2025/09/29/ecscw-2026-call-for-papers",
+    "text": "official call for papers for ecscw 2026",
+    "reason": "The URL is an official call for papers for the conference.",
+    "classification": "cfp",
+    "confidence": 0.95,
+    "discoveredAt": "2026-02-10T16:54:48.723995Z"
+  },
+  {
+    "url": "https://ecscw.eusset.eu/2026/2026/01/15/easychair-is-open-for-submissions",
+    "text": "easychair is open for submissions",
+    "reason": "The URL indicates that EasyChair is open for submissions, relevant to the submission process.",
+    "classification": "cfp",
+    "confidence": 0.85,
+    "discoveredAt": "2026-02-10T16:54:48.723995Z"
+  },
+  {
+    "url": "https://easst.net/eurograd-message",
+    "text": "10/02/2026 \n               cfa - new paths and future trajectories in digital (dis)connection studies (brno, sept. 7, 2026; deadline april 1st, 2026)",
+    "reason": "The URL contains a call for papers for a specific event.",
+    "classification": "cfp",
+    "confidence": 0.9,
+    "discoveredAt": "2026-02-10T16:54:48.723995Z"
+  },
+  {
+    "url": "https://chi2026.acm.org/tag/papers",
+    "text": "papers",
+    "reason": "The URL contains '/tag/papers', indicating it is a landing page for paper submissions.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507495Z"
+  },
+  {
+    "url": "https://cscw.acm.org/2026/papers.html",
+    "text": "submit",
+    "reason": "The URL contains 'submit' which suggests it is related to paper submissions.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507495Z"
+  },
+  {
+    "url": "https://cscw.acm.org/2026/rolling.html",
+    "text": "rolling submissions",
+    "reason": "The phrase 'rolling submissions' indicates a submission process, likely for papers.",
+    "classification": "cfp",
+    "confidence": 0.9,
+    "discoveredAt": "2026-02-10T16:54:59.507495Z"
+  },
+  {
+    "url": "https://dl.acm.org/journal/pacmhci/submission-templates",
+    "text": "https://dl.acm.org/journal/pacmhci/submission-templates",
+    "reason": "The URL is related to submission templates, which is relevant for paper submissions.",
+    "classification": "cfp",
+    "confidence": 0.8,
+    "discoveredAt": "2026-02-10T16:54:59.507495Z"
+  },
+  {
+    "url": "https://facctconference.org/2026/cfp.html",
+    "text": "call for papers",
+    "reason": "The phrase 'call for papers' clearly indicates a call for paper submissions.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507994Z"
+  },
+  {
+    "url": "https://facctconference.org/2026/cfpcraft.html",
+    "text": "call for craft",
+    "reason": "The phrase 'call for craft' suggests a specific submission type, likely related to papers.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507994Z"
+  },
+  {
+    "url": "https://tei.acm.org/2026/participate/papers",
+    "text": "papers",
+    "reason": "The URL contains 'participate/papers', indicating it is related to paper submissions.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507994Z"
+  },
+  {
+    "url": "https://aisel.aisnet.org/submit_research.html",
+    "text": "CFP Link",
+    "reason": "The URL clearly refers to a submission page for research papers.",
+    "classification": "cfp",
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:55:03.439495Z"
+  }
+]

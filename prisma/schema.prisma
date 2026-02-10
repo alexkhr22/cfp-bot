@@ -25,20 +25,23 @@ model KeywordGroup {
 
 model CFP {
   id                 Int      @id @default(autoincrement())
-  title              String
-  deadline           DateTime
+  
+  title              String?
+  deadline           String?
   location           String?
-  conferenceDate     DateTime
-  url                String
-  callback           DateTime
-  submissionForm     SubmissionForm
-  wordCharacterLimit Int?
-  tag                String?
+  conferenceDate     String?
+  url                String?
+  submissionForm     String?
+  wordCharacterLimit String?
+  tags               String[]
+  note               String?
 
   userId             Int
   user               User     @relation(fields: [userId], references: [id])
 
   groups             CFPKeywordGroup[]
+
+  @@unique([url, title, conferenceDate])
 }
 
 model UserKeywordGroup {

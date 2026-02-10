@@ -40,8 +40,9 @@ const RightSideHome = ({cfps}) =>{
 
         createEvents(icsEvents, (error, value) => {
             if (error) {
-            console.error("ICS error:", error);
-            return;
+                console.error("ICS error:", error);
+                console.log("Bad ICS events:", icsEvents);
+                return;
             }
 
             const blob = new Blob([value], { type: "text/calendar;charset=utf-8" });
@@ -82,22 +83,11 @@ const RightSideHome = ({cfps}) =>{
         };
     });
 
-    const callbackEvents = cfps.map(cfp => {
-        const start = new Date(cfp.callback);
-        const end = new Date(start.getTime() + 60 * 60 * 1000);
-        return {
-            title: cfp.title + " Rückmeldung",
-            start,
-            end,
-            location: cfp.location,
-            description: cfp.url,
-        };
-    });
+
 
     const events = [
         ...deadlineEvents,
         ...conferenceDateEvents,
-        ...callbackEvents,
     ];
 
     return (

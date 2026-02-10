@@ -17,7 +17,6 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
         location: "",
         dateOfConference: "",
         url: "",
-        dateReturnMessage: "",
         submissionForm: "OPENREVIEW",
         wordLimit: "",
         tag: "",
@@ -51,39 +50,49 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
             const freshUser = allUsers.find(u => String(u.id) === String(selectedUser.id));
             const freshTags = freshUser?.tags ?? [];
 
-            allCfp.forEach((cfp, index) => {
-                console.log("ALL CFP: " + cfp.title);
-            })
+            allCfp.forEach(cfp => {
+                console.log("ALL CFP TAGS ARRAY:", getCfpTagsArray(cfp));
+            });
 
-            const tagMatches = allCfp.filter(cfp => freshTags.includes(cfp.tag));
+            const tagMatches = allCfp.filter(cfp =>
+                getCfpTagsArray(cfp).some(tag => freshTags.includes(tag))
+            );
+            console.log("TAG MATCHES: " + tagMatches)
 
             const keywords = (userGroups?.flatMap(g => g.keywords) ?? [])
             .map(k => k.toLowerCase());
 
-            console.log("Keywords: " + keywords)
 
             const keywordMatches = allCfp.filter(cfp => {
                 const text = cfpToSearchText(cfp);
                 return keywords.some(kw => text.includes(kw));
             });
 
-            console.log("Keyword Matches: " + keywordMatches)
 
             const mergedById = new Map();
             for (const cfp of [...tagMatches, ...keywordMatches]) {
                 mergedById.set(String(cfp.id), cfp);
             }
+            
 
             setCfps(Array.from(mergedById.values()));
             setUserCfpGlobal(Array.from(mergedById.values()));
-            cfps.forEach((cfp, index) => {
-                console.log(cfp.title);
-            })
+            
         };
 
             loadAndMerge();
         }, [selectedUser?.id, refreshKey, userGroups]);
 
+    const getCfpTagsArray = (cfp) => {
+        if (Array.isArray(cfp.tags)) return cfp.tags;
+        if (typeof cfp.tags === "string") {
+            return cfp.tags
+            .split(",")
+            .map(t => t.trim())
+            .filter(Boolean);
+        }
+        return [];
+    };
 
     
     async function getAllCfPFromUsers() {
@@ -107,24 +116,27 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
         setForm(emptyForm);
     }
 
+    const parseTags = (s) =>
+        String(s ?? "")
+            .split(",")
+            .map(t => t.trim())
+            .filter(Boolean);
+
     async function handleConfirm(){
         const newCfp = createCfp({
             userId: selectedUser.id,
             title: form.title,
-            deadline: new Date(form.submissionDeadline),
-            conferenceDate: new Date(form.dateOfConference),
-            callback: new Date(form.dateReturnMessage),
+            deadline: form.submissionDeadline,
+            conferenceDate: form.dateOfConference,
             location: form.location,
             url: form.url,
             submissionForm: form.submissionForm,
-            wordCharacterLimit: Number(form.wordLimit),
-            tag: form.tag,
+            wordCharacterLimit: form.wordLimit,
+            tags: parseTags(form.tag),
             groupIds: form.groupIds
         });
+        console.log("Form Tag: " + form.tag)
         setShowAddCfp(false);
-        console.log("submissionDeadline:", form.submissionDeadline);
-        console.log("dateOfConference:", form.dateOfConference);
-        console.log("dateReturnMessage:", form.dateReturnMessage);
 
         await reloadUser();
 
@@ -134,7 +146,6 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
 
         await reloadUser();
 
-        console.log(newCfp)
 
         const savedCfp = await addCFP(newCfp)
         setCfps(prev => [...prev, savedCfp]);
@@ -155,7 +166,7 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
     const saveEditTag = async (cfp) => {
         const newTag = tagEdit.trim();
 
-        if (newTag === cfp.tag) {
+        if (newTag === cfp.tags) {
             cancelEditTag();
             return;
         }
@@ -189,7 +200,6 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
             cfp.wordCharacterLimit,
             cfp.deadline,
             cfp.conferenceDate,
-            cfp.callback
         ]
             .filter(Boolean)        
             .join(" ")
@@ -199,6 +209,7 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
     const showAllCfpClicked = () => {
         setCfps(allCfpGlobal);
         setShowAllCfp(true);
+
     }
 
     const showUserCfpClicked = () => {
@@ -250,10 +261,6 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
                             <input className="cfp-url" name="url" value={form.url} onChange={handleCfpInputChange}></input>
                         </li>
                         <li>
-                            <label>Datum Rückmeldung:</label>
-                            <input className="cfp-return-message-date" type="date" name="dateReturnMessage" value={form.dateReturnMessage} onChange={handleCfpInputChange}></input>
-                        </li>
-                        <li>
                             <label>Einreichungsform:</label>
                             <select className="cfp-submission-form" name="submissionForm" value={form.submissionForm} onChange={handleCfpInputChange}>
                                 <option value="OPENREVIEW">OPENREVIEW</option>
@@ -288,7 +295,7 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
                                     <strong>Tag:</strong>{" "}
                                     {editingId !== cfp.id ? (
                                         <>
-                                        {cfp.tag ?? "-"}
+                                        {(cfp.tags && cfp.tags.length > 0) ? cfp.tags.join(", ") : "-"}
                                         <button type="button" onClick={() => startEditTag(cfp)}>
                                             Edit
                                         </button>
@@ -315,7 +322,6 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
                                 <li><strong>Ort:</strong> {cfp.location}</li>
                                 <li><strong>Konferenzdatum:</strong> {String(cfp.conferenceDate)}</li>
                                 <li><strong>URL:</strong> {cfp.url}</li>
-                                <li><strong>Rückmeldung bis:</strong> {String(cfp.callback)}</li>
                                 <li><strong>Einreichungsformular:</strong> {cfp.submissionForm}</li>
                                 <li><strong>Wortlimit:</strong> {cfp.wordCharacterLimit}</li>
                             </ul>

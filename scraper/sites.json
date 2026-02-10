@@ -1,10 +1,8 @@
 {
   "urls": [
-    "https://dl.acm.org/",
     "https://interact2025.org/",
     "https://www.pdc2026.polimi.it/",
     "https://www.weizenbaum-institut.de/",
-    "https://dl.acm.org/",
     "https://ecscw.eusset.eu/",
     "https://icis2025.aisconferences.org/",
     "https://easst.net/",
@@ -15,6 +13,7 @@
     "https://muc2025.mensch-und-computer.de/",
     "https://dis.acm.org/",
     "https://dblp.org/",
-    "https://aisel.aisnet.org/"
+    "https://aisel.aisnet.org/",
+    "https://call-for-papers.sas.upenn.edu/"
   ]
 }

@@ -48,9 +48,10 @@ async def main():
 
     results_acc = []
 
-    for batch in chunked(new_links, BATCH_SIZE):
+    for i, batch in enumerate(chunked(new_links, BATCH_SIZE), start=1):
+        print(f"➡️ Batch {i}: AI-Classification for {len(batch)} urls")
         ai_results = await classify_batch(client, batch)
-
+        
         for res in ai_results:
             idx = res.get("index")
             if idx is None or idx >= len(batch):

@@ -2,193 +2,129 @@
   {
     "url": "https://www.weizenbaum-institut.de/media/Publikationen/Weizenbaum_Policy_Paper/WPP5_Dateninstitut_after_final.pdf",
     "text": "CFP Link",
-    "reason": "The URL suggests it is a link to a CFP document.",
+    "reason": "The URL suggests it is a CFP link, but the content is not directly accessible.",
     "classification": "cfp",
     "confidence": 0.8,
-    "discoveredAt": "2026-02-09T12:42:58.297419Z"
+    "discoveredAt": "2026-02-10T16:54:38.567995Z"
   },
   {
     "url": "https://ecscw.eusset.eu/2026/submissions",
     "text": "submissions",
-    "reason": "The page explicitly mentions submissions, indicating a call for papers.",
+    "reason": "The page explicitly mentions submissions.",
     "classification": "cfp",
-    "confidence": 0.9,
-    "discoveredAt": "2026-02-09T12:42:58.297419Z"
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:38.567995Z"
   },
   {
     "url": "https://ecscw.eusset.eu/2026/submissions/conference-papers",
     "text": "(full) conference papers",
     "reason": "The page is specifically about conference paper submissions.",
     "classification": "cfp",
-    "confidence": 0.9,
-    "discoveredAt": "2026-02-09T12:42:58.297419Z"
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:38.567995Z"
   },
   {
     "url": "https://ecscw.eusset.eu/2026/submissions/exploratory-papers",
     "text": "exploratory papers",
-    "reason": "The URL contains 'submissions' and refers to exploratory papers, indicating a call for papers.",
+    "reason": "The page is specifically about exploratory paper submissions.",
     "classification": "cfp",
-    "confidence": 0.95,
-    "discoveredAt": "2026-02-09T12:43:06.710870Z"
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:38.567995Z"
   },
   {
     "url": "https://ecscw.eusset.eu/2026/submissions/journal-papers",
     "text": "journal papers",
-    "reason": "The URL contains 'submissions' and refers to journal papers, indicating a call for papers.",
+    "reason": "The URL refers to journal papers submission details.",
     "classification": "cfp",
-    "confidence": 0.95,
-    "discoveredAt": "2026-02-09T12:43:06.710870Z"
+    "confidence": 0.9,
+    "discoveredAt": "2026-02-10T16:54:48.723995Z"
   },
   {
     "url": "https://ecscw.eusset.eu/2026/2025/09/29/ecscw-2026-call-for-papers",
     "text": "official call for papers for ecscw 2026",
-    "reason": "The text explicitly mentions 'official call for papers' and the URL is related to submissions.",
+    "reason": "The URL is an official call for papers for the conference.",
     "classification": "cfp",
     "confidence": 0.95,
-    "discoveredAt": "2026-02-09T12:43:06.710870Z"
+    "discoveredAt": "2026-02-10T16:54:48.723995Z"
   },
   {
     "url": "https://ecscw.eusset.eu/2026/2026/01/15/easychair-is-open-for-submissions",
     "text": "easychair is open for submissions",
-    "reason": "The text indicates that submissions are open, suggesting a call for papers.",
+    "reason": "The URL indicates that EasyChair is open for submissions, relevant to the submission process.",
+    "classification": "cfp",
+    "confidence": 0.85,
+    "discoveredAt": "2026-02-10T16:54:48.723995Z"
+  },
+  {
+    "url": "https://easst.net/eurograd-message",
+    "text": "10/02/2026 \n               cfa - new paths and future trajectories in digital (dis)connection studies (brno, sept. 7, 2026; deadline april 1st, 2026)",
+    "reason": "The URL contains a call for papers for a specific event.",
     "classification": "cfp",
     "confidence": 0.9,
-    "discoveredAt": "2026-02-09T12:43:06.711369Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-09_bb31",
-    "text": "09/02/2026 \n               call for papers “the social studies of w=?windows-1252?q?ater=94 finnish sociology conference in rovaniemi=2c may 7?= -8",
-    "reason": "The text mentions a call for papers for a conference, indicating a call for papers.",
-    "classification": "cfp",
-    "confidence": 0.85,
-    "discoveredAt": "2026-02-09T12:43:06.711369Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_f982",
-    "text": "06/02/2026 \n               cfp: p8. should we smash our keyboards? ethnographic interventions and/in the algorithmic age | interventions: swedish anthropological association conference 2026",
-    "reason": "The text explicitly mentions 'cfp' and is related to a conference, indicating a call for papers.",
-    "classification": "cfp",
-    "confidence": 0.95,
-    "discoveredAt": "2026-02-09T12:43:06.711369Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_e0c5",
-    "text": "06/02/2026 \n               call for papers: rgs-ibg 2026 critical remote sensing",
-    "reason": "The text explicitly mentions 'call for papers' and is related to a conference, indicating a call for papers.",
-    "classification": "cfp",
-    "confidence": 0.95,
-    "discoveredAt": "2026-02-09T12:43:06.711369Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_363e",
-    "text": "06/02/2026 \n               vb: swedish sts conference, deadline abstract 27 feb",
-    "reason": "The text indicates a deadline for abstract submission, suggesting a call for papers.",
-    "classification": "cfp",
-    "confidence": 0.85,
-    "discoveredAt": "2026-02-09T12:43:06.711369Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-03_10e3",
-    "text": "03/02/2026 \n               gentle reminder - cfp: 30th euras annual standardisation conference (european academy for standardisation)",
-    "reason": "The text explicitly mentions a call for papers (cfp) for a conference.",
-    "classification": "cfp",
-    "confidence": 1.0,
-    "discoveredAt": "2026-02-09T12:43:13.760070Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-02_cfca",
-    "text": "02/02/2026 \n               ideas2026 conference - call for papers",
-    "reason": "The text explicitly mentions a call for papers for the ideas2026 conference.",
-    "classification": "cfp",
-    "confidence": 1.0,
-    "discoveredAt": "2026-02-09T12:43:13.760070Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-31_772e",
-    "text": "31/01/2026 \n               cfp technology and language – theatrum machinarium",
-    "reason": "The text explicitly mentions a call for papers (cfp) for a conference.",
-    "classification": "cfp",
-    "confidence": 1.0,
-    "discoveredAt": "2026-02-09T12:43:13.760070Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_c449",
-    "text": "29/01/2026 \n               deadline extended: call for abstracts - sts conference graz 2026",
-    "reason": "The text mentions a call for abstracts, which is related to paper submissions.",
-    "classification": "cfp",
-    "confidence": 1.0,
-    "discoveredAt": "2026-02-09T12:43:13.760070Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_bb23",
-    "text": "29/01/2026 \n               fw: cfp extended to february 8: social study of microbes conference 2026",
-    "reason": "The text explicitly mentions a call for papers (cfp) for a conference.",
-    "classification": "cfp",
-    "confidence": 1.0,
-    "discoveredAt": "2026-02-09T12:43:13.760070Z"
-  },
-  {
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_1826",
-    "text": "29/01/2026 \n               ideas2026 conference - call for papers",
-    "reason": "The text explicitly mentions a call for papers for the ideas2026 conference.",
-    "classification": "cfp",
-    "confidence": 1.0,
-    "discoveredAt": "2026-02-09T12:43:13.760070Z"
+    "discoveredAt": "2026-02-10T16:54:48.723995Z"
   },
   {
     "url": "https://chi2026.acm.org/tag/papers",
     "text": "papers",
-    "reason": "The URL suggests a tag related to papers, which may imply submission details.",
+    "reason": "The URL contains '/tag/papers', indicating it is a landing page for paper submissions.",
     "classification": "cfp",
-    "confidence": 0.8,
-    "discoveredAt": "2026-02-09T12:43:13.760070Z"
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507495Z"
   },
   {
     "url": "https://cscw.acm.org/2026/papers.html",
     "text": "submit",
-    "reason": "The URL contains 'papers.html', indicating it is related to paper submissions.",
+    "reason": "The URL contains 'submit' which suggests it is related to paper submissions.",
     "classification": "cfp",
-    "confidence": 0.9,
-    "discoveredAt": "2026-02-09T12:43:20.363510Z"
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507495Z"
   },
   {
     "url": "https://cscw.acm.org/2026/rolling.html",
     "text": "rolling submissions",
-    "reason": "The term 'rolling submissions' suggests a submission process for papers.",
+    "reason": "The phrase 'rolling submissions' indicates a submission process, likely for papers.",
+    "classification": "cfp",
+    "confidence": 0.9,
+    "discoveredAt": "2026-02-10T16:54:59.507495Z"
+  },
+  {
+    "url": "https://dl.acm.org/journal/pacmhci/submission-templates",
+    "text": "https://dl.acm.org/journal/pacmhci/submission-templates",
+    "reason": "The URL is related to submission templates, which is relevant for paper submissions.",
     "classification": "cfp",
     "confidence": 0.8,
-    "discoveredAt": "2026-02-09T12:43:20.363510Z"
+    "discoveredAt": "2026-02-10T16:54:59.507495Z"
   },
   {
     "url": "https://facctconference.org/2026/cfp.html",
     "text": "call for papers",
-    "reason": "The phrase 'call for papers' directly indicates a request for paper submissions.",
+    "reason": "The phrase 'call for papers' clearly indicates a call for paper submissions.",
     "classification": "cfp",
-    "confidence": 0.9,
-    "discoveredAt": "2026-02-09T12:43:20.363510Z"
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507994Z"
   },
   {
     "url": "https://facctconference.org/2026/cfpcraft.html",
     "text": "call for craft",
-    "reason": "The phrase 'call for craft' suggests a specific submission category for papers.",
+    "reason": "The phrase 'call for craft' suggests a specific submission type, likely related to papers.",
     "classification": "cfp",
-    "confidence": 0.9,
-    "discoveredAt": "2026-02-09T12:43:20.363510Z"
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507994Z"
   },
   {
     "url": "https://tei.acm.org/2026/participate/papers",
     "text": "papers",
     "reason": "The URL contains 'participate/papers', indicating it is related to paper submissions.",
     "classification": "cfp",
-    "confidence": 0.9,
-    "discoveredAt": "2026-02-09T12:43:20.363510Z"
+    "confidence": 1.0,
+    "discoveredAt": "2026-02-10T16:54:59.507994Z"
   },
   {
     "url": "https://aisel.aisnet.org/submit_research.html",
     "text": "CFP Link",
-    "reason": "The URL clearly refers to submission details for research papers.",
+    "reason": "The URL clearly refers to a submission page for research papers.",
     "classification": "cfp",
     "confidence": 1.0,
-    "discoveredAt": "2026-02-09T12:43:22.399299Z"
+    "discoveredAt": "2026-02-10T16:55:03.439495Z"
   }
 ]

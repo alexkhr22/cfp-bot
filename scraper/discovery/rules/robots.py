@@ -30,7 +30,6 @@ def get_robots_parser(url: str) -> RobotFileParser | None:
         _robot_cache[base] = None
         return None
 
-#TODO: FÜR JEDEN UNTERLINK SEPARAT PRÜFEN, NICHT NUR DIE HAUPTURL
 def is_allowed_by_robots(url: str, user_agent: str = "*") -> bool:
     parser = get_robots_parser(url)
 

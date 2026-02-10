@@ -1,25 +1,6 @@
 [
   {
-    "title": "Weizenbaum Policy Paper",
-    "conferenceSeries": "n/a",
-    "deadline": "n/a",
-    "conferenceDate": "n/a",
-    "location": "n/a",
-    "submissionForm": "n/a",
-    "wordCharacterLimit": "n/a",
-    "tags": [
-      "policy",
-      "data",
-      "institute"
-    ],
-    "reviewModel": "n/a",
-    "notes": "This document appears to be a policy paper rather than a call for papers.",
-    "url": "https://www.weizenbaum-institut.de/media/Publikationen/Weizenbaum_Policy_Paper/WPP5_Dateninstitut_after_final.pdf",
-    "id": "na_2026_afterfinalpdf",
-    "extractedAt": "2026-02-09T12:45:24.118708Z"
-  },
-  {
-    "title": "Full Conference Papers",
+    "title": "ECSCW 2026 - Full Conference Papers",
     "conferenceSeries": "ECSCW",
     "deadline": "n/a",
     "conferenceDate": "n/a",
@@ -28,14 +9,13 @@
     "wordCharacterLimit": "n/a",
     "tags": [
       "hci",
-      "cscl",
-      "collaboration"
+      "collaborative work"
     ],
     "reviewModel": "n/a",
-    "notes": "Deadline information is missing.",
+    "notes": "Deadline information not provided.",
     "url": "https://ecscw.eusset.eu/2026/submissions",
     "id": "ecscw_2026_026submissions",
-    "extractedAt": "2026-02-09T12:45:28.042483Z"
+    "extractedAt": "2026-02-10T16:55:10.738995Z"
   },
   {
     "title": "ECSCW 2026 Conference Papers",
@@ -44,7 +24,7 @@
     "conferenceDate": "2026-07-01",
     "location": "Munich, Germany",
     "submissionForm": "https://easychair.org/conferences/?conf=<PERSON>",
-    "wordCharacterLimit": "No longer than 6,000 words without references",
+    "wordCharacterLimit": "6000 words without references",
     "tags": [
       "CSCW",
       "collaboration",
@@ -53,10 +33,10 @@
       "case study"
     ],
     "reviewModel": "Double-blind",
-    "notes": "Submissions must be anonymized and will undergo a single-round peer review. Accepted papers will be published in the EUSSET Digital Library.",
+    "notes": "Submissions must be anonymized and follow the EUSSET conference template. Accepted papers will be published in the EUSSET Digital Library.",
     "url": "https://ecscw.eusset.eu/2026/submissions/conference-papers",
     "id": "ecscw_2026_nferencepapers",
-    "extractedAt": "2026-02-09T12:45:33.823419Z"
+    "extractedAt": "2026-02-10T16:55:16.784498Z"
   },
   {
     "title": "Exploratory Papers",
@@ -68,16 +48,36 @@
     "wordCharacterLimit": "5000 words (excluding references)",
     "tags": [
       "cscw",
-      "exploratory",
-      "hci",
-      "design",
+      "exploratory studies",
+      "design probes",
       "innovation"
     ],
     "reviewModel": "Single-blind",
     "notes": "Submissions should be in PDF format using the EUSSET conference template. Accepted papers will be published in the EUSSET digital library with various copyright options.",
     "url": "https://ecscw.eusset.eu/2026/submissions/exploratory-papers",
     "id": "ecscw_2026_loratorypapers",
-    "extractedAt": "2026-02-09T12:45:38.859764Z"
+    "extractedAt": "2026-02-10T16:55:21.096499Z"
+  },
+  {
+    "title": "ECSCW 2026 Journal Papers",
+    "conferenceSeries": "ECSCW",
+    "deadline": "n/a",
+    "conferenceDate": "2026-07-01",
+    "location": "Munich, Germany",
+    "submissionForm": "https://submission.nature.com/new-submission/10606/3",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "cscw",
+      "collaborative systems",
+      "social technologies",
+      "ethnography",
+      "human-AI collaboration"
+    ],
+    "reviewModel": "Single-blind",
+    "notes": "Submissions are on a rolling basis. Papers must be accepted by April 1, 2026, for inclusion in ECSCW 2026.",
+    "url": "https://ecscw.eusset.eu/2026/submissions/journal-papers",
+    "id": "ecscw_2026_journalpapers",
+    "extractedAt": "2026-02-10T16:55:25.686995Z"
   },
   {
     "title": "ECSCW 2026 - Full Conference Papers",
@@ -97,7 +97,7 @@
     "notes": "Single-track conference; part of the EUSSET Conference on Computer-Supported Cooperative Work series.",
     "url": "https://ecscw.eusset.eu/2026/2025/09/29/ecscw-2026-call-for-papers",
     "id": "ecscw_2026_callforpapers",
-    "extractedAt": "2026-02-09T12:45:48.265423Z"
+    "extractedAt": "2026-02-10T16:55:30.713495Z"
   },
   {
     "title": "ECSCW 2026 - Full Conference Papers",
@@ -116,204 +116,26 @@
     "notes": "n/a",
     "url": "https://ecscw.eusset.eu/2026/2026/01/15/easychair-is-open-for-submissions",
     "id": "ecscw_2026_forsubmissions",
-    "extractedAt": "2026-02-09T12:45:57.521179Z"
+    "extractedAt": "2026-02-10T16:55:34.270995Z"
   },
   {
-    "title": "The Social Studies of Water - Finnish Sociology Conference",
+    "title": "New paths and future trajectories in digital (dis)connection studies",
     "conferenceSeries": "n/a",
-    "deadline": "2026-03-13",
-    "conferenceDate": "2026-05-07",
-    "location": "Rovaniemi, Finland",
-    "submissionForm": "n/a",
-    "wordCharacterLimit": "300 words",
-    "tags": [
-      "sociology",
-      "water studies",
-      "environment",
-      "climate change"
-    ],
-    "reviewModel": "n/a",
-    "notes": "Submit abstracts in RTF or Word format. Use Times New Roman, font size 11, line spacing 1.15, left-aligned text, and a bolded title, APA style for references.",
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-09_bb31",
-    "id": "na_2026_20260209bb31",
-    "extractedAt": "2026-02-09T12:46:04.235661Z"
-  },
-  {
-    "title": "P8. Should we smash our keyboards? Ethnographic interventions and/in the algorithmic age",
-    "conferenceSeries": "n/a",
-    "deadline": "2026-02-23",
-    "conferenceDate": "2026-04-22",
-    "location": "Gothenburg, Sweden",
-    "submissionForm": "https://www.gu.se/en/globalstudies/sant-conference-2026-interventions#call-fo",
-    "wordCharacterLimit": "250 words",
-    "tags": [
-      "ethnography",
-      "algorithms",
-      "technology",
-      "education",
-      "pedagogy"
-    ],
-    "reviewModel": "n/a",
-    "notes": "Part of the Swedish Anthropological Association Conference 2026",
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_f982",
-    "id": "na_2026_20260206f982",
-    "extractedAt": "2026-02-09T12:46:11.269679Z"
-  },
-  {
-    "title": "RGS-IBG 2026 Critical Remote Sensing",
-    "conferenceSeries": "RGS-IBG",
-    "deadline": "n/a",
-    "conferenceDate": "2026-09-01",
-    "location": "London, United Kingdom",
-    "submissionForm": "n/a",
+    "deadline": "2026-04-01",
+    "conferenceDate": "2026-09-07",
+    "location": "Brno, Czech Republic",
+    "submissionForm": "https://easst.net/eurograd-message/?mailbox_message_uid=2026-02-10_3c54",
     "wordCharacterLimit": "n/a",
     "tags": [
-      "remote sensing",
-      "critical studies",
-      "geography"
+      "digital studies",
+      "disconnection",
+      "future trajectories"
     ],
     "reviewModel": "n/a",
-    "notes": "Part of the RGS-IBG Annual International Conference",
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_e0c5",
-    "id": "rgsibg_2026_20260206e0c5",
-    "extractedAt": "2026-02-09T12:46:16.905383Z"
-  },
-  {
-    "title": "Swedish STS Conference",
-    "conferenceSeries": "n/a",
-    "deadline": "2026-02-27",
-    "conferenceDate": "2026-06-10",
-    "location": "Malmö, Sweden",
-    "submissionForm": "n/a",
-    "wordCharacterLimit": "n/a",
-    "tags": [
-      "science and technology studies",
-      "STS"
-    ],
-    "reviewModel": "n/a",
-    "notes": "Conference takes place from June 10-12, 2026",
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-06_363e",
-    "id": "na_2026_20260206363e",
-    "extractedAt": "2026-02-09T12:46:22.607122Z"
-  },
-  {
-    "title": "30th EURAS Annual Standardisation Conference",
-    "conferenceSeries": "EURAS",
-    "deadline": "2026-03-09",
-    "conferenceDate": "2026-06-24",
-    "location": "Graz, Austria",
-    "submissionForm": "n/a",
-    "wordCharacterLimit": "n/a",
-    "tags": [
-      "standardisation",
-      "values",
-      "technology"
-    ],
-    "reviewModel": "n/a",
-    "notes": "Theme: 'Values in Standards'",
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-03_10e3",
-    "id": "euras_2026_2026020310e3",
-    "extractedAt": "2026-02-09T12:46:27.280643Z"
-  },
-  {
-    "title": "IDEAS2026 Conference",
-    "conferenceSeries": "IDEAS2026",
-    "deadline": "2026-05-31",
-    "conferenceDate": "2026-08-03",
-    "location": "Manchester, UK",
-    "submissionForm": "https://ideas-conference.org/",
-    "wordCharacterLimit": "n/a",
-    "tags": [
-      "social science",
-      "technology",
-      "innovation",
-      "policy"
-    ],
-    "reviewModel": "n/a",
-    "notes": "Organized by AT Publishing in association with HASS and RECAP journals. Selected papers may be invited for journal publication.",
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-02-02_cfca",
-    "id": "ideas2026_2026_20260202cfca",
-    "extractedAt": "2026-02-09T12:46:42.895608Z"
-  },
-  {
-    "title": "Technology and Language – Theatrum Machinarium",
-    "conferenceSeries": "n/a",
-    "deadline": "2026-10-05",
-    "conferenceDate": "n/a",
-    "location": "n/a",
-    "submissionForm": "https://soctech.spbstu.ru/en/issue/21/",
-    "wordCharacterLimit": "n/a",
-    "tags": [
-      "technology",
-      "language",
-      "theatre",
-      "cultural studies",
-      "media studies"
-    ],
-    "reviewModel": "n/a",
-    "notes": "Call for contributions on theatrical technologies and their impact on perception and meaning.",
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-31_772e",
-    "id": "na_2026_20260131772e",
-    "extractedAt": "2026-02-09T12:46:49.148149Z"
-  },
-  {
-    "title": "STS Conference Graz 2026",
-    "conferenceSeries": "n/a",
-    "deadline": "2026-02-10",
-    "conferenceDate": "2026-05-04",
-    "location": "Graz, Austria",
-    "submissionForm": "https://stsconf.tugraz.at",
-    "wordCharacterLimit": "n/a",
-    "tags": [
-      "science",
-      "technology",
-      "society"
-    ],
-    "reviewModel": "n/a",
-    "notes": "Critical Issues in Science, Technology and Society Studies",
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_c449",
-    "id": "na_2026_20260129c449",
-    "extractedAt": "2026-02-09T12:46:54.194027Z"
-  },
-  {
-    "title": "IDEAS2026 Conference - Call for Papers",
-    "conferenceSeries": "IDEAS2026",
-    "deadline": "2026-05-31",
-    "conferenceDate": "2026-08-03",
-    "location": "Manchester, UK",
-    "submissionForm": "https://ideas-conference.org/",
-    "wordCharacterLimit": "n/a",
-    "tags": [
-      "social science",
-      "technology",
-      "innovation",
-      "policy"
-    ],
-    "reviewModel": "n/a",
-    "notes": "Organized by AT Publishing in association with HASS and RECAP journals. Selected papers may be invited for journal publication.",
-    "url": "https://easst.net/eurograd-message?mailbox_message_uid=2026-01-29_1826",
-    "id": "ideas2026_2026_202601291826",
-    "extractedAt": "2026-02-09T12:47:07.813341Z"
-  },
-  {
-    "title": "CSCW 2026 Rolling Submissions",
-    "conferenceSeries": "CSCW",
-    "deadline": "n/a",
-    "conferenceDate": "n/a",
-    "location": "n/a",
-    "submissionForm": "https://cscw.acm.org/2026/rolling.html",
-    "wordCharacterLimit": "5000 to 12000 words",
-    "tags": [
-      "hci",
-      "social computing",
-      "collaboration",
-      "CSCW"
-    ],
-    "reviewModel": "Double-blind",
-    "notes": "Rolling, journal-style submission model with no fixed deadlines. Submissions are reviewed on an ongoing basis.",
-    "url": "https://cscw.acm.org/2026/rolling.html",
-    "id": "cscw_2026_26rollinghtml",
-    "extractedAt": "2026-02-09T12:47:34.317480Z"
+    "notes": "n/a",
+    "url": "https://easst.net/eurograd-message",
+    "id": "na_2026_urogradmessage",
+    "extractedAt": "2026-02-10T16:55:40.555995Z"
   },
   {
     "title": "ACM FAccT 2026 Call for CRAFT Proposals",
@@ -322,40 +144,25 @@
     "conferenceDate": "2026-06-25",
     "location": "Montréal, Canada",
     "submissionForm": "n/a",
-    "wordCharacterLimit": "4 pages (excluding references)",
+    "wordCharacterLimit": "Proposals should be no more than 4 pages (excluding references) or an equivalent length",
     "tags": [
       "hci",
       "ai",
-      "fairness",
+      "computing",
       "accountability",
+      "fairness",
       "transparency",
-      "community",
-      "participatory",
-      "experimental"
+      "community-driven",
+      "experimental",
+      "indigeneity",
+      "feminist politics",
+      "disability justice",
+      "environmental justice"
     ],
     "reviewModel": "n/a",
     "notes": "CRAFT sessions may be in-person, online-only, or hybrid. Proposals should be submitted via EasyChair.",
     "url": "https://facctconference.org/2026/cfpcraft.html",
     "id": "facct_2026_6cfpcrafthtml",
-    "extractedAt": "2026-02-09T12:47:43.491382Z"
-  },
-  {
-    "title": "Submit Research | Association for Information Systems (AIS) eLibrary",
-    "conferenceSeries": "n/a",
-    "deadline": "n/a",
-    "conferenceDate": "n/a",
-    "location": "n/a",
-    "submissionForm": "https://aisel.aisnet.org/submit_research.html",
-    "wordCharacterLimit": "n/a",
-    "tags": [
-      "information systems",
-      "research",
-      "AIS"
-    ],
-    "reviewModel": "n/a",
-    "notes": "This page provides links to submit research to various AIS affiliated conferences and journals.",
-    "url": "https://aisel.aisnet.org/submit_research.html",
-    "id": "na_2026_tresearchhtml",
-    "extractedAt": "2026-02-09T12:48:29.467946Z"
+    "extractedAt": "2026-02-10T16:56:14.732995Z"
   }
 ]

@@ -140,8 +140,21 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
 
         await reloadUser();
 
-        if(!selectedUser.tags.includes(form.tag)){
-            await addUserTag(selectedUser.id, form.tag)
+        const inputTags = String(form.tag || "")
+            .split(",")
+            .map(t => t.trim())
+            .filter(Boolean);
+
+        const existingTags = new Set(
+            (selectedUser.tags ?? [])
+            .flatMap(t => String(t).split(","))
+            .map(t => t.trim().toLowerCase())
+        );
+
+        for (const tag of inputTags) {
+            if (!existingTags.has(tag.toLowerCase())) {
+            await addUserTag(selectedUser.id, tag);
+            }
         }
 
         await reloadUser();

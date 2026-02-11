@@ -25,6 +25,7 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
         setUsers(allUsers);
 
         const user = allUsers.find(u => String(u.id) === String(selectedUser?.id));
+        console.log("USER TAGS: "  + user?.tags)
         setTags(user?.tags ?? []);
     };
 

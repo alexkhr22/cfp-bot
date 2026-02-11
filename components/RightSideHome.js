@@ -11,7 +11,10 @@ import { createEvents } from "ics";
 const RightSideHome = ({cfps}) =>{
     const localizer = momentLocalizer(moment);
 
-
+    function isValidDate(value) {
+        const d = new Date(value);
+        return value && value !== "n/a" && !isNaN(d.getTime());
+    }
     function exportToICS(events) {
         const icsEvents = events.map(ev => {
             const start = new Date(ev.start);
@@ -59,22 +62,27 @@ const RightSideHome = ({cfps}) =>{
 
     
 
-    const deadlineEvents = cfps.map(cfp => {
-        const start = new Date(cfp.deadline);
-        const end = new Date(start.getTime() + 60 * 60 * 1000);
-        return {
+    const deadlineEvents = cfps
+        .filter(cfp => isValidDate(cfp.deadline))
+        .map(cfp => {
+            const start = new Date(cfp.deadline);
+            const end = new Date(start.getTime() + 60 * 60 * 1000);
+            return {
             title: cfp.title + " Einreichungs Deadline",
             start,
             end,
             location: cfp.location,
             description: cfp.url,
-        };
+            };
     });
 
-    const conferenceDateEvents = cfps.map(cfp => {
-        const start = new Date(cfp.conferenceDate);
-        const end = new Date(start.getTime() + 60 * 60 * 1000);
-        return {
+
+    const conferenceDateEvents = cfps
+        .filter(cfp => isValidDate(cfp.conferenceDate))
+        .map(cfp => {
+            const start = new Date(cfp.conferenceDate);
+            const end = new Date(start.getTime() + 60 * 60 * 1000);
+            return {
             title: cfp.title + " Konferenzdatum",
             start,
             end,
@@ -92,15 +100,15 @@ const RightSideHome = ({cfps}) =>{
 
     return (
         <div className="rechteck-rightside">
-        <Calendar
-            localizer={localizer}
-            events={events}
-            startAccessor="start"
-            endAccessor="end"
-            defaultView="month"
-            popup
-            style={{height: "80%", fontSize: "14px"}}
-        />
+            <Calendar
+                localizer={localizer}
+                events={events}
+                startAccessor="start"
+                endAccessor="end"
+                defaultView="month"
+                popup
+                style={{height: "80%", fontSize: "14px"}}
+            />
             <button onClick={() => exportToICS(events)}>Export</button>
         </div>
         

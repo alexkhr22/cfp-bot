@@ -1,18 +1,11 @@
-import { PrismaClient } from "@prisma/client";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+const { PrismaClient } = require("@prisma/client");
+const fs = require("fs");
+const path = require("path");
 
 const prisma = new PrismaClient();
 const SYSTEM_USER_ID = Number(process.env.SYSTEM_USER_ID || 1);
 
-// ─────────────────────────────────────────────
-// Pfad-Setup (ES Modules kompatibel)
-// ─────────────────────────────────────────────
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// app/scripts → app/scraper/outputs/active_cfps.json
+// __dirname existiert automatisch in CommonJS
 const DATA_PATH = path.join(
   __dirname,
   "..",

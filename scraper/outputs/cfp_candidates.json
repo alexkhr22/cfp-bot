@@ -126,5 +126,77 @@
     "classification": "cfp",
     "confidence": 1.0,
     "discoveredAt": "2026-02-10T16:55:03.439495Z"
+  },
+  {
+    "url": "https://ecscw.eusset.eu/2026/submissions/template",
+    "text": "eusset conference template",
+    "reason": "The page provides a submission template for a conference.",
+    "classification": "cfp",
+    "confidence": 0.95,
+    "discoveredAt": "2026-02-22T11:49:03.164638Z"
+  },
+  {
+    "url": "https://submission.nature.com/new-submission/10606/3",
+    "text": "snapp (springer nature)",
+    "reason": "The page is related to a submission process for a journal.",
+    "classification": "cfp",
+    "confidence": 0.95,
+    "discoveredAt": "2026-02-22T11:49:03.164638Z"
+  },
+  {
+    "url": "https://ecscw.eusset.eu/2026/wp-content/uploads/2025/09/EUSSET-Submission-Format-Instructions-v0.1.zip",
+    "text": "eusset submission format instructions v0.1",
+    "reason": "The page provides submission format instructions for a conference.",
+    "classification": "cfp",
+    "confidence": 0.95,
+    "discoveredAt": "2026-02-22T11:49:03.164638Z"
+  },
+  {
+    "url": "https://www.overleaf.com/latex/templates/eusset-conference-submission/khppkvydkqvx",
+    "text": "overleaf template",
+    "reason": "The page provides an Overleaf template for conference submissions.",
+    "classification": "cfp",
+    "confidence": 0.95,
+    "discoveredAt": "2026-02-22T11:49:03.164638Z"
+  },
+  {
+    "url": "https://chi2026.acm.org/2025/12/15/insights-into-the-papers-track-assisted-desk-rejections",
+    "text": "insights into the papers track (assisted) desk rejections",
+    "reason": "The URL discusses insights related to the papers track, indicating a focus on submissions.",
+    "classification": "cfp",
+    "confidence": 0.9,
+    "discoveredAt": "2026-02-22T11:49:11.554923Z"
+  },
+  {
+    "url": "https://chi2026.acm.org/2025/12/12/insights-into-the-papers-track-first-round-outcomes",
+    "text": "insights into the papers track first round outcomes",
+    "reason": "The URL discusses outcomes related to the papers track, indicating a focus on submissions.",
+    "classification": "cfp",
+    "confidence": 0.9,
+    "discoveredAt": "2026-02-22T11:49:11.554923Z"
+  },
+  {
+    "url": "https://chi2026.acm.org/2025/08/08/revised-chi-2026-papers-desk-reject-process",
+    "text": "“revised chi 2026 papers desk reject process",
+    "reason": "The URL discusses the desk reject process for papers, indicating a focus on submissions.",
+    "classification": "cfp",
+    "confidence": 0.9,
+    "discoveredAt": "2026-02-22T11:49:11.554923Z"
+  },
+  {
+    "url": "https://cscw.acm.org/rolling.html",
+    "text": "rolling submissions",
+    "reason": "The URL refers to rolling submissions, which is related to paper submissions.",
+    "classification": "cfp",
+    "confidence": 0.8,
+    "discoveredAt": "2026-02-22T11:49:11.554923Z"
+  },
+  {
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLScEtlaT1mCilHGjZ0jw7GfkGDV3sFqfoHtBADnpgJJ0HEHX3Q/viewform",
+    "text": "submit it via this form",
+    "reason": "The URL indicates a form for submission, directly related to CFP.",
+    "classification": "cfp",
+    "confidence": 0.9,
+    "discoveredAt": "2026-02-22T11:49:11.554923Z"
   }
 ]

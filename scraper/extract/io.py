@@ -1,5 +1,9 @@
 import json
+import logging
+
 from pathlib import Path
+
+logger = logging.getLogger(__name__)
 
 
 def load_json(path: Path) -> list:
@@ -8,6 +12,7 @@ def load_json(path: Path) -> list:
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
+        logger.exception(f"Unable to load JSON from {path}")
         return []
 
 

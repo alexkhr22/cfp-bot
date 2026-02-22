@@ -1,11 +1,13 @@
+import logging
+
 from urllib.parse import urljoin, urlparse, urlunparse
 from crawl4ai import AsyncWebCrawler
-
 from .robots import is_allowed_by_robots
 from .scoring import cfp_score
 from scraper.utils.years import is_relevant_year
 from .filters import is_calendar_link, NEGATIVE_HINTS
 
+logger = logging.getLogger(__name__)
 
 def normalize_url(url: str) -> str:
     """
@@ -39,14 +41,15 @@ async def get_relevant_links(
     norm_url = normalize_url(url)
 
     if depth > config["MAX_DEPTH"] or norm_url in seen:
+        logger.debug(f"Max depth erreicht: {norm_url}")
         return []
 
     if not is_allowed_by_robots(norm_url):
-        print(f"{'  '*depth}🚫 robots.txt blockiert: {norm_url}")
+        logger.debug(f"{'  '*depth}robots.txt blocking: {norm_url}")
         return []
 
     seen.add(norm_url)
-    print(f"{'  '*depth}🔍 Ebene {depth} | {norm_url}")
+    logger.debug(f"Crawling: {norm_url} | depth={depth}")
 
     try:
         result = await crawler.arun(
@@ -55,6 +58,7 @@ async def get_relevant_links(
             page_timeout=config["TIMEOUT_PER_PAGE"] * 1000,
         )
     except Exception:
+        logger.exception(f"Crawler ERROR at {norm_url}")
         return []
 
     if not result.success or not result.links:

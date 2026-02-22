@@ -1,37 +1,55 @@
 import asyncio
 import subprocess
+import logging
+import uuid
+import time
 
 from pathlib import Path
 from scraper.discovery.rules.start_discovering import main as start_discovering
 from scraper.discovery.ai.run_filter import main as run_filter
 from scraper.extract.run_extraction import main as run_cfp_extraction
 from scraper.postprocess.run_postprocess import main as run_postprocess
+from scraper.logging_config import setup_logging
+
 
 BASE_DIR = Path(__file__).resolve().parent
-NODE_SCRIPT = BASE_DIR / "scripts" / "importActiveCfps.js"
-
+NODE_SCRIPT = BASE_DIR / "scripts" / "importActiveCfps.cjs"
+setup_logging()
+RUN_ID = uuid.uuid4().hex[:8]
+logger = logging.getLogger(f"{__name__}.{RUN_ID}")
 
 async def scrape_pipeline():
-    print("🧭 Starte Rule-based Discovery")
-    await start_discovering()
+    start_total = time.time()
+    logger.info("Starting Pipeline Process")
 
-    print("🤖 Starte AI-based Discovery")
-    await run_filter()
+    try:
+        logger.info("Start Rule-based Discovery")
+        #await start_discovering()
 
-    print("🤖 Starte CFP Extraction")
-    await run_cfp_extraction()
+        logger.info("Start AI-based Discovery")
+        #await run_filter()
 
-    print("🗓️ Post-Processing (Deadlines)")
-    run_postprocess()
+        logger.info("Start CFP Extraction")
+        #await run_cfp_extraction()
 
-    print("📦 Importiere CFPs in DB (Node.js)")
-    subprocess.run(
-        ["node", str(NODE_SCRIPT)],
-        cwd=BASE_DIR,
-        check=True
-    )
+        logger.info("Post-Processing (Deadlines)")
+        run_postprocess()
 
-    print("✅ Scrape Pipeline abgeschlossen")
+        logger.info("Importing CFPs in DB (Node.js)")
+        subprocess.run(
+            ["node", str(NODE_SCRIPT)],
+            cwd=BASE_DIR,
+            check=True
+        )
+
+        logger.info("Pipeline successfully completed")
+
+    except Exception:
+        logger.exception("Pipeline aborted")
+
+    finally:
+        duration = time.time() - start_total
+        logger.info(f"Pipeline Duration: {duration:.2f}s")
 
 
 def run():

@@ -1,5 +1,9 @@
+import logging
+
 from presidio_analyzer import AnalyzerEngine
 from presidio_anonymizer import AnonymizerEngine
+
+logger = logging.getLogger(__name__)
 
 PII_ENTITIES = {
     "PERSON",
@@ -26,6 +30,9 @@ def sanitize_markdown(text: str) -> str:
             entities=list(PII_ENTITIES),
         )
 
+        if results:
+            logger.debug(f"{len(results)} PII Entities anonymized.")
+
         if not results:
             return text
 
@@ -37,4 +44,5 @@ def sanitize_markdown(text: str) -> str:
         return anonymized.text
 
     except Exception:
+        logger.exception("Sanitize failed")
         return text

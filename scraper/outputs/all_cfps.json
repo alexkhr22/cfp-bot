@@ -327,5 +327,157 @@
     "url": "https://aisel.aisnet.org/submit_research.html",
     "id": "na_2026_tresearchhtml",
     "extractedAt": "2026-02-10T16:56:59.846496Z"
+  },
+  {
+    "title": "ECSCW 2026",
+    "conferenceSeries": "ECSCW",
+    "deadline": "n/a",
+    "conferenceDate": "n/a",
+    "location": "Munich, Germany",
+    "submissionForm": "https://ecscw.eusset.eu/2026/submissions/template",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "collaborative work",
+      "EUSSET"
+    ],
+    "reviewModel": "n/a",
+    "notes": "The conference will use a new paper template for submissions. The template is available in LaTeX and Microsoft Word formats.",
+    "url": "https://ecscw.eusset.eu/2026/submissions/template",
+    "id": "ecscw_2026_ssionstemplate",
+    "extractedAt": "2026-02-22T11:49:21.932034Z"
+  },
+  {
+    "title": "Computer Supported Cooperative Work (CSCW)",
+    "conferenceSeries": "CSCW",
+    "deadline": "n/a",
+    "conferenceDate": "n/a",
+    "location": "n/a",
+    "submissionForm": "https://submission.nature.com/new-submission/10606/3",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "cooperative work"
+    ],
+    "reviewModel": "n/a",
+    "notes": "Log in or register to continue with your submission.",
+    "url": "https://submission.nature.com/new-submission/10606/3",
+    "id": "cscw_2026_mission106063",
+    "extractedAt": "2026-02-22T11:49:25.817997Z"
+  },
+  {
+    "title": "EUSSET Conference Submission - Posters and Demos",
+    "conferenceSeries": "ECSCW",
+    "deadline": "n/a",
+    "conferenceDate": "2026-01-01",
+    "location": "n/a",
+    "submissionForm": "https://ecscw.eusset.eu/2026/submissions/template/",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "conference paper",
+      "EUSSET",
+      "CSCW"
+    ],
+    "reviewModel": "n/a",
+    "notes": "This template is for EUSSET conferences, particularly ECSCW from 2026 onward.",
+    "url": "https://www.overleaf.com/latex/templates/eusset-conference-submission/khppkvydkqvx",
+    "id": "ecscw_2026_onkhppkvydkqvx",
+    "extractedAt": "2026-02-22T11:49:30.020863Z"
+  },
+  {
+    "title": "CHI 2026 Papers",
+    "conferenceSeries": "CHI",
+    "deadline": "2025-09-11",
+    "conferenceDate": "2026-04-13",
+    "location": "Barcelona, Spain",
+    "submissionForm": "https://chi2026.acm.org/authors/papers/",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "papers",
+      "desk rejection"
+    ],
+    "reviewModel": "n/a",
+    "notes": "Abstract/Metadata due on 2025-09-04",
+    "url": "https://chi2026.acm.org/2025/12/15/insights-into-the-papers-track-assisted-desk-rejections",
+    "id": "chi_2026_deskrejections",
+    "extractedAt": "2026-02-22T11:49:34.738111Z"
+  },
+  {
+    "title": "CHI 2026 Papers",
+    "conferenceSeries": "CHI",
+    "deadline": "2025-09-11",
+    "conferenceDate": "2026-04-13",
+    "location": "Barcelona, Spain",
+    "submissionForm": "https://chi2026.acm.org/authors/papers/",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "papers",
+      "submission"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Abstract/Metadata due on 2025-09-04. Resubmission due on 2025-12-04. Decisions notification on 2026-01-15.",
+    "url": "https://chi2026.acm.org/2025/12/12/insights-into-the-papers-track-first-round-outcomes",
+    "id": "chi_2026_roundoutcomes",
+    "extractedAt": "2026-02-22T11:49:38.750703Z"
+  },
+  {
+    "title": "CHI 2026 Papers",
+    "conferenceSeries": "CHI",
+    "deadline": "2025-09-11",
+    "conferenceDate": "2026-04-13",
+    "location": "Barcelona, Spain",
+    "submissionForm": "https://chi2026.acm.org/authors/papers/",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "papers"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Abstract/Metadata due on 2025-09-04. Decisions notification on 2026-01-15.",
+    "url": "https://chi2026.acm.org/2025/08/08/revised-chi-2026-papers-desk-reject-process",
+    "id": "chi_2026_rejectprocess",
+    "extractedAt": "2026-02-22T11:49:41.975706Z"
+  },
+  {
+    "title": "CSCW 2026 Rolling Submissions",
+    "conferenceSeries": "CSCW",
+    "deadline": "2026-02-25",
+    "conferenceDate": "n/a",
+    "location": "n/a",
+    "submissionForm": "https://docs.google.com/forms/d/e/1FAIpQLScEtlaT1mCilHGjZ0jw7GfkGDV3sFqfoHtBADnpgJJ0HEHX3Q/viewform?usp=publish-editor",
+    "wordCharacterLimit": "5000 to 12000 words",
+    "tags": [
+      "hci",
+      "social computing",
+      "collaboration",
+      "AI",
+      "machine learning",
+      "AR/VR"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Rolling submissions model; initial phase ends on 2026-02-25. Papers are published in PACM HCI and invited for presentation at the next CSCW conference.",
+    "url": "https://cscw.acm.org/rolling.html",
+    "id": "cscw_2026_rgrollinghtml",
+    "extractedAt": "2026-02-22T11:49:46.894097Z"
+  },
+  {
+    "title": "CSCW Rolling Paper Nominations - Qualitative",
+    "conferenceSeries": "CSCW",
+    "deadline": "n/a",
+    "conferenceDate": "2026-03-01",
+    "location": "n/a",
+    "submissionForm": "https://docs.google.com/forms/d/e/1FAIpQLScEtlaT1mCilHGjZ0jw7GfkGDV3sFqfoHtBADnpgJJ0HEHX3Q/viewform",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "qualitative"
+    ],
+    "reviewModel": "n/a",
+    "notes": "Rolling paper nominations for CSCW test phase.",
+    "url": "https://docs.google.com/forms/d/e/1FAIpQLScEtlaT1mCilHGjZ0jw7GfkGDV3sFqfoHtBADnpgJJ0HEHX3Q/viewform",
+    "id": "cscw_2026_3viewform",
+    "extractedAt": "2026-02-22T11:49:50.248841Z"
   }
 ]

@@ -1,12 +1,13 @@
 import json
 import asyncio
+import logging
+
 from pathlib import Path
 from crawl4ai import AsyncWebCrawler
-
 from .crawler import get_relevant_links
 from .robots import is_allowed_by_robots
 
-
+logger = logging.getLogger(__name__)
 BASE_DIR = Path(__file__).resolve().parent
 SCRAPER_DIR = BASE_DIR.parents[1]
 
@@ -19,8 +20,11 @@ FILTERED_LINKS_PATH = OUTPUTS_DIR / "filtered_links.json"
 
 
 def load_config() -> dict:
+    logger.debug("Lade config.json")
+    
     if not CONFIG_PATH.exists():
-        raise FileNotFoundError(f"config.json nicht gefunden unter: {CONFIG_PATH}")
+        logger.critical("config.json fehlt")
+        raise FileNotFoundError(f"config.json could not be found: {CONFIG_PATH}")
 
     with open(CONFIG_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
@@ -36,10 +40,10 @@ async def main():
 
     async with AsyncWebCrawler(headless=True) as crawler:
         for url in urls:
-            print(f"\n🚀 Start: {url}")
+            logger.info(f"🚀 Start: {url}")
 
             if not is_allowed_by_robots(url):
-                print("🚫 robots.txt verbietet Scraping")
+                logger.warning("robots.txt not allowing Scraping")
                 continue
 
             results[url] = await get_relevant_links(
@@ -47,11 +51,12 @@ async def main():
                 url=url,
                 config=config,
             )
+            logger.info(f"{len(results[url])} found relevant links {url}")
 
     with open(FILTERED_LINKS_PATH, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
 
-    print("\n🏁 CFP Discovery abgeschlossen")
+    logger.info("🏁 CFP Discovery finished")
 
 
 if __name__ == "__main__":

@@ -164,5 +164,46 @@
     "url": "https://facctconference.org/2026/cfpcraft.html",
     "id": "facct_2026_6cfpcrafthtml",
     "extractedAt": "2026-02-10T16:56:14.732995Z"
+  },
+  {
+    "title": "ECSCW 2026",
+    "conferenceSeries": "ECSCW",
+    "deadline": "n/a",
+    "conferenceDate": "n/a",
+    "location": "Munich, Germany",
+    "submissionForm": "https://ecscw.eusset.eu/2026/submissions/template",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "collaborative work",
+      "EUSSET"
+    ],
+    "reviewModel": "n/a",
+    "notes": "The conference will use a new paper template for submissions. The template is available in LaTeX and Microsoft Word formats.",
+    "url": "https://ecscw.eusset.eu/2026/submissions/template",
+    "id": "ecscw_2026_ssionstemplate",
+    "extractedAt": "2026-02-22T11:49:21.932034Z"
+  },
+  {
+    "title": "CSCW 2026 Rolling Submissions",
+    "conferenceSeries": "CSCW",
+    "deadline": "2026-02-25",
+    "conferenceDate": "n/a",
+    "location": "n/a",
+    "submissionForm": "https://docs.google.com/forms/d/e/1FAIpQLScEtlaT1mCilHGjZ0jw7GfkGDV3sFqfoHtBADnpgJJ0HEHX3Q/viewform?usp=publish-editor",
+    "wordCharacterLimit": "5000 to 12000 words",
+    "tags": [
+      "hci",
+      "social computing",
+      "collaboration",
+      "AI",
+      "machine learning",
+      "AR/VR"
+    ],
+    "reviewModel": "Double-blind",
+    "notes": "Rolling submissions model; initial phase ends on 2026-02-25. Papers are published in PACM HCI and invited for presentation at the next CSCW conference.",
+    "url": "https://cscw.acm.org/rolling.html",
+    "id": "cscw_2026_rgrollinghtml",
+    "extractedAt": "2026-02-22T11:49:46.894097Z"
   }
 ]

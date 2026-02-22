@@ -1,7 +1,5 @@
 "use client";
 
-import config from "@/config";
-import { useState } from "react";
 import React from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";

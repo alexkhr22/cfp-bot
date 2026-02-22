@@ -9,7 +9,6 @@ import RightSideHome from "@/components/RightSideHome";
 import NewGrp from "@/components/NewGrp";
 import GroupsScreen from "@/components/GroupsScreen";
 import { getAllUsers } from "@/services/user-service";
-import { redirect } from "next/navigation";
 
 
 export default function Home() {

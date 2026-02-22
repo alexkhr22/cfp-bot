@@ -1,8 +1,10 @@
 import requests
+import logging
+
 from urllib.parse import urlparse
 from urllib.robotparser import RobotFileParser
 
-
+logger = logging.getLogger(__name__)
 _robot_cache: dict[str, RobotFileParser | None] = {}
 
 
@@ -28,6 +30,7 @@ def get_robots_parser(url: str) -> RobotFileParser | None:
 
     except Exception:
         _robot_cache[base] = None
+        logger.warning(f"robots.txt could not be fetched: {robots_url}")
         return None
 
 def is_allowed_by_robots(url: str, user_agent: str = "*") -> bool:

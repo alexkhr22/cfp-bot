@@ -1,11 +1,14 @@
 import json
+import logging
+
 from datetime import datetime
 from openai import AsyncOpenAI
 from scraper.prompts.extractor import build_cfp_extraction_prompt
 from .ids import generate_canonical_id
 
-MODEL = "gpt-4o"
+logger = logging.getLogger(__name__)
 
+MODEL = "gpt-4o"
 
 async def extract_cfp(
     client: AsyncOpenAI,
@@ -14,6 +17,7 @@ async def extract_cfp(
 ) -> dict | None:
 
     prompt = build_cfp_extraction_prompt()
+    logger.debug(f"OpenAI Extraction für {url}")
 
     try:
         response = await client.chat.completions.create(
@@ -38,4 +42,5 @@ async def extract_cfp(
         return data
 
     except Exception:
+        logger.exception(f"OpenAI Extraction failed: {url}")
         return None

@@ -1,15 +1,17 @@
 import os
 import asyncio
+import logging
+
 from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
 from openai import OpenAI
-
 from .batch_utils import chunked
 from .filters import is_calendar_link, has_deadline_signal
 from .classifier import classify_batch
 from .io import load_json, save_json
 
+logger = logging.getLogger(__name__)
 
 def build_entry(link, result):
     return {
@@ -48,9 +50,12 @@ async def main():
 
     results_acc = []
 
+    logger.info(f"{len(new_links)} new links to classify with AI")
+
     for i, batch in enumerate(chunked(new_links, BATCH_SIZE), start=1):
-        print(f"➡️ Batch {i}: AI-Classification for {len(batch)} urls")
+        logger.info(f"➡️ Batch {i}: AI-Classification for {len(batch)} urls")
         ai_results = await classify_batch(client, batch)
+        logger.debug(f"AI Response Batch {i}: {ai_results}")
         
         for res in ai_results:
             idx = res.get("index")
@@ -68,7 +73,7 @@ async def main():
 
         save_json(OUTPUT_PATH, existing + results_acc)
 
-    print(f"🤖 AI Discovery abgeschlossen: {len(results_acc)} neue CFPs")
+    logger.info(f"AI Discovery finished: {len(results_acc)} new CFPs")
 
 
 if __name__ == "__main__":

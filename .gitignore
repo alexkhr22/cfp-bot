@@ -26,7 +26,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-!.env.example
 
 # vercel
 .vercel
@@ -42,4 +41,5 @@ public/sitemap-0.xml
 
 # environment variables
 .env*
+!.env.example
 /app/generated/prisma

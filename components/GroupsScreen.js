@@ -1,6 +1,5 @@
 "use client";
 
-import config from "@/config";
 import { useState, useEffect } from "react";
 import { getAllUsers } from "@/services/user-service";
 import { deleteGroup, getAllGroups, userLeaveGroup, userJoinGroup } from "@/services/group-service";

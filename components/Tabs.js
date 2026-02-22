@@ -2,10 +2,6 @@
 
 import { useState } from "react";
 
-// The list of tabs to be displayed. It only shows the content of the active tab.
-// - icon is optional
-// - title is required
-// - content is required, it's the content to be displayed when the tab is active
 const tabs = [
 	{
 		id: "1",

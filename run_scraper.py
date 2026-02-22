@@ -24,13 +24,13 @@ async def scrape_pipeline():
 
     try:
         logger.info("Start Rule-based Discovery")
-        #await start_discovering()
+        await start_discovering()
 
         logger.info("Start AI-based Discovery")
-        #await run_filter()
+        await run_filter()
 
         logger.info("Start CFP Extraction")
-        #await run_cfp_extraction()
+        await run_cfp_extraction()
 
         logger.info("Post-Processing (Deadlines)")
         run_postprocess()

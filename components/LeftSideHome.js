@@ -1,12 +1,10 @@
 "use client";
 
-import config from "@/config";
 import { useState, useEffect } from "react";
 import { createCfp } from "@/models/Cfp";
 import { addCFP, getUserCfPs, updateCfPTag } from "@/services/cfp-service";
 import { addUserTag, getAllUsers } from "@/services/user-service";
 import { useUserGroups } from "@/hooks/useUserGroups";
-import { all } from "axios";
 
 const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCfpChanged}) =>{
     const [showAddCfp, setShowAddCfp] = useState(false);

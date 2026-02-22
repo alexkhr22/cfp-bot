@@ -81,7 +81,7 @@ You may define a model for scraping or use default values.
 ```env
 OPENAI_API_KEY=""
 CHAT_AI_API_KEY="sk-proj-xxx"
-LLM_Model=""
+LLM_Model="gpt-4o"
 ```
 
 ---

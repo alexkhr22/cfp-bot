@@ -1,84 +1,195 @@
-# ======================================================
-# CFP-BOT – KOMPLETTER SETUP-GUIDE (BACKEND + DOCKER)
-# Alle Schritte in der richtigen Reihenfolge
-# ======================================================
+# CFP Bot – Setup & Deployment Guide
 
-# 0) Voraussetzungen (vorher installieren)
-# - Git (Git SCM): https://git-scm.com/downloads
-# - Node.js (LTS >= 18): https://nodejs.org
-# - Docker Desktop: https://www.docker.com/products/docker-desktop
-# Docker Desktop MUSS laufen!
+This guide explains step by step how to set up and run the **CFP Bot** and its **WebApp** on a server.
 
-# ------------------------------------------------------
-# 1) Projekt klonen
-# ------------------------------------------------------
-git clone <REPO_URL>
+> ⚠️ These steps were tested on a Hetzner server.
+
+---
+
+## Server Requirements
+
+- **Provider:** Hetzner (tested)
+- **Operating System:** Ubuntu 24.04
+- **Architecture:** x86 (Intel/AMD)
+- **Server Type:** CX33  
+  - vCPU: 4  
+  - RAM: 8GB  
+  - SSD: 80GB  
+  - Traffic: 20TB  
+
+---
+
+# 1️⃣ Copy Project into Server
+
+Update system packages and install required dependencies:
+
+```bash
+sudo apt update
+sudo apt install git -y
+
+sudo apt update
+sudo apt install python3 python3-pip -y
+```
+
+Clone the repository:
+
+```bash
+git clone https://github.com/alexkhr22/cfp-bot.git
 cd cfp-bot
+```
 
-# ------------------------------------------------------
-# 2) Node-Abhängigkeiten installieren
-# ------------------------------------------------------
-npm install
+---
 
-# ------------------------------------------------------
-# 3) Prisma installieren (ORM für die Datenbank)
-# ------------------------------------------------------
-npm install prisma @prisma/client
+# 2️⃣ Environment Setup
 
-# (Optional) Prüfen, ob Prisma korrekt installiert ist
-npx prisma --version
+Copy the example environment file:
 
-# ------------------------------------------------------
-# 4) PostgreSQL-Datenbank mit Docker starten
-# (docker-compose.yml muss im Projekt-Root liegen)
-# ------------------------------------------------------
-docker compose up -d
+```bash
+cp .env.example .env
+nano .env
+```
 
-# Prüfen, ob der Container läuft
-docker ps
+---
 
-# ------------------------------------------------------
-# 5) Environment-Datei anlegen / prüfen
-# Datei: .env (im Projekt-Root)
-# ------------------------------------------------------
-# Inhalt der .env:
-# DATABASE_URL="postgresql://postgres:postgres@localhost:5432/cfp_bot"
+## WebApp & Database Configuration
 
-# WICHTIG:
-# - Wenn .env geändert wurde: Terminal schließen & neu öffnen
+Set the database URL and port.
 
-# ------------------------------------------------------
-# 6) Prisma-Migration ausführen (Tabellen anlegen)
-# ------------------------------------------------------
-npx prisma migrate dev --name init
+Replace `db` with your server IP if you want the database to be publicly accessible and adjust `docker-compose.yml` accordingly under `DATABASE_URL`, if intended.
 
-# Optional: Datenbank im Browser ansehen
-npx prisma studio
+- `APP_URL` defines the address under which the WebApp is accessible.
+- `PORT` defines the internal server port.
 
-# ------------------------------------------------------
-# 7) Backend starten
-# ------------------------------------------------------
-npm run dev
+```env
+DATABASE_URL="postgresql://cfp_user:strongpassword@db:5432/cfp_bot"
+APP_URL="http://localhost:3000"
+PORT=3000
+```
 
-# Backend läuft jetzt unter:
-# http://localhost:3000
-# Beispiel-Endpunkte:
-# http://localhost:3000/api/users
-# http://localhost:3000/api/groups
+---
 
-# ======================================================
-# DOCKER STOPPEN / BEENDEN
-# ======================================================
+## API Configuration
 
-# A) Docker stoppen, Daten behalten (empfohlen)
-docker compose down
+If you are using a regular OpenAI API Key, leave `CHAT_AI_API_KEY` blank.  
+Otherwise, do the opposite.
 
-# B) Docker stoppen UND Daten löschen (Reset – Vorsicht!)
-docker compose down -v
+The logic for detecting which API key is used is implemented in `openai_client.py`.  
+The code automatically detects which key is provided. No further configuration is required beyond setting one of the keys.
 
-# ------------------------------------------------------
-# Docker-Status prüfen
-# ------------------------------------------------------
-docker ps        # laufende Container
-docker ps -a     # alle Container (auch gestoppte)
-# ======================================================
+You may define a model for scraping or use default values.
+
+```env
+OPENAI_API_KEY=""
+CHAT_AI_API_KEY="sk-proj-xxx"
+LLM_Model=""
+```
+
+---
+
+## Scraping Configuration
+
+- `MAX_DEPTH` defines how many levels of subpages are scraped.
+- `LINKS_PER_LEVEL` defines how many links per subpage are scraped.
+- The system user always has ID = 1.
+
+```env
+MAX_DEPTH=5
+LINKS_PER_LEVEL=50
+TIMEOUT_PER_PAGE=30
+SYSTEM_USER_ID=1
+```
+
+---
+
+# 3️⃣ Run WebApp and Database (Docker)
+
+Make the install script executable and run it:
+
+```bash
+chmod +x install-app.sh
+./install-app.sh
+```
+
+---
+
+# 4️⃣ Setup Scraper
+
+Create and activate a Python virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+sudo apt update
+```
+
+Install required Python dependencies:
+
+```bash
+pip install crawl4ai
+pip install presidio-analyzer
+pip install presidio-anonymizer
+pip install python-dateutil
+playwright install
+pip install python-dotenv
+```
+
+Load environment variables:
+
+```bash
+export $(grep -v '^#' .env | xargs)
+```
+
+Initialize the database with the first CFP entries:
+
+```bash
+python run_scraper.py
+```
+
+Afterwards, you can create a user with `SYSTEM` inside the WebApp to later adjust the list of URLs to be scraped.
+
+---
+
+# 5️⃣ Set Cronjobs for Scraping & Cleanups
+
+Make the scripts executable:
+
+```bash
+chmod +x setup-cron.sh
+chmod +x del-all-cron.sh
+```
+
+Setup cronjobs:
+
+```bash
+./setup-cron.sh
+```
+
+If you want to delete all cronjobs:
+
+```bash
+./del-all-cron.sh
+```
+
+---
+
+# 6️⃣ Logs
+
+All scraping operations are logged.
+
+Logs can be found at:
+
+```
+CFP-BOT/scraper/logs
+```
+
+---
+
+# Legal & Ethical Considerations
+
+- This bot scrapes only relevant CFP data from websites and structures them inside a WebApp.
+- All scraped data should be verified manually, as parsing via LLMs does not guarantee 100% correctness.
+- The bot respects the `robots.txt` file of scraped websites.
+- Personally identifiable data is anonymized before scraped content is sent to an LLM for parsing.
+- It is the responsibility of the user to comply with website terms of service and not to exceed legal or ethical boundaries.
+
+---

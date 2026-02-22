@@ -4,48 +4,79 @@ set -e
 
 PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 PYTHON_PATH="$PROJECT_DIR/venv/bin/python"
-SCRAPER_PATH="$PROJECT_DIR/run_scraper.py"
-CLEANUP_PATH="$PROJECT_DIR/scripts/cleanupExpiredCfps.js"
-LOG_PATH="$PROJECT_DIR/cron.log"
+SCRAPER_SCRIPT="$PROJECT_DIR/run_scraper.py"
+LOG_DIR="$PROJECT_DIR/scraper/logs"
+CRON_LOG="$PROJECT_DIR/cron.log"
 
 echo "=== CFP Cron Setup ==="
 
 add_job() {
-  local NAME=$1
-  local COMMAND=$2
+  local NAME="$1"
+  local COMMAND="$2"
 
   echo ""
-  echo "Konfiguration für: $NAME"
-  read -p "Aktivieren? (y/n): " ENABLE
+  echo "Configuration for: $NAME"
+  read -p "Enable? (y/n): " ENABLE
 
   if [ "$ENABLE" != "y" ]; then
-    echo "Übersprungen."
+    echo "Skipped."
     return
   fi
 
-  echo "Wochentag wählen (0=So ... 6=Sa)"
-  read -p "Tag (0-6): " DAY
-  read -p "Stunde (0-23): " HOUR
-  read -p "Minute (0-59): " MINUTE
+  echo ""
+  echo "Select interval:"
+  echo "1) daily"
+  echo "2) weekly"
+  echo "3) monthly"
+  read -p "Choice (1-3): " MODE
 
-  CRON_CMD="$MINUTE $HOUR * * $DAY cd $PROJECT_DIR && $COMMAND >> $LOG_PATH 2>&1"
+  case $MODE in
+    1)
+      read -p "Hour (0-23): " HOUR
+      read -p "Minute (0-59): " MINUTE
+      CRON_TIME="$MINUTE $HOUR * * *"
+      ;;
+    2)
+      echo "Weekday (0=Sun ... 6=Sat)"
+      read -p "Day (0-6): " DAY
+      read -p "Hour (0-23): " HOUR
+      read -p "Minute (0-59): " MINUTE
+      CRON_TIME="$MINUTE $HOUR * * $DAY"
+      ;;
+    3)
+      read -p "Day of month (1-31): " DAY
+      read -p "Hour (0-23): " HOUR
+      read -p "Minute (0-59): " MINUTE
+      CRON_TIME="$MINUTE $HOUR $DAY * *"
+      ;;
+    *)
+      echo "Invalid selection."
+      return
+      ;;
+  esac
 
-  # bestehenden gleichen Job entfernen
+  CRON_CMD="$CRON_TIME cd $PROJECT_DIR && $COMMAND >> $CRON_LOG 2>&1"
+
+  # Remove existing identical job
   (crontab -l 2>/dev/null | grep -v "$COMMAND") | crontab -
 
-  # neuen Job hinzufügen
+  # Add new job
   (crontab -l 2>/dev/null; echo "$CRON_CMD") | crontab -
 
-  echo "✅ $NAME Cronjob gesetzt."
+  echo "✅ $NAME cron job configured."
 }
 
-# Scraper Job
-add_job "Scraper (Python)" "$PYTHON_PATH $SCRAPER_PATH"
+# 1️⃣ Scraper
+add_job "Scraper (Python)" "$PYTHON_PATH $SCRAPER_SCRIPT"
 
-# Cleanup Job (Node im Docker Container)
+# 2️⃣ CleanupExpiredCfps (Docker Node)
 add_job "CleanupExpiredCfps (Docker Node)" \
 "docker compose exec -T web node scripts/cleanupExpiredCfps.js"
 
+# 3️⃣ Log Cleanup
+add_job "Scraper Log Cleanup" \
+"rm -rf $LOG_DIR/*"
+
 echo ""
-echo "Aktuelle Cronjobs:"
+echo "Current cron jobs:"
 crontab -l

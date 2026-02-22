@@ -2,16 +2,13 @@ import json
 import logging
 
 from datetime import datetime
-from openai import AsyncOpenAI
 from scraper.prompts.extractor import build_cfp_extraction_prompt
 from .ids import generate_canonical_id
+from scraper.ai.openai_client import async_chat
 
 logger = logging.getLogger(__name__)
 
-MODEL = "gpt-4o"
-
 async def extract_cfp(
-    client: AsyncOpenAI,
     markdown: str,
     url: str,
 ) -> dict | None:
@@ -20,20 +17,11 @@ async def extract_cfp(
     logger.debug(f"OpenAI Extraction für {url}")
 
     try:
-        response = await client.chat.completions.create(
-            model=MODEL,
-            messages=[
-                {"role": "system", "content": prompt},
-                {
-                    "role": "user",
-                    "content": f"URL: {url}\n\nCONTENT:\n{markdown}",
-                },
-            ],
+        data = await async_chat(
+            system_prompt=prompt,
+            user_prompt=f"URL: {url}\n\nCONTENT:\n{markdown}",
             temperature=0.0,
-            response_format={"type": "json_object"},
         )
-
-        data = json.loads(response.choices[0].message.content)
 
         data["url"] = url
         data["id"] = generate_canonical_id(data)

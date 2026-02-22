@@ -5,7 +5,6 @@ import logging
 from datetime import datetime
 from pathlib import Path
 from dotenv import load_dotenv
-from openai import OpenAI
 from .batch_utils import chunked
 from .filters import is_calendar_link, has_deadline_signal
 from .classifier import classify_batch
@@ -26,8 +25,6 @@ def build_entry(link, result):
 
 async def main():
     load_dotenv()
-
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     BASE_DIR = Path(__file__).resolve().parents[2]
     INPUT_PATH = BASE_DIR / "outputs" / "filtered_links.json"
@@ -54,7 +51,7 @@ async def main():
 
     for i, batch in enumerate(chunked(new_links, BATCH_SIZE), start=1):
         logger.info(f"➡️ Batch {i}: AI-Classification for {len(batch)} urls")
-        ai_results = await classify_batch(client, batch)
+        ai_results = await classify_batch(batch)
         logger.debug(f"AI Response Batch {i}: {ai_results}")
         
         for res in ai_results:

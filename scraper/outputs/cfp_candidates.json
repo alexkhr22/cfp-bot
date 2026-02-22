@@ -198,5 +198,13 @@
     "classification": "cfp",
     "confidence": 0.9,
     "discoveredAt": "2026-02-22T11:49:11.554923Z"
+  },
+  {
+    "url": "https://cscw.acm.org/2026/papers2026@cscw.acm.org",
+    "text": "papers2026@cscw.acm.org",
+    "reason": "The URL and text suggest a contact for paper submissions, indicating a call for papers.",
+    "classification": "cfp",
+    "confidence": 0.95,
+    "discoveredAt": "2026-02-22T16:10:05.826194Z"
   }
 ]

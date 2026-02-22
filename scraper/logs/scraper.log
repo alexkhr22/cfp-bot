@@ -165,3 +165,141 @@ subprocess.CalledProcessError: Command '['node', 'D:\\CFP-BOT\\cfp-bot\\scripts\
 2026-02-22 13:32:46,890 | INFO | __main__.b6b8ebbe | run_scraper.py:38 | Importing CFPs in DB (Node.js)
 2026-02-22 13:32:47,425 | INFO | __main__.b6b8ebbe | run_scraper.py:45 | Pipeline successfully completed
 2026-02-22 13:32:47,425 | INFO | __main__.b6b8ebbe | run_scraper.py:52 | Pipeline Duration: 0.54s
+2026-02-22 17:08:19,365 | INFO | __main__.a4c8534c | run_scraper.py:23 | Starting Pipeline Process
+2026-02-22 17:08:19,365 | INFO | __main__.a4c8534c | run_scraper.py:26 | Start Rule-based Discovery
+2026-02-22 17:08:20,458 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://interact2025.org/
+2026-02-22 17:08:22,985 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://interact2025.org/
+2026-02-22 17:08:22,986 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://www.pdc2026.polimi.it/
+2026-02-22 17:08:25,952 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://www.pdc2026.polimi.it/
+2026-02-22 17:08:25,952 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://www.weizenbaum-institut.de/
+2026-02-22 17:08:29,698 | INFO | __main__.a4c8534c | run_scraper.py:54 | Pipeline Duration: 10.33s
+2026-02-22 17:08:29,924 | ERROR | asyncio | base_events.py:1821 | Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed\nCall log:\n  - navigating to "https://www.weizenbaum-institut.de/transfer/erklaeren-und-beraten/policy-papers", waiting until "domcontentloaded"\n')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.weizenbaum-institut.de/transfer/erklaeren-und-beraten/policy-papers", waiting until "domcontentloaded"
+
+2026-02-22 17:08:49,084 | INFO | __main__.72ef5030 | run_scraper.py:23 | Starting Pipeline Process
+2026-02-22 17:08:49,085 | INFO | __main__.72ef5030 | run_scraper.py:26 | Start Rule-based Discovery
+2026-02-22 17:08:50,187 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://interact2025.org/
+2026-02-22 17:08:52,475 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://interact2025.org/
+2026-02-22 17:08:52,475 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://www.pdc2026.polimi.it/
+2026-02-22 17:08:55,470 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://www.pdc2026.polimi.it/
+2026-02-22 17:08:55,470 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://www.weizenbaum-institut.de/
+2026-02-22 17:09:01,854 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 9 found relevant links https://www.weizenbaum-institut.de/
+2026-02-22 17:09:01,855 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://ecscw.eusset.eu/
+2026-02-22 17:09:11,517 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 10 found relevant links https://ecscw.eusset.eu/
+2026-02-22 17:09:11,518 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://icis2025.aisconferences.org/
+2026-02-22 17:09:13,945 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://icis2025.aisconferences.org/
+2026-02-22 17:09:13,946 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://easst.net/
+2026-02-22 17:09:18,905 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 1 found relevant links https://easst.net/
+2026-02-22 17:09:18,906 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://chi2026.acm.org/
+2026-02-22 17:09:27,976 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 4 found relevant links https://chi2026.acm.org/
+2026-02-22 17:09:27,977 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://cscw.acm.org/
+2026-02-22 17:09:33,991 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 7 found relevant links https://cscw.acm.org/
+2026-02-22 17:09:33,991 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://facctconference.org/
+2026-02-22 17:09:39,629 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 4 found relevant links https://facctconference.org/
+2026-02-22 17:09:39,630 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://tei.acm.org/
+2026-02-22 17:09:42,655 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 2 found relevant links https://tei.acm.org/
+2026-02-22 17:09:42,655 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://muc2025.mensch-und-computer.de/
+2026-02-22 17:09:45,456 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 1 found relevant links https://muc2025.mensch-und-computer.de/
+2026-02-22 17:09:45,457 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://dis.acm.org/
+2026-02-22 17:09:46,828 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://dis.acm.org/
+2026-02-22 17:09:46,828 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://dblp.org/
+2026-02-22 17:09:53,095 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 1 found relevant links https://dblp.org/
+2026-02-22 17:09:53,095 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://aisel.aisnet.org/
+2026-02-22 17:09:58,588 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 1 found relevant links https://aisel.aisnet.org/
+2026-02-22 17:09:59,076 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:70 | 🏁 CFP Discovery finished
+2026-02-22 17:09:59,076 | INFO | __main__.72ef5030 | run_scraper.py:29 | Start AI-based Discovery
+2026-02-22 17:09:59,104 | INFO | scraper.discovery.ai.run_filter | run_filter.py:50 | 17 new links to classify with AI
+2026-02-22 17:09:59,104 | INFO | scraper.discovery.ai.run_filter | run_filter.py:53 | ➡️ Batch 1: AI-Classification for 12 urls
+2026-02-22 17:10:05,815 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-22 17:10:05,827 | INFO | scraper.discovery.ai.run_filter | run_filter.py:53 | ➡️ Batch 2: AI-Classification for 5 urls
+2026-02-22 17:10:09,639 | INFO | httpx | _client.py:1025 | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-22 17:10:09,650 | INFO | scraper.discovery.ai.run_filter | run_filter.py:73 | AI Discovery finished: 1 new CFPs
+2026-02-22 17:10:09,650 | INFO | __main__.72ef5030 | run_scraper.py:32 | Start CFP Extraction
+2026-02-22 17:10:09,673 | INFO | scraper.extract.run_extraction | run_extraction.py:25 | 26 Kandidates for CFP-Extraction
+2026-02-22 17:10:09,674 | INFO | scraper.extract.run_extraction | run_extraction.py:26 | 24 already saved CFPs
+2026-02-22 17:10:11,087 | WARNING | scraper.extract.run_extraction | run_extraction.py:43 | Crawl failed: https://ecscw.eusset.eu/2026/wp-content/uploads/2025/09/EUSSET-Submission-Format-Instructions-v0.1.zip
+2026-02-22 17:10:12,164 | WARNING | presidio-analyzer | recognizer_registry.py:182 | Entity USERNAME doesn't have the corresponding recognizer in language : en
+2026-02-22 17:10:12,165 | WARNING | presidio-analyzer | recognizer_registry.py:182 | Entity IBAN doesn't have the corresponding recognizer in language : en
+2026-02-22 17:10:13,917 | INFO | httpx | _client.py:1740 | HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2026-02-22 17:10:13,969 | INFO | scraper.extract.run_extraction | run_extraction.py:54 | CFP extracted: CSCW 2026 | https://cscw.acm.org/2026/papers2026@cscw.acm.org
+2026-02-22 17:10:14,124 | INFO | scraper.extract.run_extraction | run_extraction.py:62 | Extraction successful: 25 CFPs
+2026-02-22 17:10:14,124 | INFO | __main__.72ef5030 | run_scraper.py:35 | Post-Processing (Deadlines)
+2026-02-22 17:10:14,141 | INFO | scraper.postprocess.run_postprocess | run_postprocess.py:17 | 25 CFPs before Postprocessing
+2026-02-22 17:10:14,143 | INFO | scraper.postprocess.run_postprocess | run_postprocess.py:31 | 10 active CFPs
+2026-02-22 17:10:14,144 | INFO | __main__.72ef5030 | run_scraper.py:38 | Importing CFPs in DB (Node.js)
+2026-02-22 17:10:15,054 | ERROR | __main__.72ef5030 | run_scraper.py:50 | Pipeline aborted
+Traceback (most recent call last):
+  File "D:\CFP-BOT\cfp-bot\run_scraper.py", line 39, in scrape_pipeline
+    subprocess.run([
+  File "C:\Users\alexk\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['docker', 'compose', 'exec', '-T', 'web', 'node', 'scripts/importActiveCfps.cjs']' returned non-zero exit status 1.
+2026-02-22 17:10:15,056 | INFO | __main__.72ef5030 | run_scraper.py:54 | Pipeline Duration: 85.97s
+2026-02-22 17:30:34,740 | INFO | __main__.9acfcba4 | run_scraper.py:23 | Starting Pipeline Process
+2026-02-22 17:30:34,740 | INFO | __main__.9acfcba4 | run_scraper.py:26 | Start Rule-based Discovery
+2026-02-22 17:30:35,795 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://interact2025.org/
+2026-02-22 17:30:37,305 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://interact2025.org/
+2026-02-22 17:30:37,306 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://www.pdc2026.polimi.it/
+2026-02-22 17:30:40,197 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://www.pdc2026.polimi.it/
+2026-02-22 17:30:40,198 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://www.weizenbaum-institut.de/
+2026-02-22 17:30:47,307 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 9 found relevant links https://www.weizenbaum-institut.de/
+2026-02-22 17:30:47,307 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://ecscw.eusset.eu/
+2026-02-22 17:30:57,174 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 10 found relevant links https://ecscw.eusset.eu/
+2026-02-22 17:30:57,175 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://icis2025.aisconferences.org/
+2026-02-22 17:30:59,436 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://icis2025.aisconferences.org/
+2026-02-22 17:30:59,436 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://easst.net/
+2026-02-22 17:31:04,006 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 1 found relevant links https://easst.net/
+2026-02-22 17:31:04,006 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://chi2026.acm.org/
+2026-02-22 17:31:12,418 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 4 found relevant links https://chi2026.acm.org/
+2026-02-22 17:31:12,418 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://cscw.acm.org/
+2026-02-22 17:31:18,025 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 7 found relevant links https://cscw.acm.org/
+2026-02-22 17:31:18,025 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://facctconference.org/
+2026-02-22 17:31:23,400 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 4 found relevant links https://facctconference.org/
+2026-02-22 17:31:23,400 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://tei.acm.org/
+2026-02-22 17:31:26,245 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 2 found relevant links https://tei.acm.org/
+2026-02-22 17:31:26,245 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://muc2025.mensch-und-computer.de/
+2026-02-22 17:31:29,124 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 1 found relevant links https://muc2025.mensch-und-computer.de/
+2026-02-22 17:31:29,125 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://dis.acm.org/
+2026-02-22 17:31:30,481 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 0 found relevant links https://dis.acm.org/
+2026-02-22 17:31:30,481 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://dblp.org/
+2026-02-22 17:31:34,571 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 1 found relevant links https://dblp.org/
+2026-02-22 17:31:34,572 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:54 | 🚀 Start: https://aisel.aisnet.org/
+2026-02-22 17:31:39,920 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:65 | 1 found relevant links https://aisel.aisnet.org/
+2026-02-22 17:31:40,409 | INFO | scraper.discovery.rules.start_discovering | start_discovering.py:70 | 🏁 CFP Discovery finished
+2026-02-22 17:31:40,410 | INFO | __main__.9acfcba4 | run_scraper.py:29 | Start AI-based Discovery
+2026-02-22 17:31:40,414 | INFO | scraper.discovery.ai.run_filter | run_filter.py:50 | 16 new links to classify with AI
+2026-02-22 17:31:40,414 | INFO | scraper.discovery.ai.run_filter | run_filter.py:53 | ➡️ Batch 1: AI-Classification for 12 urls
+2026-02-22 17:31:40,415 | ERROR | scraper.discovery.ai.classifier | classifier.py:24 | Error during AI classification
+Traceback (most recent call last):
+  File "D:\CFP-BOT\cfp-bot\scraper\discovery\ai\classifier.py", line 15, in classify_batch
+    result = await async_chat(
+                   ^^^^^^^^^^^
+TypeError: async_chat() got an unexpected keyword argument 'model'
+2026-02-22 17:31:40,417 | INFO | scraper.discovery.ai.run_filter | run_filter.py:53 | ➡️ Batch 2: AI-Classification for 4 urls
+2026-02-22 17:31:40,417 | ERROR | scraper.discovery.ai.classifier | classifier.py:24 | Error during AI classification
+Traceback (most recent call last):
+  File "D:\CFP-BOT\cfp-bot\scraper\discovery\ai\classifier.py", line 15, in classify_batch
+    result = await async_chat(
+                   ^^^^^^^^^^^
+TypeError: async_chat() got an unexpected keyword argument 'model'
+2026-02-22 17:31:40,419 | INFO | scraper.discovery.ai.run_filter | run_filter.py:73 | AI Discovery finished: 0 new CFPs
+2026-02-22 17:31:40,420 | INFO | __main__.9acfcba4 | run_scraper.py:32 | Start CFP Extraction
+2026-02-22 17:31:40,441 | INFO | scraper.extract.run_extraction | run_extraction.py:25 | 26 Kandidates for CFP-Extraction
+2026-02-22 17:31:40,442 | INFO | scraper.extract.run_extraction | run_extraction.py:26 | 25 already saved CFPs
+2026-02-22 17:31:41,844 | WARNING | scraper.extract.run_extraction | run_extraction.py:43 | Crawl failed: https://ecscw.eusset.eu/2026/wp-content/uploads/2025/09/EUSSET-Submission-Format-Instructions-v0.1.zip
+2026-02-22 17:31:42,029 | INFO | scraper.extract.run_extraction | run_extraction.py:62 | Extraction successful: 25 CFPs
+2026-02-22 17:31:42,030 | INFO | __main__.9acfcba4 | run_scraper.py:35 | Post-Processing (Deadlines)
+2026-02-22 17:31:42,031 | INFO | scraper.postprocess.run_postprocess | run_postprocess.py:17 | 25 CFPs before Postprocessing
+2026-02-22 17:31:42,033 | INFO | scraper.postprocess.run_postprocess | run_postprocess.py:31 | 10 active CFPs
+2026-02-22 17:31:42,034 | INFO | __main__.9acfcba4 | run_scraper.py:38 | Importing CFPs in DB (Node.js)
+2026-02-22 17:31:42,427 | ERROR | __main__.9acfcba4 | run_scraper.py:50 | Pipeline aborted
+Traceback (most recent call last):
+  File "D:\CFP-BOT\cfp-bot\run_scraper.py", line 39, in scrape_pipeline
+    subprocess.run([
+  File "C:\Users\alexk\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['docker', 'compose', 'exec', '-T', 'web', 'node', 'scripts/importActiveCfps.cjs']' returned non-zero exit status 1.
+2026-02-22 17:31:42,429 | INFO | __main__.9acfcba4 | run_scraper.py:54 | Pipeline Duration: 67.69s

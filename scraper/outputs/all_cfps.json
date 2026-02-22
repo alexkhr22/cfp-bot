@@ -479,5 +479,24 @@
     "url": "https://docs.google.com/forms/d/e/1FAIpQLScEtlaT1mCilHGjZ0jw7GfkGDV3sFqfoHtBADnpgJJ0HEHX3Q/viewform",
     "id": "cscw_2026_3viewform",
     "extractedAt": "2026-02-22T11:49:50.248841Z"
+  },
+  {
+    "title": "CSCW 2026",
+    "conferenceSeries": "CSCW",
+    "deadline": "n/a",
+    "conferenceDate": "2026-02-27",
+    "location": "n/a",
+    "submissionForm": "n/a",
+    "wordCharacterLimit": "n/a",
+    "tags": [
+      "hci",
+      "social computing",
+      "cooperative work"
+    ],
+    "reviewModel": "n/a",
+    "notes": "The page appears to be outdated or incorrect, referencing the 2016 conference.",
+    "url": "https://cscw.acm.org/2026/papers2026@cscw.acm.org",
+    "id": "cscw_2026_26cscwacmorg",
+    "extractedAt": "2026-02-22T16:10:13.968602Z"
   }
 ]

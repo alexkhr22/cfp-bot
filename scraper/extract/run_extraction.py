@@ -5,7 +5,6 @@ import logging
 from pathlib import Path
 from dotenv import load_dotenv
 from crawl4ai import AsyncWebCrawler, CrawlerRunConfig, CacheMode
-from openai import AsyncOpenAI
 from .io import load_json, save_json
 from .normalize import clean_markdown_for_extraction
 from .sanitize import sanitize_markdown
@@ -15,7 +14,6 @@ logger = logging.getLogger(__name__)
 
 async def main():
     load_dotenv()
-    client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
     BASE_DIR = Path(__file__).resolve().parents[1]
     INPUT_PATH = BASE_DIR / "outputs" / "cfp_candidates.json"
@@ -48,7 +46,7 @@ async def main():
                 md = clean_markdown_for_extraction(result.markdown)
                 md = sanitize_markdown(md)
 
-                cfp = await extract_cfp(client, md, url)
+                cfp = await extract_cfp(md, url)
                 if cfp:
                     existing.append(cfp)
                     existing_urls.add(url)

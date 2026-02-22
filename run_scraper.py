@@ -36,11 +36,13 @@ async def scrape_pipeline():
         run_postprocess()
 
         logger.info("Importing CFPs in DB (Node.js)")
-        subprocess.run(
-            ["node", str(NODE_SCRIPT)],
-            cwd=BASE_DIR,
-            check=True
-        )
+        subprocess.run([
+            "docker", "compose", "exec",
+            "-T",
+            "web",
+            "node",
+            "scripts/importActiveCfps.cjs"
+        ], check=True)
 
         logger.info("Pipeline successfully completed")
 

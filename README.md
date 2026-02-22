@@ -6,7 +6,7 @@ This guide explains step by step how to set up and run the **CFP Bot** and its *
 
 ---
 
-## Server Requirements
+## Server specifications on which the bot and the web app were tested 
 
 - **Provider:** Hetzner (tested)
 - **Operating System:** Ubuntu 24.04

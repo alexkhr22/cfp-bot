@@ -107,7 +107,7 @@ const RightSideHome = ({cfps}) =>{
                 popup
                 style={{height: "80%", fontSize: "14px"}}
             />
-            <button onClick={() => exportToICS(events)}>Export</button>
+            <button className="export-calendar-btn" onClick={() => exportToICS(events)}>Exportieren</button>
         </div>
         
     );

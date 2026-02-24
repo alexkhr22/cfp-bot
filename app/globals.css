@@ -1,3 +1,6 @@
+/* =========================================================
+   Global Reset / Base
+   ========================================================= */
 html,
 
 * {
@@ -13,6 +16,9 @@ li {
   list-style: none;
 }
 
+/* =========================================================
+   App Layout / Body
+   ========================================================= */
 body {
   background-color: #aed0bd;
   min-height: 100%;
@@ -25,6 +31,9 @@ body {
   align-items: center;
 }
 
+/* =========================================================
+   Layout Containers (Rechtecke)
+   ========================================================= */
 .rechteck-sidebar {
   width: 25vw;
   height: 95vh;
@@ -65,6 +74,9 @@ body {
   overflow: hidden;
 }
 
+/* =========================================================
+   Sidebar Elements (Dropdown / Buttons / Lists)
+   ========================================================= */
 .home-dropdown {
   width: 20vw;
   height: 12vh;
@@ -81,7 +93,7 @@ body {
   width: 20vw;
   height: 7vh;
   margin-top: 15px;
-  border: 2px;
+  border: 2px, solid;
   border-radius: 10px;
   background-color: #f6fdff;
 }
@@ -90,7 +102,7 @@ body {
   width: 20vw;
   height: 7vh;
   margin-top: 15px;
-  border: 2px;
+  border: 2px, solid;
   border-radius: 10px;
   background-color: #93baeb;
 }
@@ -109,12 +121,16 @@ body {
   background-color: #fff;
 }
 
+/* =========================================================
+   Tags (New Tag / Tags List / Tag Item / Buttons)
+   ========================================================= */
 .newtag-div {
   width: 20vw;
   height: 4vh;
   background-color: #f6fdff;
   display: flex;
   flex-direction: row;
+
 
   justify-content: center;
   align-items: center;
@@ -151,14 +167,31 @@ body {
   background: transparent;
   border: 2px solid black;
   color: black;
+  background-color: lightcoral;
   font-weight: bold;
   cursor: pointer;
+}
+.trash-img {
+  width: 16px;   
+  height: 16px;
+  display: block;
 }
 
 .delete-btn:hover {
   color: red;
 }
 
+.newtag-btn {
+  background: transparent;
+  border: 1px solid black;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* =========================================================
+   LeftSideHome – Header (Add CFP + Search)
+   ========================================================= */
 .add-cfp {
   width: 7vw;
   height: 5vh;
@@ -184,6 +217,11 @@ body {
   margin-left: auto;
   margin-right: 5px;
   font-size: 25px;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;        
+  outline: none; 
 }
 
 .cfp-title {
@@ -217,6 +255,9 @@ body {
   cursor: pointer;
 }
 
+/* =========================================================
+   LeftSideHome – Add CFP Modal / Form
+   ========================================================= */
 .addcfp-div {
   width: 40vw;
   background-color: #f6fdff;
@@ -224,6 +265,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid;
+  border-radius: 10px;
+
 
   position: absolute;
   top: 50%;
@@ -234,6 +278,7 @@ body {
   padding: 20px;
 
   max-height: 80vh;
+  z-index: 1000;
 }
 
 .addcfp-list li {
@@ -274,6 +319,9 @@ body {
   margin: 20px;
 }
 
+/* =========================================================
+   LeftSideHome – CFP Cards / List
+   ========================================================= */
 .cfp-card {
   width: 27vw;
   height: 40vh;
@@ -295,8 +343,11 @@ body {
   padding: 0 10px;
 }
 
-.cfp-card-tag-paragraph{
+.cfp-card-tag-paragraph {
   margin-right: 5px;
+  border: 1px solid black;   
+  padding: 4px 8px;          
+  border-radius: 4px;        
 }
 
 .cfps-list {
@@ -315,7 +366,25 @@ body {
   margin: 10px;
 }
 
+.edit-cfp-btn{
+  background: transparent;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  outline:none
+}
 
+.edit-img{
+  width: 16px;  
+  height: 16px;
+  display: block;
+}
+
+/* =========================================================
+   New Group Screen (Create Group)
+   ========================================================= */
 .rechteck-newgrp {
   width: 75vw;
   height: 95vh;
@@ -379,6 +448,11 @@ body {
   margin-left: 26vw;
 }
 
+/* =========================================================
+   Groups (Old/Sidebar-style group list components)
+   ========================================================= */
+
+
 .groups-div {
   height: 60vh;
   width: 20vw;
@@ -388,7 +462,6 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
 
 .groups-div ul {
   list-style: none;
@@ -420,23 +493,73 @@ body {
   height: 40px;       
 }     
 
-.join-group-btn,
+.join-group-btn {
+  position: absolute;
+  left: 10px;
+}
+
+
+
+.groups-screen-toggle-btn.join {
+  position: absolute;
+  left: 10px;
+  height: 2vh;
+  width: 4vw;
+  background: #9be59b;
+  border: 2px;
+  border-radius: 10px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-size: 18px;
+}
+
+
+.groups-screen-toggle-btn.leave {
+  position: absolute;
+  left: 10px;
+  height: 2vh;
+  width: 4vw;
+  background: #f98383;
+  border: 2px;
+  border-radius: 10px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-size: 18px;
+}
+
 .leave-group-btn {
   position: absolute;
-  left: 1vw;
+  left: 10px;
+  height: 2vh;
+  width: 4vw;
+  background: #f98383;
+  border: 2px;
+  border-radius: 10px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-size: 18px;
 }
 
 .group-item-title {
   margin: 0 auto;          
 }
 
-
 .group-item-dropdown-btn {
-  position: absolute;
-  right: 1vw;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
 }
 
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
 
+/* =========================================================
+   GroupsScreen (Alle Gruppen) – Two-Column Screen
+   ========================================================= */
 .groups-screen-div {
   width: 75vw;
   height: 95vh;
@@ -451,6 +574,9 @@ body {
 
 }
 
+/* =========================================================
+   User Screen
+   ========================================================= */
 .user-screen-div{
   width: 99vw;
   height: 97vh;
@@ -529,6 +655,7 @@ body {
   justify-content: space-between;  
   align-items: center;
 }
+
 .delete-user-btn{
   background: transparent;
   border: 2px solid black;
@@ -537,6 +664,9 @@ body {
   cursor: pointer;
 }
 
+/* =========================================================
+   GroupsScreen – Header + Content Columns
+   ========================================================= */
 .groups-screen-title-div {
   width: 100%;
   height: 7vh;
@@ -626,7 +756,6 @@ body {
   background-color: #fff;
 }
 
-
 .groups-ulist-div{
   width: 80%;
   height: 60%;
@@ -652,6 +781,31 @@ body {
 .groups-screen-leave-group-btn{
   position: absolute;
   left: 10px;
+  height: 2vh;
+  width: 4vw;
+  background: #f98383;
+  border: 2px;
+  border-radius: 10px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-size: 18px;
 }
 
 
+
+
+.export-calendar-btn {
+  width: 17vw;
+  height: 5vh;
+  margin-top: 2rem;
+
+  border-radius: 10px;
+  background-color: #f6fdff;
+
+  font-size: 20px;
+  font-weight: bold;   
+
+  border: none;      
+  outline: none;    
+  cursor: pointer;
+}

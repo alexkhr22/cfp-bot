@@ -51,7 +51,8 @@ const GroupsScreen = ({selectedUser, refreshKey, onGroupsChanged}) =>{
         
         onGroupsChanged?.();
     }
-
+    
+    
     
     async function getClickedGroup(group){
         const allGroups = await getAllGroups();
@@ -87,61 +88,109 @@ const GroupsScreen = ({selectedUser, refreshKey, onGroupsChanged}) =>{
     return (
         <div className="groups-screen-div">
             <div className="groups-screen-title-div">
-                <p className="groups-screen-title">Alle Gruppen</p>
+            <p className="groups-screen-title">Alle Gruppen</p>
             </div>
+
             <div className="groups-content">
-                <div className="groups-left-side">
-                    <p className="member-p">Mitglied</p>
-                    <ul className="member-groups-list">
-                        {(userGroups ?? []).map((userGroup, index) => (
-                            <li key={index} className="groups-screen-group-item">
-                                <div className="groups-screen-group-item-title-div">
-                                    <button className="groups-screen-leave-group-btn" onClick={() => handleLeave(userGroup)}>Leave</button>
-                                    <p>{userGroup.name}</p>
-                                </div>
-                                <div className="groups-screen-group-item-content-div">
-                                    <p className="keyword-title-p">Schlagwörter:</p>
-                                    <div className="groups-ulist-div">
-                                        <ul className="groups-keywords-scroll-list">
-                                        {userGroup.keywords.map((keyword, index) => (
-                                            <li key={index} className="tag-item">
-                                                <span>{keyword}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    </div>
-                                    <button className="delete-group-btn" onClick={() => handleDeleteGroup(userGroup)}>Gruppe löschen</button>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="groups-right-side">
-                    <p className="no-member-p">Kein Mitglied</p>
-                    <ul className="member-groups-list">
-                        {(userNotJoinedGroups ?? []).map((userNotGroup, index) => (
-                            <li key={index} className="groups-screen-group-item">
-                                <div className="groups-screen-group-item-title-div">
-                                    <button className="groups-screen-leave-group-btn" onClick={() => handleJoin(userNotGroup)}>Join</button>
-                                    <p>{userNotGroup.name}</p>
-                                </div>
-                                <div className="groups-screen-group-item-content-div">
-                                    <p className="keyword-title-p">Schlagwörter:</p>
-                                    <div className="groups-ulist-div">
-                                        <ul className="groups-keywords-scroll-list">
-                                        {userNotGroup.keywords.map((keyword, index) => (
-                                            <li key={index} className="tag-item">
-                                                <span>{keyword}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    </div>
-                                    <button className="delete-group-btn" onClick={() => handleDeleteGroup(userNotGroup)}>Gruppe löschen</button>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+            {/* LEFT: Mitglied */}
+            <div className="groups-left-side">
+                <p className="member-p">Mitglied</p>
+
+                <ul className="member-groups-list">
+                {(userGroups ?? []).map((userGroup, index) => {
+                    const isMember = true;
+
+                    return (
+                    <li key={index} className="groups-screen-group-item">
+                        <div className="groups-screen-group-item-title-div">
+                        <button
+                            className={`groups-screen-toggle-btn ${isMember ? "leave" : "join"}`}
+                            onClick={() => handleLeave(userGroup)}
+                        >
+                            Leave
+                        </button>
+
+                        <p>{userGroup.name}</p>
+                        </div>
+
+                        <div className="groups-screen-group-item-content-div">
+                        <p className="keyword-title-p">Schlagwörter:</p>
+
+                        <div className="groups-ulist-div">
+                            <ul className="groups-keywords-scroll-list">
+                            {userGroup.keywords.map((keyword, idx) => (
+                                <li key={idx} className="tag-item">
+                                <span>{keyword}</span>
+                                </li>
+                            ))}
+                            </ul>
+                        </div>
+
+                        <button
+                            className="delete-group-btn"
+                            onClick={() => handleDeleteGroup(userGroup)}
+                        >
+                            Gruppe löschen
+                        </button>
+                        </div>
+                    </li>
+                    );
+                })}
+                </ul>
+            </div>
+
+            {/* RIGHT: Kein Mitglied */}
+            <div className="groups-right-side">
+                <p className="no-member-p">Kein Mitglied</p>
+
+                <ul className="member-groups-list">
+                {(userNotJoinedGroups ?? []).map((userNotGroup, index) => {
+                    const isMember = userGroups.some(
+                    (g) => String(g.id) === String(userNotGroup.id)
+                    );
+
+                    return (
+                    <li key={index} className="groups-screen-group-item">
+                        <div className="groups-screen-group-item-title-div">
+                        <button
+                            className={`groups-screen-toggle-btn ${isMember ? "leave" : "join"}`}
+                            onClick={() =>
+                            isMember
+                                ? handleLeave(userNotGroup)
+                                : handleJoin(userNotGroup)
+                            }
+                        >
+                            {isMember ? "Leave" : "Join"}
+                        </button>
+
+                        <p>{userNotGroup.name}</p>
+                        </div>
+
+                        <div className="groups-screen-group-item-content-div">
+                        <p className="keyword-title-p">Schlagwörter:</p>
+
+                        <div className="groups-ulist-div">
+                            <ul className="groups-keywords-scroll-list">
+                            {userNotGroup.keywords.map((keyword, idx) => (
+                                <li key={idx} className="tag-item">
+                                <span>{keyword}</span>
+                                </li>
+                            ))}
+                            </ul>
+                        </div>
+
+                        <button
+                            className="delete-group-btn"
+                            onClick={() => handleDeleteGroup(userNotGroup)}
+                        >
+                            Gruppe löschen
+                        </button>
+                        </div>
+                    </li>
+                    );
+                })}
+                </ul>
+            </div>
             </div>
         </div>
     );

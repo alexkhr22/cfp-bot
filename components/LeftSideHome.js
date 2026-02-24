@@ -307,8 +307,8 @@ const LeftSideHome = ({selectedUser, reloadUser, refreshKey, cfps, setCfps, onCf
                                     {editingId !== cfp.id ? (
                                         <>
                                         {(cfp.tags && cfp.tags.length > 0) ? cfp.tags.join(", ") : "-"}
-                                        <button type="button" onClick={() => startEditTag(cfp)}>
-                                            Edit
+                                        <button className="edit-cfp-btn"type="button" onClick={() => startEditTag(cfp)}>
+                                            <img className="edit-img" src="/icons/edit.png" alt="Delete" />
                                         </button>
                                         </>
                                     ) : (

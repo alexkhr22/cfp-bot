@@ -32,44 +32,49 @@ async function main() {
 
   for (const cfp of cfps) {
     try {
+      const url = toStringOrNull(cfp.url) ?? "";   // falls du url NOT NULL brauchst
+      const title = toStringOrNull(cfp.title) ?? "";
+
+      const conferenceDate = toDateOrNull(cfp.conferenceDate);
+      const deadline = toDateOrNull(cfp.deadline);
+
       await prisma.cFP.upsert({
         where: {
-            url_title_conferenceDate: {
-            url: cfp.url,
-            title: cfp.title,
-            conferenceDate: cfp.conferenceDate,
-            },
+          url_title_conferenceDate: {
+            url,
+            title,
+            conferenceDate, // Date | null (je nach Schema)
+          },
         },
         update: {
-            deadline: cfp.deadline ?? null,
-            conferenceDate: cfp.conferenceDate ?? null,
-            location: cfp.location ?? null,
-            submissionForm: cfp.submissionForm ?? null,
-            wordCharacterLimit: cfp.wordCharacterLimit ?? null,
-            note: cfp.notes ?? null,
-            tags: Array.isArray(cfp.tags) ? cfp.tags : [],
+          deadline,
+          conferenceDate,
+          location: toStringOrNull(cfp.location),
+          submissionForm: toStringOrNull(cfp.submissionForm),
+          wordCharacterLimit: cfp.wordCharacterLimit ?? null,
+          note: toStringOrNull(cfp.notes),
+          tags: Array.isArray(cfp.tags) ? cfp.tags : [],
         },
         create: {
-            title: cfp.title,
-            url: cfp.url,
-            deadline: cfp.deadline ?? null,
-            conferenceDate: cfp.conferenceDate ?? null,
-            location: cfp.location ?? null,
-            submissionForm: cfp.submissionForm ?? null,
-            wordCharacterLimit: cfp.wordCharacterLimit ?? null,
-            note: cfp.notes ?? null,
-            tags: Array.isArray(cfp.tags) ? cfp.tags : [],
-            userId: SYSTEM_USER_ID,
+          title,
+          url,
+          deadline,
+          conferenceDate,
+          location: toStringOrNull(cfp.location),
+          submissionForm: toStringOrNull(cfp.submissionForm),
+          wordCharacterLimit: cfp.wordCharacterLimit ?? null,
+          note: toStringOrNull(cfp.notes),
+          tags: Array.isArray(cfp.tags) ? cfp.tags : [],
+          userId: SYSTEM_USER_ID,
         },
-        });
-
+      });
 
       createdOrUpdated++;
       console.log("✅ importiert:", cfp.title);
     } catch (err) {
       failed++;
       console.error("❌ Fehler bei:", cfp.title);
-      console.error(err.message);
+      console.error(err);
     }
   }
 
@@ -77,6 +82,24 @@ async function main() {
   console.log(`✅ Erfolgreich: ${createdOrUpdated}`);
   console.log(`❌ Fehlgeschlagen: ${failed}`);
 }
+
+const toDateOrNull = (v) => {
+  // akzeptiert ISO-Strings, Date-Objekte, null/undefined/""
+  if (v === null || v === undefined) return null;
+  if (typeof v === "string" && v.trim() === "") return null;
+
+  const d = v instanceof Date ? v : new Date(v);
+
+  // Invalid Date -> null (oder throw, wenn du streng sein willst)
+  if (Number.isNaN(d.getTime())) return null;
+  return d;
+};
+
+const toStringOrNull = (v) => {
+  if (v === null || v === undefined) return null;
+  if (typeof v === "string" && v.trim() === "") return null;
+  return String(v);
+};
 
 // ─────────────────────────────────────────────
 // Run

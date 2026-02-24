@@ -112,7 +112,7 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
                                 className="delete-btn"
                                 onClick={() => handleDeleteTag(tag)}
                             >
-                                X
+                                <img className="trash-img" src="/icons/delete.png" alt="Delete" />
                             </button>
                             </li>
                         ))}
@@ -149,7 +149,16 @@ const SideBar = ({ screen, setScreen, goToUser, selectedUser, refreshKey, onGrou
                                 <button className="leave-group-btn" onClick={() => handleLeave(group)}>Leave</button>
 
                                 <p className="group-item-title"><strong>{group.name}</strong></p>
-                                <button className="group-item-dropdown-btn" onClick={() => handleShowDropdown(group.id)}>drop</button>
+                               <button
+                                    className="group-item-dropdown-btn"
+                                    onClick={() => handleShowDropdown(group.id)}
+                                    >
+                                    <img
+                                        className="dropdown-icon"
+                                        src={dropDownGroupId === group.id ? "/icons/down.png" : "/icons/left.png"}
+                                        alt={dropDownGroupId === group.id ? "Collapse" : "Expand"}
+                                    />
+                                </button>
                             </div>
                             {dropDownGroupId === group.id &&(
                                 <div className="group-item-div">

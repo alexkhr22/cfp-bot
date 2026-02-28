@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/libs/prisma";
 
 /**
- * Löscht eine Keyword-Gruppe und entfernt alle zugehörigen Verknüpfungen.
+ * Deletes a keyword group and removes all associated links.
  */
 export async function DELETE(req, { params }) {
   try {
@@ -10,24 +10,17 @@ export async function DELETE(req, { params }) {
     const groupId = parseInt(resolvedParams.id, 10);
 
     if (isNaN(groupId)) {
-      return NextResponse.json({ error: "Ungültige Group ID" }, { status: 400 });
+      return NextResponse.json({ error: "Invalid Group ID" }, { status: 400 });
     }
 
-    /** 
-     * Löscht zuerst alle Abhängigkeiten in den Join-Tabellen,
-     * um Foreign-Key-Constraints nicht zu verletzen.
-     * Entfernt Verknüpfungen zwischen Usern und dieser Gruppe
-    */
     await prisma.userKeywordGroup.deleteMany({ 
       where: { groupId: groupId } 
     });
-    
-    // Entfernt Verknüpfungen zwischen CFPs und dieser Gruppe
+
     await prisma.cFPKeywordGroup.deleteMany({ 
       where: { groupId: groupId } 
     });
 
-    // Eigentliche Gruppe aus der Haupttabelle löschen
     await prisma.keywordGroup.delete({ 
       where: { id: groupId } 
     });
@@ -36,7 +29,7 @@ export async function DELETE(req, { params }) {
   } catch (err) {
     console.error("Delete Group Error:", err);
     return NextResponse.json(
-      { error: err?.message ?? "Unbekannter Fehler" },
+      { error: err?.message ?? "Unknown error" },
       { status: 500 }
     );
   }

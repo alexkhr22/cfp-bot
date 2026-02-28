@@ -4,26 +4,23 @@ import { prisma } from "@/libs/prisma";
 const SYSTEM_USER_ID = Number(process.env.SYSTEM_USER_ID);
 
 /**
- * Erstellt einen neuen CFP-Eintrag.
- * Verknüpft den CFP mit einem User und optionalen Keyword-Gruppen.
+ * Creates a new CFP entry.
+ * Links the CFP to a user and optional keyword groups.
  */
 export async function POST(req) {
   try {
     const body = await req.json();
 
     if (!body?.title) {
-      return NextResponse.json({ error: "title fehlt" }, { status: 400 });
+      return NextResponse.json({ error: "title missing" }, { status: 400 });
     }
     if (!body?.url || !body?.conferenceDate) {
       return NextResponse.json(
-        { error: "url oder conferenceDate fehlt" },
+        { error: "url or conferenceDate missing" },
         { status: 400 }
       );
     }
 
-    // 👉 WICHTIG: userId NICHT mehr aus dem Body erzwingen
-    // Scraper → SYSTEM
-    // UI → über Session (hier vereinfacht SYSTEM)
     const userId = body.userId
       ? parseInt(body.userId, 10)
       : SYSTEM_USER_ID;
@@ -76,8 +73,8 @@ export async function POST(req) {
 
 
 /**
- * Ruft alle CFPs ab, die einem bestimmten Benutzer gehören.
- * Filterung erfolgt über den Query-Parameter ?userId=...
+ * Retrieves all CFPs belonging to a specific user.
+* Filtering is performed using the query parameter ?userId=...
  */
 export async function GET(req) {
   try {
@@ -85,7 +82,7 @@ export async function GET(req) {
     const rawUserId = searchParams.get("userId");
 
     if (!rawUserId) {
-      return NextResponse.json({ error: "userId fehlt" }, { status: 400 });
+      return NextResponse.json({ error: "userId missing" }, { status: 400 });
     }
     const userId = parseInt(rawUserId, 10);
 
@@ -98,7 +95,7 @@ export async function GET(req) {
     return NextResponse.json(cfps);
   } catch (err) {
     return NextResponse.json(
-      { error: err?.message ?? "Unbekannter Fehler" },
+      { error: err?.message ?? "Unknown error" },
       { status: 500 }
     );
   }

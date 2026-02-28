@@ -2,8 +2,8 @@ import { prisma } from "@/libs/prisma";
 import { NextResponse } from "next/server";
 
 /**
- * Ruft alle Benutzer ab, sortiert nach Name.
- * Inkludiert die Gruppenmitgliedschaften des Benutzers.
+ * Retrieves all users, sorted by name.
+ * Includes the user's group memberships.
  */
 export async function GET() {
   try {
@@ -14,15 +14,15 @@ export async function GET() {
     return NextResponse.json(users);
   } catch (err) {
     return NextResponse.json(
-      { error: err?.message ?? "Unbekannter Fehler" },
+      { error: err?.message ?? "Unknown error" },
       { status: 500 }
     );
   }
 }
 
 /**
- * Erstellt einen neuen Benutzer.
- * Erwartet ein 'name' Feld im Body und initialisiert die Tags leer.
+ * Creates a new user.
+ * Expects a ‘name’ field in the body and initializes the tags as empty.
  */
 export async function POST(req) {
   try {
@@ -39,7 +39,7 @@ export async function POST(req) {
     return NextResponse.json(user, { status: 201 });
   } catch (err) {
     return NextResponse.json(
-      { error: err?.message ?? "Unbekannter Fehler" },
+      { error: err?.message ?? "Unknown error" },
       { status: 500 }
     );
   }

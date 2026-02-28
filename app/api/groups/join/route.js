@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/libs/prisma";
 
 /**
- * Verknüpft einen Benutzer mit einer Keyword-Gruppe.
+ * Links a user to a keyword group.
  */
 export async function POST(req) {
   try {
@@ -13,12 +13,11 @@ export async function POST(req) {
 
     if (isNaN(userId) || isNaN(groupId)) {
       return NextResponse.json(
-        { error: "userId oder groupId fehlt oder ist ungültig" },
+        { error: "userId or groupId missing or invalid" },
         { status: 400 }
       );
     }
 
-    // Eintrag in der Join-Tabelle (UserKeywordGroup) erstellen
     await prisma.userKeywordGroup.create({
       data: { 
         userId: userId, 
@@ -28,17 +27,15 @@ export async function POST(req) {
 
     return NextResponse.json({ ok: true }, { status: 201 });
   } catch (err) {
-    // Fehlerbehandlung: Prisma-Error P2002 (Unique Constraint) abfangen,
-    // falls die Verbindung zwischen User und Gruppe bereits existiert.
     if (err.code === 'P2002') {
       return NextResponse.json(
-        { error: "User ist bereits Mitglied dieser Gruppe" },
+        { error: "User is already a member of this group" },
         { status: 409 }
       );
     }
 
     return NextResponse.json(
-      { error: err?.message ?? "Unbekannter Fehler" },
+      { error: err?.message ?? "Unknown error" },
       { status: 500 }
     );
   }

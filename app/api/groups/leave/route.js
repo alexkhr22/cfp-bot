@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/libs/prisma";
 
 /**
- * Entfernt die Verknüpfung zwischen einem Benutzer und einer Gruppe.
+ * Removes the link between a user and a group.
  */
 export async function POST(req) {
   try {
@@ -13,12 +13,11 @@ export async function POST(req) {
 
     if (isNaN(userId) || isNaN(groupId)) {
       return NextResponse.json(
-        { error: "userId oder groupId fehlt oder ist ungültig" },
+        { error: "userId or groupId missing or invalid" },
         { status: 400 }
       );
     }
 
-    // Löschen über den zusammengesetzten Unique-Index (userId_groupId)
     await prisma.userKeywordGroup.delete({
       where: { 
         userId_groupId: { 
@@ -30,16 +29,16 @@ export async function POST(req) {
 
     return NextResponse.json({ ok: true });
   } catch (err) {
-    // Fehlerbehandlung: Check, falls die Beziehung gar nicht existierte
+
     if (err.code === 'P2025') {
       return NextResponse.json(
-        { error: "Beziehung existiert nicht" },
+        { error: "Relationship does not exist" },
         { status: 404 }
       );
     }
 
     return NextResponse.json(
-      { error: err?.message ?? "Unbekannter Fehler" },
+      { error: err?.message ?? "Unknown error" },
       { status: 500 }
     );
   }
